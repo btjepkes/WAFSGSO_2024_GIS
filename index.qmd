@@ -20,13 +20,13 @@ listing:
 
 This workshop, **GIS for Fisheries and Wildlife Sciences**, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included.
 
-### Objectives:
+## Workshop Objectives
 
--   Provide an overview of GIS concepts and data types
--   Introduce ArcGIS Pro (interface, projects, resources)
--   Demonstrate common spatial operations and tools
--   Work through an example of programmatic GIS (python)
--   Explore a variety of other tools and integrations
+-   To provide an overview of GIS concepts and data types.
+-   To introduce ArcGIS Pro (interface, projects, resources).
+-   To demonstrate common spatial operations and tools.
+-   To work through an example of programmatic GIS (Python).
+-   To explore a variety of other tools and integrations (e.g., R).
 
 ## Data Downloads
 

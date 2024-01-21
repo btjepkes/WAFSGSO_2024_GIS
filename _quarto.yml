@@ -4,7 +4,9 @@ project:
 
 website:
   title: "GIS Workshop 2024"
-  search: FALSE
+  search:
+    location: sidebar
+    type: textbox
   bread-crumbs: true
   navbar:
     logo: layer-group-solid.svg
@@ -20,21 +22,30 @@ website:
           - href: scripting-in-arcgis-pro.qmd
           - href: spatial-data-in-R.qmd
       - href: resources.qmd
-  # sidebar:
-  #   background: "#f0f2f4"
-  #   style: "floating"
-  #   search: true
-  #   contents:
-  #     - id: getting-started
-  #       href: index.qmd
-  #     - href: slides.qmd
-  #     - href: exercises.qmd
-  #     - href: resources.qmd
+  sidebar:
+    background: "#f0f2f4"
+    style: "floating"
+    search: true
+    contents: 
+      - text: "This workshop was kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri."
+      - href: https://pro.arcgis.com/en/pro-app/3.1/help/main/welcome-to-the-arcgis-pro-app-help.htm
+        text: ArcGIS Pro Help Reference
+        icon: question-circle-fill
+      - href: https://pro.arcgis.com/en/pro-app/3.1/arcpy/main/arcgis-pro-arcpy-reference.htm
+        text: ArcPy Help Reference
+        icon: question-circle-fill
   page-footer:
-    center: "Site not affiliated with the University of Missouri. Created with R, RStudio, and Quarto."
-    # background: "#f0f2f4"
+    center: "Site not affiliated with the University of Missouri.<br>Created with R and Quarto by [btjepkes](https://btjepkes.github.io)."
+    background: "#000"
+    foreground: "#fff"
 format:
   html:
+    link-external-icon: false
+    link-external-newwindow: true
+    link-external-filter: ^(?:http:|https:)\/\/www\.btjepkes\.github\.io\/custom
     theme: cosmo
     css: styles.css
     toc: true
+    grid:
+      gutter-width: 4.5%
+      body-width: 900px

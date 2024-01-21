@@ -158,21 +158,63 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "GISGeography ~ All things GIS\nGDAL ~ File formats and conversions"
+  },
+  {
+    "objectID": "resources.html#general-gis",
+    "href": "resources.html#general-gis",
+    "title": "Resources",
+    "section": "",
+    "text": "GISGeography ~ All things GIS\nGDAL ~ File formats and conversions"
+  },
+  {
+    "objectID": "resources.html#arcgis-pro",
+    "href": "resources.html#arcgis-pro",
+    "title": "Resources",
+    "section": "ArcGIS Pro",
+    "text": "ArcGIS Pro"
+  },
+  {
+    "objectID": "resources.html#projections",
+    "href": "resources.html#projections",
+    "title": "Resources",
+    "section": "Projections",
+    "text": "Projections\n\nEPSG Projections ~ Projection codes and help selecting projections"
+  },
+  {
+    "objectID": "resources.html#spatial-data-in-r",
+    "href": "resources.html#spatial-data-in-r",
+    "title": "Resources",
+    "section": "Spatial Data in R",
+    "text": "Spatial Data in R"
+  },
+  {
+    "objectID": "resources.html#data-sources",
+    "href": "resources.html#data-sources",
+    "title": "Resources",
+    "section": "Data Sources",
+    "text": "Data Sources"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Getting Started",
     "section": "",
-    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included.\n\n\n\nProvide an overview of GIS concepts and data types\nIntroduce ArcGIS Pro (interface, projects, resources)\nDemonstrate common spatial operations and tools\nWork through an example of programmatic GIS (python)\nExplore a variety of other tools and integrations"
+    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included."
   },
   {
     "objectID": "index.html#workshop-description",
     "href": "index.html#workshop-description",
     "title": "Getting Started",
     "section": "",
-    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included.\n\n\n\nProvide an overview of GIS concepts and data types\nIntroduce ArcGIS Pro (interface, projects, resources)\nDemonstrate common spatial operations and tools\nWork through an example of programmatic GIS (python)\nExplore a variety of other tools and integrations"
+    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included."
+  },
+  {
+    "objectID": "index.html#workshop-objectives",
+    "href": "index.html#workshop-objectives",
+    "title": "Getting Started",
+    "section": "Workshop Objectives",
+    "text": "Workshop Objectives\n\nTo provide an overview of GIS concepts and data types.\nTo introduce ArcGIS Pro (interface, projects, resources).\nTo demonstrate common spatial operations and tools.\nTo work through an example of programmatic GIS (Python).\nTo explore a variety of other tools and integrations (e.g., R)."
   },
   {
     "objectID": "index.html#data-downloads",
@@ -189,32 +231,25 @@
     "text": "Workshop Schedule\nThis workshop is set to take approximately 4 hours to complete and will cover a diverse range of GIS topics. The following schedule outlines the general sections for each topic covered.\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n1. GIS Concepts\n\n\nData types, file formats, projections, software, and tools.\n\n\n\n\n2. Intro to ArcGIS Pro\n\n\nInterface, catalog, adding data, symbology, layouts, geoprocessing tools\n\n\n\n\n3. Scripting in ArcGIS Pro\n\n\nJupyter, ArcPy, visualization, and workflows.\n\n\n\n\n4. Spatial Data in R\n\n\nVector and raster packages, spatial operations, cartography.\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "exercises.html",
-    "href": "exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2"
+    "objectID": "gis-concepts.html#spatial-data-types",
+    "href": "gis-concepts.html#spatial-data-types",
+    "title": "1. GIS Concepts",
+    "section": "Spatial Data Types",
+    "text": "Spatial Data Types\n\nVector\n\n\nRaster\n\n\nData Type Considerations"
   },
   {
-    "objectID": "exercises.html#exercise-1-intro-to-arcgis-pro",
-    "href": "exercises.html#exercise-1-intro-to-arcgis-pro",
-    "title": "Exercises",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2"
+    "objectID": "gis-concepts.html#projections-crs",
+    "href": "gis-concepts.html#projections-crs",
+    "title": "1. GIS Concepts",
+    "section": "Projections (CRS)",
+    "text": "Projections (CRS)"
   },
   {
-    "objectID": "exercises.html#exercise-2-scripting-in-arcgis-pro",
-    "href": "exercises.html#exercise-2-scripting-in-arcgis-pro",
-    "title": "Exercises",
-    "section": "Exercise 2: Scripting in ArcGIS Pro",
-    "text": "Exercise 2: Scripting in ArcGIS Pro"
-  },
-  {
-    "objectID": "exercises.html#exercise-3-spatial-data-in-rrstudio",
-    "href": "exercises.html#exercise-3-spatial-data-in-rrstudio",
-    "title": "Exercises",
-    "section": "Exercise 3: Spatial Data in R/RStudio",
-    "text": "Exercise 3: Spatial Data in R/RStudio"
+    "objectID": "gis-concepts.html#software-programs",
+    "href": "gis-concepts.html#software-programs",
+    "title": "1. GIS Concepts",
+    "section": "Software & Programs",
+    "text": "Software & Programs"
   },
   {
     "objectID": "slides.html",

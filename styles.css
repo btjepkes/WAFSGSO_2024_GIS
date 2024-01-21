@@ -31,3 +31,13 @@ h1 {
   width: 100%;
   height: 475px;
 }
+
+
+.sidebar-item .sidebar-item-container {
+  color: red;
+  padding-top: 10px;
+}
+
+.bi-question-circle-fill {
+    padding-right: 5px;
+    }

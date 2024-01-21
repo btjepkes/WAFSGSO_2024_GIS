@@ -2,8 +2,20 @@
 title: "Resources"
 ---
 
-About this site
+## General GIS
 
-```{r}
-1 + 1
-```
+- [GISGeography](https://gisgeography.com/) ~ All things GIS
+- [GDAL](https://gdal.org/index.html) ~ File formats and conversions
+
+## ArcGIS Pro
+
+
+
+## Projections
+
+- [EPSG Projections](https://epsg.io/) ~ Projection codes and help selecting projections
+
+## Spatial Data in R
+
+
+## Data Sources

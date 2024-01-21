@@ -3,3 +3,24 @@ title: "1. GIS Concepts"
 subtitle: "Data types, file formats, projections, software, and tools."
 ---
 
+## Introduction
+
+### What is GIS?
+
+### Why Learn GIS?
+
+## Spatial Data Types
+
+### Vector
+
+
+### Raster
+
+
+### Data Type Considerations
+
+
+## Projections (CRS)
+
+
+## Software & Programs

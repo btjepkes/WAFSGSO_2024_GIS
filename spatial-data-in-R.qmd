@@ -1,0 +1,6 @@
+---
+title: "4. Spatial Data in R"
+subtitle: "Vector and raster packages, spatial operations, cartography."
+---
+
+## Introduction

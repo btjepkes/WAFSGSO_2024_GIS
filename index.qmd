@@ -1,0 +1,40 @@
+---
+title: "Getting Started"
+subtitle: "Welcome to the WAFSGSO Spring 2024 GIS Workshop!"
+listing: 
+  id: listings-schedule
+  contents:
+    - gis-concepts.qmd
+    - intro-to-arcgis-pro.qmd
+    - scripting-in-arcgis-pro.qmd
+    - spatial-data-in-R.qmd
+  filter-ui: false
+  sort-ui: false
+  type: table
+  fields: 
+    - title
+    - subtitle
+---
+
+## Workshop Description
+
+This workshop, **GIS for Fisheries and Wildlife Sciences**, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included.
+
+### Objectives:
+
+-   Provide an overview of GIS concepts and data types
+-   Introduce ArcGIS Pro (interface, projects, resources)
+-   Demonstrate common spatial operations and tools
+-   Work through an example of programmatic GIS (python)
+-   Explore a variety of other tools and integrations
+
+## Data Downloads
+
+Start by downloading workshop files here: [Workshop Files (Zipped)]().
+
+## Workshop Schedule
+
+This workshop is set to take approximately 4 hours to complete and will cover a diverse range of GIS topics. The following schedule outlines the general sections for each topic covered.
+
+::: {#listings-schedule}
+:::

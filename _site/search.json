@@ -1,0 +1,233 @@
+[
+  {
+    "objectID": "slides/outline.html#follow-along",
+    "href": "slides/outline.html#follow-along",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Follow Along…",
+    "text": "Follow Along…\n\n\n\nAdd in link to course documents/site."
+  },
+  {
+    "objectID": "slides/outline.html#housekeeping",
+    "href": "slides/outline.html#housekeeping",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\nSchedule\n4 hours, including instruction and hands-on exercises.\nBreaks\nAfter each hour, 5-10 minute break.\nQuestions\nRaise hand or write down and ask during breaks."
+  },
+  {
+    "objectID": "slides/outline.html#course-objectives",
+    "href": "slides/outline.html#course-objectives",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Course Objectives",
+    "text": "Course Objectives\n\n\n\n\nProvide an overview of GIS concepts and data types\nIntroduce ArcGIS Pro (interface, projects, resources)\nDemonstrate common spatial operations and tools\nWork through an example of programmatic GIS (python)\nExplore a variety of other tools and integrations"
+  },
+  {
+    "objectID": "slides/outline.html#workshop-instructors",
+    "href": "slides/outline.html#workshop-instructors",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Workshop Instructors",
+    "text": "Workshop Instructors\n\n\n\n\n\nBenjamin Tjepkes\n\nGraduate Student\nGeography\n\n\nWesley Fitzsimmons\n\nGraduate Student\nFisheries and Wildlife"
+  },
+  {
+    "objectID": "slides/outline.html#looking-for-gis-courses",
+    "href": "slides/outline.html#looking-for-gis-courses",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Looking for GIS Courses?",
+    "text": "Looking for GIS Courses?\n\nLearn More: Geography Course Offerings\n\nThe MU Geography Department has several:\n\nCartography\nIntro GIS\nAdvanced GIS\nSpatial Analysis\nRemote Sensing"
+  },
+  {
+    "objectID": "slides/outline.html#what-is-gis",
+    "href": "slides/outline.html#what-is-gis",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "What is GIS?",
+    "text": "What is GIS?\n\n\n\n\nStarted simply as a way to store and query spatial data\nCapable ecosystem of tools & techniques"
+  },
+  {
+    "objectID": "slides/outline.html#why-learn-gis",
+    "href": "slides/outline.html#why-learn-gis",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Why Learn GIS?",
+    "text": "Why Learn GIS?\n\n\n\n\nEverywhere is somewhere\nAdds another dimension to data\nJOBS!"
+  },
+  {
+    "objectID": "slides/outline.html#spatial-data-types",
+    "href": "slides/outline.html#spatial-data-types",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Spatial Data Types",
+    "text": "Spatial Data Types\nHow the surface of the Earth is represented digitally\n\nSpatial coordinates = X, Y, sometimes Z\nTypes of spatial data models (types)\n\nVector\nRaster\nNetworks\n\nMany file formats / extensions for each\n\nExamples: .tiff, .shp, .gdb"
+  },
+  {
+    "objectID": "slides/outline.html#vector-data",
+    "href": "slides/outline.html#vector-data",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Vector Data",
+    "text": "Vector Data\nRepresents space as points, lines, and polygons\n\nSource: Carto"
+  },
+  {
+    "objectID": "slides/outline.html#vector-file-formats",
+    "href": "slides/outline.html#vector-file-formats",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Vector File Formats",
+    "text": "Vector File Formats"
+  },
+  {
+    "objectID": "slides/outline.html#raster-data",
+    "href": "slides/outline.html#raster-data",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Raster Data",
+    "text": "Raster Data\nRepresents space as a grid of pixels\n\nSource: Carto\nLearn more: Navigation"
+  },
+  {
+    "objectID": "slides/outline.html#raster-file-formats",
+    "href": "slides/outline.html#raster-file-formats",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Raster File Formats",
+    "text": "Raster File Formats"
+  },
+  {
+    "objectID": "slides/outline.html#data-type-considerations",
+    "href": "slides/outline.html#data-type-considerations",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Data Type Considerations",
+    "text": "Data Type Considerations\n\n\n\nRaster is faster, but vector seems more correcter\n\nSpatial data files do their best to represent the world\nAccuracy needs will depend on each use case\n\nMapping an entire state vs. a single forest stand\nEach sensor and GPS receiver will vary"
+  },
+  {
+    "objectID": "slides/outline.html#projections-aka-crs",
+    "href": "slides/outline.html#projections-aka-crs",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Projections (aka CRS)",
+    "text": "Projections (aka CRS)\nRepresenting a 3D sphere on a 2D surface\n\nOften the most confusing part of introductory GIS\nNo perfect projection exists (prioritize for needs)\nDifferent regions and states have their own projections\nMany software have on-the-fly projection\nLayers need to have same CRS for spatial operations"
+  },
+  {
+    "objectID": "slides/outline.html#crs-nomenclature",
+    "href": "slides/outline.html#crs-nomenclature",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "CRS Nomenclature",
+    "text": "CRS Nomenclature\nDifferent ways to reference a CRS.\n\nEnglish Name\nWKT ~ Well Known Text\nEPSG\nPROJ.4"
+  },
+  {
+    "objectID": "slides/outline.html#software-programs",
+    "href": "slides/outline.html#software-programs",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Software & Programs",
+    "text": "Software & Programs\n\n\nProprietary\n\nArcGIS Pro\nCadcorp\nMAPublisher\nCarto\n\n\nOpen-Source*\n\nQGIS\nGRASS GIS\nGeoDa\nR / Python / Julia\n\n*Many open-source software have paid tiers for extending functionality or rely on paid services for sharing"
+  },
+  {
+    "objectID": "slides/outline.html#web-geospatial-tools",
+    "href": "slides/outline.html#web-geospatial-tools",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Web Geospatial Tools",
+    "text": "Web Geospatial Tools\n\nArcGIS Online\nGoogle Earth Engine\nLeaflet\nMapbox\nMango Map\nFelt"
+  },
+  {
+    "objectID": "slides/outline.html#common-file-types",
+    "href": "slides/outline.html#common-file-types",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Common File Types",
+    "text": "Common File Types\nHow spatial data and attributes are stored and transferred"
+  },
+  {
+    "objectID": "slides/outline.html#apps-for-field-collection",
+    "href": "slides/outline.html#apps-for-field-collection",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Apps for Field Collection",
+    "text": "Apps for Field Collection\n\nEsri: Esri Field Maps – ArcGIS Online – ArcGIS Pro\nQGIS: QField or Mergin Maps – QGIS\nAvenza Maps – Works with multiple programs"
+  },
+  {
+    "objectID": "slides/outline.html#why-use-scripting-for-gis",
+    "href": "slides/outline.html#why-use-scripting-for-gis",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Why use scripting for GIS?",
+    "text": "Why use scripting for GIS?\n\nAllows for reproducible science and workflows\n\nSupplementary material for manuscripts\n\nTurns repetitive tasks into simple tools\nSome tools are only available in the coding interface\nIntegrates with other tools and methods\n\nModules, extensions, APIs\nData wrangling and visualization"
+  },
+  {
+    "objectID": "slides/outline.html#why-use-r-for-spatial-analysis",
+    "href": "slides/outline.html#why-use-r-for-spatial-analysis",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Why Use R for Spatial Analysis?",
+    "text": "Why Use R for Spatial Analysis?\n\n\n\n\nAll the cool researchers are using it"
+  },
+  {
+    "objectID": "slides/outline.html#contact-resources",
+    "href": "slides/outline.html#contact-resources",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Contact & Resources",
+    "text": "Contact & Resources\nReach out with inquiries:\n\nBenjamin Tjepkes ~ bwtbgm@missouri.edu\nWesley Fitzsimmons ~ waf8xt@missouri.edu\n\nWorkshop Resources:\nTinyURL\n\n\n\n© The Authors | 2024.03.20"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included.\n\n\n\nProvide an overview of GIS concepts and data types\nIntroduce ArcGIS Pro (interface, projects, resources)\nDemonstrate common spatial operations and tools\nWork through an example of programmatic GIS (python)\nExplore a variety of other tools and integrations"
+  },
+  {
+    "objectID": "index.html#workshop-description",
+    "href": "index.html#workshop-description",
+    "title": "Getting Started",
+    "section": "",
+    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included.\n\n\n\nProvide an overview of GIS concepts and data types\nIntroduce ArcGIS Pro (interface, projects, resources)\nDemonstrate common spatial operations and tools\nWork through an example of programmatic GIS (python)\nExplore a variety of other tools and integrations"
+  },
+  {
+    "objectID": "index.html#data-downloads",
+    "href": "index.html#data-downloads",
+    "title": "Getting Started",
+    "section": "Data Downloads",
+    "text": "Data Downloads\nStart by downloading workshop files here: Workshop Files (Zipped)."
+  },
+  {
+    "objectID": "index.html#workshop-schedule",
+    "href": "index.html#workshop-schedule",
+    "title": "Getting Started",
+    "section": "Workshop Schedule",
+    "text": "Workshop Schedule\nThis workshop is set to take approximately 4 hours to complete and will cover a diverse range of GIS topics. The following schedule outlines the general sections for each topic covered.\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n1. GIS Concepts\n\n\nData types, file formats, projections, software, and tools.\n\n\n\n\n2. Intro to ArcGIS Pro\n\n\nInterface, catalog, adding data, symbology, layouts, geoprocessing tools\n\n\n\n\n3. Scripting in ArcGIS Pro\n\n\nJupyter, ArcPy, visualization, and workflows.\n\n\n\n\n4. Spatial Data in R\n\n\nVector and raster packages, spatial operations, cartography.\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "exercises.html",
+    "href": "exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "exercises.html#exercise-1-intro-to-arcgis-pro",
+    "href": "exercises.html#exercise-1-intro-to-arcgis-pro",
+    "title": "Exercises",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "exercises.html#exercise-2-scripting-in-arcgis-pro",
+    "href": "exercises.html#exercise-2-scripting-in-arcgis-pro",
+    "title": "Exercises",
+    "section": "Exercise 2: Scripting in ArcGIS Pro",
+    "text": "Exercise 2: Scripting in ArcGIS Pro"
+  },
+  {
+    "objectID": "exercises.html#exercise-3-spatial-data-in-rrstudio",
+    "href": "exercises.html#exercise-3-spatial-data-in-rrstudio",
+    "title": "Exercises",
+    "section": "Exercise 3: Spatial Data in R/RStudio",
+    "text": "Exercise 3: Spatial Data in R/RStudio"
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Slides",
+    "section": "",
+    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click here."
+  },
+  {
+    "objectID": "slides.html#presentation-slides",
+    "href": "slides.html#presentation-slides",
+    "title": "Slides",
+    "section": "",
+    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click here."
+  }
+]

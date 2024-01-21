@@ -1,0 +1,39 @@
+project:
+  type: website
+
+website:
+  title: "GIS Workshop 2024"
+  search: FALSE
+  bread-crumbs: true
+  navbar:
+    logo: layer-group-solid.svg
+    background: "#000"
+    foreground: "#fff"
+    right:
+      - href: index.qmd
+      - href: slides.qmd
+      - text: Topics
+        menu: 
+          - href: gis-concepts.qmd
+          - href: intro-to-arcgis-pro.qmd
+          - href: scripting-in-arcgis-pro.qmd
+          - href: spatial-data-in-R.qmd
+      - href: resources.qmd
+  # sidebar:
+  #   background: "#f0f2f4"
+  #   style: "floating"
+  #   search: true
+  #   contents:
+  #     - id: getting-started
+  #       href: index.qmd
+  #     - href: slides.qmd
+  #     - href: exercises.qmd
+  #     - href: resources.qmd
+  page-footer:
+    center: "Site not affiliated with the University of Missouri. Created with R, RStudio, and Quarto."
+    # background: "#f0f2f4"
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

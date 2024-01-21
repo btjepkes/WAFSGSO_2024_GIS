@@ -1,0 +1,6 @@
+---
+title: "3. Scripting in ArcGIS Pro"
+subtitle: "Jupyter, ArcPy, visualization, and workflows."
+---
+
+## Introduction

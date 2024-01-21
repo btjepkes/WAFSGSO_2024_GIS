@@ -1,0 +1,5 @@
+---
+title: "1. GIS Concepts"
+subtitle: "Data types, file formats, projections, software, and tools."
+---
+

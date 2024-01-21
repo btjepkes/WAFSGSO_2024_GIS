@@ -5,6 +5,10 @@ h1 {
   color: black;
 }
 
+h2 {
+  border-bottom: 2px solid #F1B82D;
+}
+
 .navbar-brand.navbar-brand-logo {
   margin-right: 0px;
   margin-left: 12px;
@@ -32,7 +36,7 @@ h1 {
   height: 475px;
 }
 
-
+/* SIDEBAR */
 .sidebar-item .sidebar-item-container {
   color: red;
   padding-top: 10px;
@@ -41,3 +45,14 @@ h1 {
 .bi-question-circle-fill {
     padding-right: 5px;
     }
+    
+figure > figcaption {
+    margin-top: 0em;
+    color: gray;
+    text-align: center;
+    font-size: 15px;
+    }
+    
+ figure {
+   padding-top: 0.5em;
+ }   

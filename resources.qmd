@@ -6,6 +6,7 @@ title: "Resources"
 
 - [GISGeography](https://gisgeography.com/) ~ All things GIS
 - [GDAL](https://gdal.org/index.html) ~ File formats and conversions
+- [PennState GEOG 486](https://www.e-education.psu.edu/geog486/) ~ Cartography and spatial data visualization
 
 ## ArcGIS Pro
 
@@ -19,3 +20,5 @@ title: "Resources"
 
 
 ## Data Sources
+
+- [lterdatasampler](https://lter.github.io/lterdatasampler/) ~ R package with sample LTER data

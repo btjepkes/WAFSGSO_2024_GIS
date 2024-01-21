@@ -158,14 +158,14 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "GISGeography ~ All things GIS\nGDAL ~ File formats and conversions"
+    "text": "GISGeography ~ All things GIS\nGDAL ~ File formats and conversions\nPennState GEOG 486 ~ Cartography and spatial data visualization"
   },
   {
     "objectID": "resources.html#general-gis",
     "href": "resources.html#general-gis",
     "title": "Resources",
     "section": "",
-    "text": "GISGeography ~ All things GIS\nGDAL ~ File formats and conversions"
+    "text": "GISGeography ~ All things GIS\nGDAL ~ File formats and conversions\nPennState GEOG 486 ~ Cartography and spatial data visualization"
   },
   {
     "objectID": "resources.html#arcgis-pro",
@@ -193,7 +193,7 @@
     "href": "resources.html#data-sources",
     "title": "Resources",
     "section": "Data Sources",
-    "text": "Data Sources"
+    "text": "Data Sources\n\nlterdatasampler ~ R package with sample LTER data"
   },
   {
     "objectID": "index.html",
@@ -221,7 +221,7 @@
     "href": "index.html#data-downloads",
     "title": "Getting Started",
     "section": "Data Downloads",
-    "text": "Data Downloads\nStart by downloading workshop files here: Workshop Files (Zipped)."
+    "text": "Data Downloads\nStart by downloading workshop files here: Workshop Files (Zipped) – need to add."
   },
   {
     "objectID": "index.html#workshop-schedule",
@@ -235,21 +235,35 @@
     "href": "gis-concepts.html#spatial-data-types",
     "title": "1. GIS Concepts",
     "section": "Spatial Data Types",
-    "text": "Spatial Data Types\n\nVector\n\n\nRaster\n\n\nData Type Considerations"
+    "text": "Spatial Data Types\nHow the surface of the Earth is represented digitally.\n\nSpatial coordinates = X, Y, sometimes Z\nTypes of spatial data models (types)\n\nVector\nRaster\nNetworks\n\nMany file formats / extensions for each\n\nExamples: .tiff, .shp, .gdb\n\n\n\nVector\nRepresents space as points, lines, and polygons.\n\nPoints – single vertex\nLines – two or more vertices\nPolygon – three or more vertices with the last vertex equal to the first\n\n\n\n\nVector data model example. Source: Carto\n\n\n\nCommon Vector Data Types:\n\n\n\n\n\n\nRaster\nRepresents space as a grid of pixels or cells.\n\n\n\nRaster data model example. Source: Carto\n\n\n\nCommon Raster Data Types:\n\n\n\n\n\n\nData Type Considerations\n\nRaster is faster, but vector seems more correcter.\n\nSpatial data files do their best to represent the world. Accuracy needs will depend on each use case. Mapping an entire state vs. a single forest stand. Each sensor and GPS receiver will vary.\nRaster Advantages:\nRaster Disadvantages:\nVector Advantages:\nVector Disadvantages:"
   },
   {
     "objectID": "gis-concepts.html#projections-crs",
     "href": "gis-concepts.html#projections-crs",
     "title": "1. GIS Concepts",
     "section": "Projections (CRS)",
-    "text": "Projections (CRS)"
+    "text": "Projections (CRS)\nRepresenting a 3D sphere on a 2D surface\n\nOften the most confusing part of introductory GIS\nNo perfect projection exists (prioritize for needs)\nDifferent regions and states have their own projections\nMany software have on-the-fly projection\nLayers need to have same CRS for spatial operations\n\n\nCRS Nomenclature\n\nEnglish Name\nWKT ~ Well Known Text\nEPSG\nPROJ.4"
   },
   {
     "objectID": "gis-concepts.html#software-programs",
     "href": "gis-concepts.html#software-programs",
     "title": "1. GIS Concepts",
     "section": "Software & Programs",
-    "text": "Software & Programs"
+    "text": "Software & Programs\nMany different types and levels of GIS software available. See more examples here.\n\nProprietary\n\nArcGIS Pro\nCadcorp\nMAPublisher\nCarto\n\n\n\nOpen-Source\n\nQGIS\nGRASS GIS\nSAGA GIS\nGeoDa\nR / Python / Julia\n\n\n\nOther Web GIS Tools\n\nArcGIS Online\nGoogle Earth Engine\nLeaflet\nMapbox\nMango Map\nFelt\n\n\n\nMobile Applications\nMany apps available for field data collection.\n\nEsri Field Maps – ArcGIS Online – ArcGIS Pro\nQField or Mergin Maps – QGIS\nAvenza Maps – Works with multiple programs"
+  },
+  {
+    "objectID": "gis-concepts.html#spatial-operations",
+    "href": "gis-concepts.html#spatial-operations",
+    "title": "1. GIS Concepts",
+    "section": "Spatial Operations",
+    "text": "Spatial Operations\nClip, union, intersect, re-project, dissolve."
+  },
+  {
+    "objectID": "gis-concepts.html#types-of-maps",
+    "href": "gis-concepts.html#types-of-maps",
+    "title": "1. GIS Concepts",
+    "section": "Types of Maps",
+    "text": "Types of Maps\n\nhttps://www.e-education.psu.edu/geog486/\n\n\nNavigation\n\n\nChoropleth\nData need to be normalized! Animals per unit area (density)"
   },
   {
     "objectID": "slides.html",

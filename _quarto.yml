@@ -42,7 +42,6 @@ format:
   html:
     link-external-icon: false
     link-external-newwindow: true
-    link-external-filter: ^(?:http:|https:)\/\/www\.btjepkes\.github\.io\/custom
     theme: cosmo
     css: styles.css
     toc: true

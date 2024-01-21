@@ -30,7 +30,7 @@ This workshop, **GIS for Fisheries and Wildlife Sciences**, provides a general i
 
 ## Data Downloads
 
-Start by downloading workshop files here: [Workshop Files (Zipped)]().
+Start by downloading workshop files here: [Workshop Files (Zipped)]() -- need to add.
 
 ## Workshop Schedule
 

@@ -190,8 +190,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#raster" id="toc-raster" class="nav-link" data-scroll-target="#raster">Raster</a></li>
   <li><a href="#data-type-considerations" id="toc-data-type-considerations" class="nav-link" data-scroll-target="#data-type-considerations">Data Type Considerations</a></li>
   </ul></li>
-  <li><a href="#projections-crs" id="toc-projections-crs" class="nav-link" data-scroll-target="#projections-crs">Projections (CRS)</a></li>
-  <li><a href="#software-programs" id="toc-software-programs" class="nav-link" data-scroll-target="#software-programs">Software &amp; Programs</a></li>
+  <li><a href="#projections-crs" id="toc-projections-crs" class="nav-link" data-scroll-target="#projections-crs">Projections (CRS)</a>
+  <ul class="collapse">
+  <li><a href="#crs-nomenclature" id="toc-crs-nomenclature" class="nav-link" data-scroll-target="#crs-nomenclature">CRS Nomenclature</a></li>
+  </ul></li>
+  <li><a href="#software-programs" id="toc-software-programs" class="nav-link" data-scroll-target="#software-programs">Software &amp; Programs</a>
+  <ul class="collapse">
+  <li><a href="#proprietary" id="toc-proprietary" class="nav-link" data-scroll-target="#proprietary">Proprietary</a></li>
+  <li><a href="#open-source" id="toc-open-source" class="nav-link" data-scroll-target="#open-source">Open-Source</a></li>
+  <li><a href="#other-web-gis-tools" id="toc-other-web-gis-tools" class="nav-link" data-scroll-target="#other-web-gis-tools">Other Web GIS Tools</a></li>
+  <li><a href="#mobile-applications" id="toc-mobile-applications" class="nav-link" data-scroll-target="#mobile-applications">Mobile Applications</a></li>
+  </ul></li>
+  <li><a href="#spatial-operations" id="toc-spatial-operations" class="nav-link" data-scroll-target="#spatial-operations">Spatial Operations</a></li>
+  <li><a href="#types-of-maps" id="toc-types-of-maps" class="nav-link" data-scroll-target="#types-of-maps">Types of Maps</a>
+  <ul class="collapse">
+  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
+  <li><a href="#choropleth" id="toc-choropleth" class="nav-link" data-scroll-target="#choropleth">Choropleth</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -229,23 +244,150 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="spatial-data-types" class="level2">
 <h2 class="anchored" data-anchor-id="spatial-data-types">Spatial Data Types</h2>
+<p>How the surface of the Earth is represented digitally.</p>
+<ul>
+<li>Spatial coordinates = X, Y, sometimes Z</li>
+<li>Types of spatial data models (types)
+<ul>
+<li>Vector</li>
+<li>Raster</li>
+<li>Networks</li>
+</ul></li>
+<li>Many file formats / extensions for each
+<ul>
+<li>Examples: .tiff, .shp, .gdb</li>
+</ul></li>
+</ul>
 <section id="vector" class="level3">
 <h3 class="anchored" data-anchor-id="vector">Vector</h3>
+<p>Represents space as points, lines, and polygons.</p>
+<ul>
+<li><strong>Points</strong> – single vertex</li>
+<li><strong>Lines</strong> – two or more vertices</li>
+<li><strong>Polygon</strong> – three or more vertices with the last vertex equal to the first</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="slides/img-vector-data-model-carto.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Vector data model example. Source: <a href="https://carto.com/blog/raster-vs-vector-whats-the-difference-which-is-best">Carto</a></figcaption>
+</figure>
+</div>
+<section id="common-vector-data-types" class="level4">
+<h4 class="anchored" data-anchor-id="common-vector-data-types">Common Vector Data Types:</h4>
+<ul>
+<li></li>
+</ul>
+</section>
 </section>
 <section id="raster" class="level3">
 <h3 class="anchored" data-anchor-id="raster">Raster</h3>
+<p>Represents space as a grid of pixels or cells.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="slides/img-raster-data-model-carto.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Raster data model example. Source: <a href="https://carto.com/blog/raster-vs-vector-whats-the-difference-which-is-best">Carto</a></figcaption>
+</figure>
+</div>
+<section id="common-raster-data-types" class="level4">
+<h4 class="anchored" data-anchor-id="common-raster-data-types">Common Raster Data Types:</h4>
+<ul>
+<li></li>
+</ul>
+</section>
 </section>
 <section id="data-type-considerations" class="level3">
 <h3 class="anchored" data-anchor-id="data-type-considerations">Data Type Considerations</h3>
+<blockquote class="blockquote">
+<p>Raster is faster, but vector seems more correcter.</p>
+</blockquote>
+<p>Spatial data files do their best to represent the world. Accuracy needs will depend on each use case. Mapping an entire state vs.&nbsp;a single forest stand. Each sensor and GPS receiver will vary.</p>
+<p>Raster Advantages:</p>
+<p>Raster Disadvantages:</p>
+<p>Vector Advantages:</p>
+<p>Vector Disadvantages:</p>
 </section>
 </section>
 <section id="projections-crs" class="level2">
 <h2 class="anchored" data-anchor-id="projections-crs">Projections (CRS)</h2>
+<p>Representing a 3D sphere on a 2D surface</p>
+<ul>
+<li>Often the most confusing part of introductory GIS</li>
+<li>No perfect projection exists (prioritize for needs)</li>
+<li>Different regions and states have their own projections</li>
+<li>Many software have on-the-fly projection</li>
+<li>Layers need to have same CRS for spatial operations</li>
+</ul>
+<section id="crs-nomenclature" class="level3">
+<h3 class="anchored" data-anchor-id="crs-nomenclature">CRS Nomenclature</h3>
+<ul>
+<li>English Name</li>
+<li>WKT ~ Well Known Text</li>
+<li>EPSG</li>
+<li>PROJ.4</li>
+</ul>
+</section>
 </section>
 <section id="software-programs" class="level2">
 <h2 class="anchored" data-anchor-id="software-programs">Software &amp; Programs</h2>
+<p>Many different types and levels of GIS software available. See more examples <a href="https://www.spatialanalysisonline.com/software.html">here</a>.</p>
+<section id="proprietary" class="level3">
+<h3 class="anchored" data-anchor-id="proprietary">Proprietary</h3>
+<ul>
+<li>ArcGIS Pro</li>
+<li>Cadcorp</li>
+<li>MAPublisher</li>
+<li>Carto</li>
+</ul>
+</section>
+<section id="open-source" class="level3">
+<h3 class="anchored" data-anchor-id="open-source">Open-Source</h3>
+<ul>
+<li>QGIS</li>
+<li>GRASS GIS</li>
+<li>SAGA GIS</li>
+<li>GeoDa</li>
+<li>R / Python / Julia</li>
+</ul>
+</section>
+<section id="other-web-gis-tools" class="level3">
+<h3 class="anchored" data-anchor-id="other-web-gis-tools">Other Web GIS Tools</h3>
+<ul>
+<li>ArcGIS Online</li>
+<li>Google Earth Engine</li>
+<li>Leaflet</li>
+<li>Mapbox</li>
+<li>Mango Map</li>
+<li>Felt</li>
+</ul>
+</section>
+<section id="mobile-applications" class="level3">
+<h3 class="anchored" data-anchor-id="mobile-applications">Mobile Applications</h3>
+<p>Many apps available for field data collection.</p>
+<ul>
+<li><strong>Esri Field Maps</strong> – ArcGIS Online – ArcGIS Pro</li>
+<li><strong>QField</strong> or <strong>Mergin Maps</strong> – QGIS</li>
+<li><strong>Avenza Maps</strong> – Works with multiple programs</li>
+</ul>
+</section>
+</section>
+<section id="spatial-operations" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-operations">Spatial Operations</h2>
+<p>Clip, union, intersect, re-project, dissolve.</p>
+</section>
+<section id="types-of-maps" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-maps">Types of Maps</h2>
+<ul>
+<li><a href="https://www.e-education.psu.edu/geog486/">https://www.e-education.psu.edu/geog486/</a></li>
+</ul>
+<section id="navigation" class="level3">
+<h3 class="anchored" data-anchor-id="navigation">Navigation</h3>
+</section>
+<section id="choropleth" class="level3">
+<h3 class="anchored" data-anchor-id="choropleth">Choropleth</h3>
+<p>Data need to be normalized! Animals per unit area (density)</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -330,7 +472,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("^(?:http:|https:)\/\/www\.btjepkes\.github\.io\/custom");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

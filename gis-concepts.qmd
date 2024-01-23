@@ -129,6 +129,11 @@ Many different types and levels of GIS software available. See more examples [he
 - Mango Map
 - Felt
 
+## Field Collection
+
+### GPS Recievers
+
+
 ### Mobile Applications
 
 Many apps available for field data collection.
@@ -137,21 +142,66 @@ Many apps available for field data collection.
 - **QField** or **Mergin Maps** – QGIS
 - **Avenza Maps** – Works with multiple programs
 
+Can be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip.
+
 ## Spatial Operations
 
 **First Law of Geography (Tobler's Law):**
 "Everything is related to everything else, but near things are more related than distant things."
 
-Clip, union, intersect, re-project, dissolve.
+### Extraction
+
+- Clip
+- Select
+- Split
+- Split By Attributes
+
+### Overlay
+
+Tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. New information is created when overlaying one set of features with another. (Esri)
+
+- Erase
+- Identity
+- Intersect
+- Spatial Join
+- Union
+- Update
+
+### Proximity
+
+
+### Other
+re-project, dissolve.
 
 
 ## Types of Maps
 
 - [https://www.e-education.psu.edu/geog486/](https://www.e-education.psu.edu/geog486/)
 
-### Navigation
+### Reference Maps
 
-### Choropleth
+Used for navigation or to identify points of interest.
 
-Data need to be normalized! Animals per unit area (density)
+### Presentation Maps
+
+Used in news articles and in journals.
+
+### Statistical Maps
+
+
+#### Choropleth
+
+Data need to be normalized! Animals per unit area (density) or Attribute per individual (rate)
+
+#### Dot Density
+
+#### Proportional Symbol
+
+#### Cartogram
+
+#### Flow Map
+
+#### Density Map
+
+
 

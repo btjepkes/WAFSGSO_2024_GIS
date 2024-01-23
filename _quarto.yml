@@ -25,8 +25,7 @@ website:
   sidebar:
     background: "#f0f2f4"
     style: "floating"
-    logo: "slides/logo.png"
-    alignment: center
+    #logo: "slides/logo.png"
     search: true
     contents: 
       - text: "This workshop was kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri."
@@ -40,7 +39,11 @@ website:
         text: ArcPy Help Reference
         icon: question-circle-fill
   page-footer:
-    center: "Site not affiliated with the University of Missouri.<br>Created with R and Quarto by [btjepkes](https://btjepkes.github.io)."
+    left: 
+    - icon: cc-circle
+      text: "2024 - btjepkes"
+    center: "Created with R and Quarto by [btjepkes](https://btjepkes.github.io)."
+    right: "Site not affiliated with the University of Missouri."
     background: "#000"
     foreground: "#fff"
 format:

@@ -221,7 +221,7 @@
     "href": "index.html#data-downloads",
     "title": "Getting Started",
     "section": "Data Downloads",
-    "text": "Data Downloads\nStart by downloading workshop files here: Workshop Files (Zipped) – need to add.\n\nEklund, Daniel A.; Donner, Deahn M.; Beck, Albert J.; Rugg, David J. 2023. Beaver colonization events on managed streams in the Chequamegon-Nicolet National Forest, Wisconsin. Fort Collins, CO: Forest Service Research Data Archive. https://doi.org/10.2737/RDS-2023-0019"
+    "text": "Data Downloads\nStart by downloading workshop files here: Workshop Files (Zipped) – need to add.\n\nData used for this workshop came from the following:  Eklund, Daniel A.; Donner, Deahn M.; Beck, Albert J.; Rugg, David J. 2023. Beaver colonization events on managed streams in the Chequamegon-Nicolet National Forest, Wisconsin. Fort Collins, CO: Forest Service Research Data Archive. https://doi.org/10.2737/RDS-2023-0019"
   },
   {
     "objectID": "index.html#workshop-schedule",
@@ -249,21 +249,35 @@
     "href": "gis-concepts.html#software-programs",
     "title": "1. GIS Concepts",
     "section": "Software & Programs",
-    "text": "Software & Programs\nMany different types and levels of GIS software available. See more examples here.\n\nProprietary\n\nArcGIS Pro\nCadcorp\nMAPublisher\nCarto\n\n\n\nOpen-Source\n\nQGIS\nGRASS GIS\nSAGA GIS\nGeoDa\nR / Python / Julia\n\n\n\nOther Web GIS Tools\n\nArcGIS Online\nGoogle Earth Engine\nLeaflet\nMapbox\nMango Map\nFelt\n\n\n\nMobile Applications\nMany apps available for field data collection.\n\nEsri Field Maps – ArcGIS Online – ArcGIS Pro\nQField or Mergin Maps – QGIS\nAvenza Maps – Works with multiple programs"
+    "text": "Software & Programs\nMany different types and levels of GIS software available. See more examples here.\n\nProprietary\n\nArcGIS Pro\nCadcorp\nMAPublisher\nCarto\n\n\n\nOpen-Source\n\nQGIS\nGRASS GIS\nSAGA GIS\nGeoDa\nR / Python / Julia\n\n\n\nOther Web GIS Tools\n\nArcGIS Online\nGoogle Earth Engine\nLeaflet\nMapbox\nMango Map\nFelt"
+  },
+  {
+    "objectID": "gis-concepts.html#field-collection",
+    "href": "gis-concepts.html#field-collection",
+    "title": "1. GIS Concepts",
+    "section": "Field Collection",
+    "text": "Field Collection\n\nGPS Recievers\n\n\nMobile Applications\nMany apps available for field data collection.\n\nEsri Field Maps – ArcGIS Online – ArcGIS Pro\nQField or Mergin Maps – QGIS\nAvenza Maps – Works with multiple programs\n\nCan be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip."
   },
   {
     "objectID": "gis-concepts.html#spatial-operations",
     "href": "gis-concepts.html#spatial-operations",
     "title": "1. GIS Concepts",
     "section": "Spatial Operations",
-    "text": "Spatial Operations\nFirst Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”\nClip, union, intersect, re-project, dissolve."
+    "text": "Spatial Operations\nFirst Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”\n\nExtraction\n\nClip\nSelect\nSplit\nSplit By Attributes\n\n\n\nOverlay\nTools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. New information is created when overlaying one set of features with another. (Esri)\n\nErase\nIdentity\nIntersect\nSpatial Join\nUnion\nUpdate\n\n\n\nProximity\n\n\nOther\nre-project, dissolve."
   },
   {
     "objectID": "gis-concepts.html#types-of-maps",
     "href": "gis-concepts.html#types-of-maps",
     "title": "1. GIS Concepts",
     "section": "Types of Maps",
-    "text": "Types of Maps\n\nhttps://www.e-education.psu.edu/geog486/\n\n\nNavigation\n\n\nChoropleth\nData need to be normalized! Animals per unit area (density)"
+    "text": "Types of Maps\n\nhttps://www.e-education.psu.edu/geog486/\n\n\nReference Maps\nUsed for navigation or to identify points of interest.\n\n\nPresentation Maps\nUsed in news articles and in journals.\n\n\nStatistical Maps\n\nChoropleth\nData need to be normalized! Animals per unit area (density) or Attribute per individual (rate)\n\n\nDot Density\n\n\nProportional Symbol\n\n\nCartogram\n\n\nFlow Map\n\n\nDensity Map"
+  },
+  {
+    "objectID": "intro-to-arcgis-pro.html#geodatabases-catalog",
+    "href": "intro-to-arcgis-pro.html#geodatabases-catalog",
+    "title": "2. Intro to ArcGIS Pro",
+    "section": "Geodatabases & Catalog",
+    "text": "Geodatabases & Catalog\n\n\n\nArcGIS Catalog Structure.\n\n\n\n\n\nGeodatabase structure."
   },
   {
     "objectID": "slides.html",

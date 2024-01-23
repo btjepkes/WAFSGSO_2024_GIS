@@ -87,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Getting Started</span></a>
   </li>  
   <li class="nav-item">
@@ -145,11 +145,6 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./slides/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -213,13 +208,24 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#proprietary" id="toc-proprietary" class="nav-link" data-scroll-target="#proprietary">Proprietary</a></li>
   <li><a href="#open-source" id="toc-open-source" class="nav-link" data-scroll-target="#open-source">Open-Source</a></li>
   <li><a href="#other-web-gis-tools" id="toc-other-web-gis-tools" class="nav-link" data-scroll-target="#other-web-gis-tools">Other Web GIS Tools</a></li>
+  </ul></li>
+  <li><a href="#field-collection" id="toc-field-collection" class="nav-link" data-scroll-target="#field-collection">Field Collection</a>
+  <ul class="collapse">
+  <li><a href="#gps-recievers" id="toc-gps-recievers" class="nav-link" data-scroll-target="#gps-recievers">GPS Recievers</a></li>
   <li><a href="#mobile-applications" id="toc-mobile-applications" class="nav-link" data-scroll-target="#mobile-applications">Mobile Applications</a></li>
   </ul></li>
-  <li><a href="#spatial-operations" id="toc-spatial-operations" class="nav-link" data-scroll-target="#spatial-operations">Spatial Operations</a></li>
+  <li><a href="#spatial-operations" id="toc-spatial-operations" class="nav-link" data-scroll-target="#spatial-operations">Spatial Operations</a>
+  <ul class="collapse">
+  <li><a href="#extraction" id="toc-extraction" class="nav-link" data-scroll-target="#extraction">Extraction</a></li>
+  <li><a href="#overlay" id="toc-overlay" class="nav-link" data-scroll-target="#overlay">Overlay</a></li>
+  <li><a href="#proximity" id="toc-proximity" class="nav-link" data-scroll-target="#proximity">Proximity</a></li>
+  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other">Other</a></li>
+  </ul></li>
   <li><a href="#types-of-maps" id="toc-types-of-maps" class="nav-link" data-scroll-target="#types-of-maps">Types of Maps</a>
   <ul class="collapse">
-  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
-  <li><a href="#choropleth" id="toc-choropleth" class="nav-link" data-scroll-target="#choropleth">Choropleth</a></li>
+  <li><a href="#reference-maps" id="toc-reference-maps" class="nav-link" data-scroll-target="#reference-maps">Reference Maps</a></li>
+  <li><a href="#presentation-maps" id="toc-presentation-maps" class="nav-link" data-scroll-target="#presentation-maps">Presentation Maps</a></li>
+  <li><a href="#statistical-maps" id="toc-statistical-maps" class="nav-link" data-scroll-target="#statistical-maps">Statistical Maps</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -412,6 +418,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Felt</li>
 </ul>
 </section>
+</section>
+<section id="field-collection" class="level2">
+<h2 class="anchored" data-anchor-id="field-collection">Field Collection</h2>
+<section id="gps-recievers" class="level3">
+<h3 class="anchored" data-anchor-id="gps-recievers">GPS Recievers</h3>
+</section>
 <section id="mobile-applications" class="level3">
 <h3 class="anchored" data-anchor-id="mobile-applications">Mobile Applications</h3>
 <p>Many apps available for field data collection.</p>
@@ -420,26 +432,77 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>QField</strong> or <strong>Mergin Maps</strong> – QGIS</li>
 <li><strong>Avenza Maps</strong> – Works with multiple programs</li>
 </ul>
+<p>Can be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip.</p>
 </section>
 </section>
 <section id="spatial-operations" class="level2">
 <h2 class="anchored" data-anchor-id="spatial-operations">Spatial Operations</h2>
 <p><strong>First Law of Geography (Tobler’s Law):</strong> “Everything is related to everything else, but near things are more related than distant things.”</p>
-<p>Clip, union, intersect, re-project, dissolve.</p>
+<section id="extraction" class="level3">
+<h3 class="anchored" data-anchor-id="extraction">Extraction</h3>
+<ul>
+<li>Clip</li>
+<li>Select</li>
+<li>Split</li>
+<li>Split By Attributes</li>
+</ul>
+</section>
+<section id="overlay" class="level3">
+<h3 class="anchored" data-anchor-id="overlay">Overlay</h3>
+<p>Tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. New information is created when overlaying one set of features with another. (Esri)</p>
+<ul>
+<li>Erase</li>
+<li>Identity</li>
+<li>Intersect</li>
+<li>Spatial Join</li>
+<li>Union</li>
+<li>Update</li>
+</ul>
+</section>
+<section id="proximity" class="level3">
+<h3 class="anchored" data-anchor-id="proximity">Proximity</h3>
+</section>
+<section id="other" class="level3">
+<h3 class="anchored" data-anchor-id="other">Other</h3>
+<p>re-project, dissolve.</p>
+</section>
 </section>
 <section id="types-of-maps" class="level2">
 <h2 class="anchored" data-anchor-id="types-of-maps">Types of Maps</h2>
 <ul>
 <li><a href="https://www.e-education.psu.edu/geog486/">https://www.e-education.psu.edu/geog486/</a></li>
 </ul>
-<section id="navigation" class="level3">
-<h3 class="anchored" data-anchor-id="navigation">Navigation</h3>
+<section id="reference-maps" class="level3">
+<h3 class="anchored" data-anchor-id="reference-maps">Reference Maps</h3>
+<p>Used for navigation or to identify points of interest.</p>
 </section>
-<section id="choropleth" class="level3">
-<h3 class="anchored" data-anchor-id="choropleth">Choropleth</h3>
-<p>Data need to be normalized! Animals per unit area (density)</p>
+<section id="presentation-maps" class="level3">
+<h3 class="anchored" data-anchor-id="presentation-maps">Presentation Maps</h3>
+<p>Used in news articles and in journals.</p>
+</section>
+<section id="statistical-maps" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-maps">Statistical Maps</h3>
+<section id="choropleth" class="level4">
+<h4 class="anchored" data-anchor-id="choropleth">Choropleth</h4>
+<p>Data need to be normalized! Animals per unit area (density) or Attribute per individual (rate)</p>
+</section>
+<section id="dot-density" class="level4">
+<h4 class="anchored" data-anchor-id="dot-density">Dot Density</h4>
+</section>
+<section id="proportional-symbol" class="level4">
+<h4 class="anchored" data-anchor-id="proportional-symbol">Proportional Symbol</h4>
+</section>
+<section id="cartogram" class="level4">
+<h4 class="anchored" data-anchor-id="cartogram">Cartogram</h4>
+</section>
+<section id="flow-map" class="level4">
+<h4 class="anchored" data-anchor-id="flow-map">Flow Map</h4>
+</section>
+<section id="density-map" class="level4">
+<h4 class="anchored" data-anchor-id="density-map">Density Map</h4>
 
 
+</section>
 </section>
 </section>
 
@@ -863,14 +926,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+      <i class="bi bi-cc-circle" role="img">
+</i> 
+ 2024 - btjepkes
+  </li>  
+</ul>
     </div>   
     <div class="nav-footer-center">
-<p>Site not affiliated with the University of Missouri.<br>Created with R and Quarto by <a href="https://btjepkes.github.io">btjepkes</a>.</p>
+<p>Created with R and Quarto by <a href="https://btjepkes.github.io">btjepkes</a>.</p>
 </div>
     <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<p>Site not affiliated with the University of Missouri.</p>
+</div>
   </div>
 </footer>
 

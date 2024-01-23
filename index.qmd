@@ -18,7 +18,7 @@ listing:
 
 ## Workshop Description
 
-This workshop, **GIS for Fisheries and Wildlife Sciences**, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included.
+This workshop, **GIS for Fisheries and Wildlife Sciences**, provides a general introduction to GIS workflows and programming in the natural sciences. Topics will cover common data types, spatial operations, data visualization, and other tools used across the breadth of wildlife and fisheries research. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. High-level coding languages (e.g., Python and R) will also be included.
 
 ## Workshop Objectives
 
@@ -31,6 +31,8 @@ This workshop, **GIS for Fisheries and Wildlife Sciences**, provides a general i
 ## Data Downloads
 
 Start by downloading workshop files here: [Workshop Files (Zipped)]() -- need to add.
+
+> Eklund, Daniel A.; Donner, Deahn M.; Beck, Albert J.; Rugg, David J. 2023. Beaver colonization events on managed streams in the Chequamegon-Nicolet National Forest, Wisconsin. Fort Collins, CO: Forest Service Research Data Archive. https://doi.org/10.2737/RDS-2023-0019
 
 ## Workshop Schedule
 

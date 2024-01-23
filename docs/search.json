@@ -144,7 +144,7 @@
     "href": "slides/outline.html#why-use-r-for-spatial-analysis",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Why Use R for Spatial Analysis?",
-    "text": "Why Use R for Spatial Analysis?\n\n\n\n\nAll the cool researchers are using it"
+    "text": "Why Use R for Spatial Analysis?\n\n\n\n\nAll the cool researchers are using it\n\nlibrary(sf)"
   },
   {
     "objectID": "slides/outline.html#contact-resources",
@@ -158,14 +158,14 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "GISGeography ~ All things GIS\nGDAL ~ File formats and conversions\nPennState GEOG 486 ~ Cartography and spatial data visualization"
+    "text": "GISGeography ~ All things GIS\nGIS Term Dictionary ~ Various and general GIS definitions\nGDAL ~ File formats and conversions\nPennState GEOG 486 ~ Cartography and spatial data visualization"
   },
   {
     "objectID": "resources.html#general-gis",
     "href": "resources.html#general-gis",
     "title": "Resources",
     "section": "",
-    "text": "GISGeography ~ All things GIS\nGDAL ~ File formats and conversions\nPennState GEOG 486 ~ Cartography and spatial data visualization"
+    "text": "GISGeography ~ All things GIS\nGIS Term Dictionary ~ Various and general GIS definitions\nGDAL ~ File formats and conversions\nPennState GEOG 486 ~ Cartography and spatial data visualization"
   },
   {
     "objectID": "resources.html#arcgis-pro",
@@ -186,7 +186,7 @@
     "href": "resources.html#spatial-data-in-r",
     "title": "Resources",
     "section": "Spatial Data in R",
-    "text": "Spatial Data in R"
+    "text": "Spatial Data in R\n\nMapping in ggplot with sf\nSpatial Data Science Book\nGeocomputation with R"
   },
   {
     "objectID": "resources.html#data-sources",
@@ -200,14 +200,14 @@
     "href": "index.html",
     "title": "Getting Started",
     "section": "",
-    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included."
+    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS workflows and programming in the natural sciences. Topics will cover common data types, spatial operations, data visualization, and other tools used across the breadth of wildlife and fisheries research. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. High-level coding languages (e.g., Python and R) will also be included."
   },
   {
     "objectID": "index.html#workshop-description",
     "href": "index.html#workshop-description",
     "title": "Getting Started",
     "section": "",
-    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS data, workflows, and programming. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. Other high-level coding languages (e.g., Python and R) will also be included."
+    "text": "This workshop, GIS for Fisheries and Wildlife Sciences, provides a general introduction to GIS workflows and programming in the natural sciences. Topics will cover common data types, spatial operations, data visualization, and other tools used across the breadth of wildlife and fisheries research. No prior GIS experience is assumed, but might be helpful when following the more advanced portions of this workshop. High-level coding languages (e.g., Python and R) will also be included."
   },
   {
     "objectID": "index.html#workshop-objectives",
@@ -221,7 +221,7 @@
     "href": "index.html#data-downloads",
     "title": "Getting Started",
     "section": "Data Downloads",
-    "text": "Data Downloads\nStart by downloading workshop files here: Workshop Files (Zipped) – need to add."
+    "text": "Data Downloads\nStart by downloading workshop files here: Workshop Files (Zipped) – need to add.\n\nEklund, Daniel A.; Donner, Deahn M.; Beck, Albert J.; Rugg, David J. 2023. Beaver colonization events on managed streams in the Chequamegon-Nicolet National Forest, Wisconsin. Fort Collins, CO: Forest Service Research Data Archive. https://doi.org/10.2737/RDS-2023-0019"
   },
   {
     "objectID": "index.html#workshop-schedule",
@@ -238,11 +238,11 @@
     "text": "Spatial Data Types\nHow the surface of the Earth is represented digitally.\n\nSpatial coordinates = X, Y, sometimes Z\nTypes of spatial data models (types)\n\nVector\nRaster\nNetworks\n\nMany file formats / extensions for each\n\nExamples: .tiff, .shp, .gdb\n\n\n\nVector\nRepresents space as points, lines, and polygons.\n\nPoints – single vertex\nLines – two or more vertices\nPolygon – three or more vertices with the last vertex equal to the first\n\n\n\n\nVector data model example. Source: Carto\n\n\n\nCommon Vector Data Types:\n\n\n\n\n\n\nRaster\nRepresents space as a grid of pixels or cells.\n\n\n\nRaster data model example. Source: Carto\n\n\n\nCommon Raster Data Types:\n\n\n\n\n\n\nData Type Considerations\n\nRaster is faster, but vector seems more correcter.\n\nSpatial data files do their best to represent the world. Accuracy needs will depend on each use case. Mapping an entire state vs. a single forest stand. Each sensor and GPS receiver will vary.\nRaster Advantages:\nRaster Disadvantages:\nVector Advantages:\nVector Disadvantages:"
   },
   {
-    "objectID": "gis-concepts.html#projections-crs",
-    "href": "gis-concepts.html#projections-crs",
+    "objectID": "gis-concepts.html#coordinate-reference-systems-crs",
+    "href": "gis-concepts.html#coordinate-reference-systems-crs",
     "title": "1. GIS Concepts",
-    "section": "Projections (CRS)",
-    "text": "Projections (CRS)\nRepresenting a 3D sphere on a 2D surface\n\nOften the most confusing part of introductory GIS\nNo perfect projection exists (prioritize for needs)\nDifferent regions and states have their own projections\nMany software have on-the-fly projection\nLayers need to have same CRS for spatial operations\n\n\nCRS Nomenclature\n\nEnglish Name\nWKT ~ Well Known Text\nEPSG\nPROJ.4"
+    "section": "Coordinate Reference Systems (CRS)",
+    "text": "Coordinate Reference Systems (CRS)\n\nOften the most confusing part of introductory GIS\nLayers need to have same CRS for spatial operations\n\n\nGeographic CRS\n\n\nProjected CRS\nRepresenting a 3D sphere on a 2D surface\n\nNo perfect projection exists (prioritize for needs)\nDifferent regions and states have their own projections\nMany software have on-the-fly projection\n\n\n\n\n\n\n\n\n\n\nMercator\n\n\n\n\n\n\n\nWGS84\n\n\n\n\n\nMollweide (Equal Area)\n\n\n\n\n\n\n\nCRS Nomenclature\n\nEnglish Name\nWKT ~ Well Known Text\nWKID ~ Well Known Identifier (ESRI)\nEPSG\nPROJ.4"
   },
   {
     "objectID": "gis-concepts.html#software-programs",
@@ -256,7 +256,7 @@
     "href": "gis-concepts.html#spatial-operations",
     "title": "1. GIS Concepts",
     "section": "Spatial Operations",
-    "text": "Spatial Operations\nClip, union, intersect, re-project, dissolve."
+    "text": "Spatial Operations\nFirst Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”\nClip, union, intersect, re-project, dissolve."
   },
   {
     "objectID": "gis-concepts.html#types-of-maps",
@@ -270,13 +270,13 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click here."
+    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click here.\n\nNote: To enter full screen view, click into the slide deck and hit the F key on your keyboard."
   },
   {
     "objectID": "slides.html#presentation-slides",
     "href": "slides.html#presentation-slides",
     "title": "Slides",
     "section": "",
-    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click here."
+    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click here.\n\nNote: To enter full screen view, click into the slide deck and hit the F key on your keyboard."
   }
 ]

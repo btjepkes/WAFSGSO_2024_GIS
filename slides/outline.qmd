@@ -9,10 +9,10 @@ author:
     affiliation: Dept. of Fisheries & Wildlife
 mainfont: Tahoma
 citation: true
-title-slide-attributes:
-  data-background-image: img-rivers.webp
-  data-background-size: cover
-  data-background-opacity: "0.1"
+# title-slide-attributes:
+#   data-background-image: img-rivers.webp
+#   data-background-size: cover
+#   data-background-opacity: "0.1"
 format:
   revealjs:
     logo: logo.png
@@ -30,6 +30,8 @@ format:
 :::
 
 Add in link to course documents/site.
+
+![](img-rivers.webp)
 
 ## Housekeeping
 
@@ -301,6 +303,10 @@ Basic introduction to handling spatial data in R/RStudio.
 :::
 
 -   All the cool researchers are using it
+
+```r
+library(sf)
+```
 
 # Questions? {background-image="img-rivers.webp" background-opacity="0.1"}
 

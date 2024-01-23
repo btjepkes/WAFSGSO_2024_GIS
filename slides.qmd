@@ -9,3 +9,6 @@ The full presentation can be viewed interactively below. Note that any resources
 ```{=html}
 <iframe class="slide-deck" src="slides/outline.html"></iframe>
 ```
+
+
+**Note: To enter full screen view, click into the slide deck and hit the `F` key on your keyboard.**

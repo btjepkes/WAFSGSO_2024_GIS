@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "GIS Workshop 2024"
+  title: "GIS Workshop - 2024"
   search:
     location: sidebar
     type: textbox
@@ -25,9 +25,14 @@ website:
   sidebar:
     background: "#f0f2f4"
     style: "floating"
+    logo: "slides/logo.png"
+    alignment: center
     search: true
     contents: 
       - text: "This workshop was kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri."
+      - href: https://gisgeography.com/gis-dictionary-definition-glossary/
+        text: GIS Term Dictionary
+        icon: question-circle-fill
       - href: https://pro.arcgis.com/en/pro-app/3.1/help/main/welcome-to-the-arcgis-pro-app-help.htm
         text: ArcGIS Pro Help Reference
         icon: question-circle-fill

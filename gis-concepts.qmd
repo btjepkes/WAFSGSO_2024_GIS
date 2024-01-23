@@ -59,20 +59,45 @@ Vector Advantages:
 
 Vector Disadvantages:
 
-## Projections (CRS)
+## Coordinate Reference Systems (CRS)
+
+- Often the most confusing part of introductory GIS
+- Layers need to have same CRS for spatial operations
+
+
+### Geographic CRS
+
+
+### Projected CRS
 
 Representing a 3D sphere on a 2D surface
 
-- Often the most confusing part of introductory GIS
 - No perfect projection exists (prioritize for needs)
 - Different regions and states have their own projections
 - Many software have on-the-fly projection
-- Layers need to have same CRS for spatial operations
+
+
+:::: {layout="[ 44, 56 ]"}
+
+::: {#first-column}
+![Mercator](img-tissots-mercator.png)
+:::
+
+::: {#second-column}
+![WGS84](img-tissots_WGS84.png)
+
+![Mollweide (Equal Area)](img-tissots-mollweide.png)
+:::
+
+::::
+
+
 
 ### CRS Nomenclature
 
 - English Name
 - WKT ~ Well Known Text
+- WKID ~ Well Known Identifier (ESRI)
 - EPSG
 - PROJ.4
 
@@ -113,6 +138,9 @@ Many apps available for field data collection.
 - **Avenza Maps** – Works with multiple programs
 
 ## Spatial Operations
+
+**First Law of Geography (Tobler's Law):**
+"Everything is related to everything else, but near things are more related than distant things."
 
 Clip, union, intersect, re-project, dissolve.
 

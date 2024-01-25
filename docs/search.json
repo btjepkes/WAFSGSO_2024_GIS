@@ -231,11 +231,25 @@
     "text": "Workshop Schedule\nThis workshop is set to take approximately 4 hours to complete and will cover a diverse range of GIS topics. The following schedule outlines the general sections for each topic covered.\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n1. GIS Concepts\n\n\nData types, file formats, projections, software, and tools.\n\n\n\n\n2. Intro to ArcGIS Pro\n\n\nInterface, catalog, adding data, symbology, layouts, geoprocessing tools\n\n\n\n\n3. Scripting in ArcGIS Pro\n\n\nJupyter, ArcPy, visualization, and workflows.\n\n\n\n\n4. Spatial Data in R\n\n\nVector and raster packages, spatial operations, cartography.\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "gis-concepts.html",
+    "href": "gis-concepts.html",
+    "title": "1. GIS Concepts",
+    "section": "",
+    "text": "First Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”"
+  },
+  {
+    "objectID": "gis-concepts.html#introduction",
+    "href": "gis-concepts.html#introduction",
+    "title": "1. GIS Concepts",
+    "section": "",
+    "text": "First Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”"
+  },
+  {
     "objectID": "gis-concepts.html#spatial-data-types",
     "href": "gis-concepts.html#spatial-data-types",
     "title": "1. GIS Concepts",
     "section": "Spatial Data Types",
-    "text": "Spatial Data Types\nHow the surface of the Earth is represented digitally.\n\nSpatial coordinates = X, Y, sometimes Z\nTypes of spatial data models (types)\n\nVector\nRaster\nNetworks\n\nMany file formats / extensions for each\n\nExamples: .tiff, .shp, .gdb\n\n\n\nVector\nRepresents space as points, lines, and polygons.\n\nPoints – single vertex\nLines – two or more vertices\nPolygon – three or more vertices with the last vertex equal to the first\n\n\n\n\nVector data model example. Source: Carto\n\n\n\nCommon Vector Data Types:\n\n\n\n\n\n\nRaster\nRepresents space as a grid of pixels or cells.\n\n\n\nRaster data model example. Source: Carto\n\n\n\nCommon Raster Data Types:\n\n\n\n\n\n\nData Type Considerations\n\nRaster is faster, but vector seems more correcter.\n\nSpatial data files do their best to represent the world. Accuracy needs will depend on each use case. Mapping an entire state vs. a single forest stand. Each sensor and GPS receiver will vary.\nRaster Advantages:\nRaster Disadvantages:\nVector Advantages:\nVector Disadvantages:"
+    "text": "Spatial Data Types\nHow the surface of the Earth is represented digitally.\n\nSpatial coordinates = X, Y, sometimes Z\nTypes of spatial data models (types)\n\nVector\nRaster\nNetworks\n\nMany file formats / extensions for each\n\nExamples: .tiff, .shp, .gdb\n\n\n\nVector\nRepresents space as points, lines, and polygons.\n\nPoints – single vertex\nLines – two or more vertices\nPolygon – three or more vertices with the last vertex equal to the first\n\n\n\n\nVector data model example. Source: Carto\n\n\n\nCommon Vector Data Types:\nMore than 80 different vector file types available across software and systems!\n\n\n\nRaster\nRepresents space as a grid of pixels or cells.\n\n\n\nRaster data model example. Source: Carto\n\n\n\nCommon Raster Data Types:\n\n\n\n\n\n\nData Type Considerations\n\nRaster is faster, but vector seems more correcter. - Old GIS Adage\n\nSpatial data files do their best to represent the world. Accuracy needs will depend on each use case. Mapping an entire state vs. a single forest stand. Each sensor and GPS receiver will vary.\nRaster Advantages:\nRaster Disadvantages:\nVector Advantages:\nVector Disadvantages:\n\n\nA Note on Shapefiles\nStop Using Shapefiles: http://switchfromshapefile.org/\nWhile shapefiles are common and widely supported, there are several downsides:\n\nMulti-file format causes sharing issues\nAttribute (column) names limited to 10 characters\nNo more than 255 total attributes\nTotal size limit of 2 GB\n\n\nAlternatives for Consideration\n\nOGC GeoPackage \n\nLeading replacement for .shp\n\nGeoJSON\n\nVery good for web mapping and transfer\n\nOGC GML\nOGC KML\nEsri GeoDatabase\n\nSuitable if operating within only ESRI products"
   },
   {
     "objectID": "gis-concepts.html#coordinate-reference-systems-crs",
@@ -256,14 +270,14 @@
     "href": "gis-concepts.html#field-collection",
     "title": "1. GIS Concepts",
     "section": "Field Collection",
-    "text": "Field Collection\n\nGPS Recievers\n\n\nMobile Applications\nMany apps available for field data collection.\n\nEsri Field Maps – ArcGIS Online – ArcGIS Pro\nQField or Mergin Maps – QGIS\nAvenza Maps – Works with multiple programs\n\nCan be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip."
+    "text": "Field Collection\n\nGPS Recievers\n\n\nMobile Applications\nMany apps available for field data collection.\n\nEsri Field Maps (for Esri)\n\nIntegrates with ArcGIS Online and ArcGIS Pro\nBoth Android and iOS support\n\n\n\nQField or Mergin Maps (for QGIS)\n\nIntegrates with QGIS Cloud environment\n\n\n\nAvenza Maps (for anything)\n\nWorks with multiple programs\n\nCan be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip."
   },
   {
     "objectID": "gis-concepts.html#spatial-operations",
     "href": "gis-concepts.html#spatial-operations",
     "title": "1. GIS Concepts",
     "section": "Spatial Operations",
-    "text": "Spatial Operations\nFirst Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”\n\nExtraction\n\nClip\nSelect\nSplit\nSplit By Attributes\n\n\n\nOverlay\nTools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. New information is created when overlaying one set of features with another. (Esri)\n\nErase\nIdentity\nIntersect\nSpatial Join\nUnion\nUpdate\n\n\n\nProximity\n\n\nOther\nre-project, dissolve."
+    "text": "Spatial Operations\n\nExtraction\n\nClip\nSelect\nSplit\nSplit By Attributes\n\n\n\nOverlay\nTools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. New information is created when overlaying one set of features with another. (Esri)\n\nErase\nIdentity\nIntersect\nSpatial Join\nUnion\nUpdate\n\n\n\nProximity\n\n\nOther\nre-project, dissolve."
   },
   {
     "objectID": "gis-concepts.html#types-of-maps",
@@ -273,11 +287,18 @@
     "text": "Types of Maps\n\nhttps://www.e-education.psu.edu/geog486/\n\n\nReference Maps\nUsed for navigation or to identify points of interest.\n\n\nPresentation Maps\nUsed in news articles and in journals.\n\n\nStatistical Maps\n\nChoropleth\nData need to be normalized! Animals per unit area (density) or Attribute per individual (rate)\n\n\nDot Density\n\n\nProportional Symbol\n\n\nCartogram\n\n\nFlow Map\n\n\nDensity Map"
   },
   {
-    "objectID": "intro-to-arcgis-pro.html#geodatabases-catalog",
-    "href": "intro-to-arcgis-pro.html#geodatabases-catalog",
+    "objectID": "intro-to-arcgis-pro.html",
+    "href": "intro-to-arcgis-pro.html",
     "title": "2. Intro to ArcGIS Pro",
-    "section": "Geodatabases & Catalog",
-    "text": "Geodatabases & Catalog\n\n\n\nArcGIS Catalog Structure.\n\n\n\n\n\nGeodatabase structure."
+    "section": "",
+    "text": "ArcGIS Catalog Structure.\n\n\n\n\n\nGeodatabase structure."
+  },
+  {
+    "objectID": "intro-to-arcgis-pro.html#introduction",
+    "href": "intro-to-arcgis-pro.html#introduction",
+    "title": "2. Intro to ArcGIS Pro",
+    "section": "",
+    "text": "ArcGIS Catalog Structure.\n\n\n\n\n\nGeodatabase structure."
   },
   {
     "objectID": "slides.html",

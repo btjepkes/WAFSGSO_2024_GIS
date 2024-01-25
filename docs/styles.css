@@ -23,6 +23,11 @@ figure > figcaption {
  figure {
    padding-top: 0.5em;
  }
+ 
+ figure img {
+    width: 100%;
+    border: solid #dee2e6;
+ }
 
 /* SLIDES */
 
@@ -30,6 +35,12 @@ figure > figcaption {
   border: 3px solid #dee2e6;
   width: 100%;
   aspect-ratio: 16 / 9;
+}
+
+/* TABLES */
+
+table td:nth-child(1)  {
+  width: 30%;
 }
 
 /* NAVBAR */
@@ -97,8 +108,8 @@ figure > figcaption {
   
 /* SIDEBAR */
 .sidebar-item .sidebar-item-container {
-  color: indianred;
-  padding-top: 10px;
+  color: black;
+  padding-top: 8px;
 }
 
 .bi-question-circle-fill {

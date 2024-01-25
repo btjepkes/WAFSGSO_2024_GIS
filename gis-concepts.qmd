@@ -7,6 +7,13 @@ subtitle: "Data types, file formats, projections, software, and tools."
 
 ### What is GIS?
 
+### What are spatial data?
+
+> **First Law of Geography (Tobler's Law):**
+> "Everything is related to everything else, but near things are more related than distant things."
+
+- 
+
 ### Why Learn GIS?
 
 ## Spatial Data Types
@@ -33,7 +40,9 @@ Represents space as points, lines, and polygons.
 
 #### Common Vector Data Types:
 
--
+More than **80 different vector file types** available across software and systems!
+
+
 
 ### Raster
 
@@ -47,7 +56,7 @@ Represents space as a grid of pixels or cells.
 
 ### Data Type Considerations
 
-> Raster is faster, but vector seems more correcter.
+> *Raster is faster, but vector seems more correcter.* - Old GIS Adage
 
 Spatial data files do their best to represent the world. Accuracy needs will depend on each use case. Mapping an entire state vs. a single forest stand. Each sensor and GPS receiver will vary.
 
@@ -58,6 +67,28 @@ Raster Disadvantages:
 Vector Advantages:
 
 Vector Disadvantages:
+
+### A Note on Shapefiles
+
+Stop Using Shapefiles: [http://switchfromshapefile.org/](http://switchfromshapefile.org/)
+
+While shapefiles are common and widely supported, there are several downsides:
+
+- Multi-file format causes sharing issues
+- Attribute (column) names limited to 10 characters
+- No more than 255 total attributes
+- Total size limit of 2 GB
+
+#### Alternatives for Consideration
+
+- **OGC GeoPackage** <i style= "color: green;" class="bi bi-check2-circle"></i>
+  - Leading replacement for .shp
+- **GeoJSON**
+  - Very good for web mapping and transfer
+- **OGC GML**
+- **OGC KML**
+- **Esri GeoDatabase**
+  - Suitable if operating within only ESRI products
 
 ## Coordinate Reference Systems (CRS)
 
@@ -138,16 +169,22 @@ Many different types and levels of GIS software available. See more examples [he
 
 Many apps available for field data collection.
 
-- **Esri Field Maps** – ArcGIS Online – ArcGIS Pro
-- **QField** or **Mergin Maps** – QGIS
-- **Avenza Maps** – Works with multiple programs
+#### Esri Field Maps (for Esri)
+
+- Integrates with ArcGIS Online and ArcGIS Pro
+- Both Android and iOS support
+
+#### QField or Mergin Maps (for QGIS)
+
+- Integrates with QGIS Cloud environment
+
+#### Avenza Maps (for anything)
+
+- Works with multiple programs
 
 Can be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip.
 
 ## Spatial Operations
-
-**First Law of Geography (Tobler's Law):**
-"Everything is related to everything else, but near things are more related than distant things."
 
 ### Extraction
 

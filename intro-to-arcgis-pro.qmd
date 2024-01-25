@@ -6,8 +6,10 @@ subtitle: "Interface, catalog, adding data, symbology, layouts, geoprocessing to
 ## Introduction
 
 
-## Geodatabases & Catalog
+### Geodatabases & Catalog
 
 ![ArcGIS Catalog Structure.](img-ArcCatalog.jpg)
 
 ![Geodatabase structure.](img-geodatabase.jpg)
+
+

@@ -28,7 +28,7 @@ website:
     #logo: "slides/logo.png"
     search: true
     contents: 
-      - text: "This workshop was kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri."
+      - text: "This workshop is kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri."
       - href: https://gisgeography.com/gis-dictionary-definition-glossary/
         text: GIS Term Dictionary
         icon: question-circle-fill
@@ -39,9 +39,7 @@ website:
         text: ArcPy Help Reference
         icon: question-circle-fill
   page-footer:
-    left: 
-    - icon: cc-circle
-      text: "2024 - btjepkes"
+    left:   <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></p> 
     center: "Created with R and Quarto by [btjepkes](https://btjepkes.github.io)."
     right: "Site not affiliated with the University of Missouri."
     background: "#000"

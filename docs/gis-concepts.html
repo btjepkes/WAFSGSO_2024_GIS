@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
- <span class="menu-text">This workshop was kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri.</span>
+ <span class="menu-text">This workshop is kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri.</span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -189,6 +189,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#what-is-gis" id="toc-what-is-gis" class="nav-link" data-scroll-target="#what-is-gis">What is GIS?</a></li>
+  <li><a href="#what-are-spatial-data" id="toc-what-are-spatial-data" class="nav-link" data-scroll-target="#what-are-spatial-data">What are spatial data?</a></li>
   <li><a href="#why-learn-gis" id="toc-why-learn-gis" class="nav-link" data-scroll-target="#why-learn-gis">Why Learn GIS?</a></li>
   </ul></li>
   <li><a href="#spatial-data-types" id="toc-spatial-data-types" class="nav-link" data-scroll-target="#spatial-data-types">Spatial Data Types</a>
@@ -196,6 +197,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#vector" id="toc-vector" class="nav-link" data-scroll-target="#vector">Vector</a></li>
   <li><a href="#raster" id="toc-raster" class="nav-link" data-scroll-target="#raster">Raster</a></li>
   <li><a href="#data-type-considerations" id="toc-data-type-considerations" class="nav-link" data-scroll-target="#data-type-considerations">Data Type Considerations</a></li>
+  <li><a href="#a-note-on-shapefiles" id="toc-a-note-on-shapefiles" class="nav-link" data-scroll-target="#a-note-on-shapefiles">A Note on Shapefiles</a></li>
   </ul></li>
   <li><a href="#coordinate-reference-systems-crs" id="toc-coordinate-reference-systems-crs" class="nav-link" data-scroll-target="#coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</a>
   <ul class="collapse">
@@ -258,6 +260,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="what-is-gis" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-gis">What is GIS?</h3>
 </section>
+<section id="what-are-spatial-data" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-spatial-data">What are spatial data?</h3>
+<blockquote class="blockquote">
+<p><strong>First Law of Geography (Tobler’s Law):</strong> “Everything is related to everything else, but near things are more related than distant things.”</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+</section>
 <section id="why-learn-gis" class="level3">
 <h3 class="anchored" data-anchor-id="why-learn-gis">Why Learn GIS?</h3>
 </section>
@@ -294,9 +305,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="common-vector-data-types" class="level4">
 <h4 class="anchored" data-anchor-id="common-vector-data-types">Common Vector Data Types:</h4>
-<ul>
-<li></li>
-</ul>
+<p>More than <strong>80 different vector file types</strong> available across software and systems!</p>
 </section>
 </section>
 <section id="raster" class="level3">
@@ -318,13 +327,43 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-type-considerations" class="level3">
 <h3 class="anchored" data-anchor-id="data-type-considerations">Data Type Considerations</h3>
 <blockquote class="blockquote">
-<p>Raster is faster, but vector seems more correcter.</p>
+<p><em>Raster is faster, but vector seems more correcter.</em> - Old GIS Adage</p>
 </blockquote>
 <p>Spatial data files do their best to represent the world. Accuracy needs will depend on each use case. Mapping an entire state vs.&nbsp;a single forest stand. Each sensor and GPS receiver will vary.</p>
 <p>Raster Advantages:</p>
 <p>Raster Disadvantages:</p>
 <p>Vector Advantages:</p>
 <p>Vector Disadvantages:</p>
+</section>
+<section id="a-note-on-shapefiles" class="level3">
+<h3 class="anchored" data-anchor-id="a-note-on-shapefiles">A Note on Shapefiles</h3>
+<p>Stop Using Shapefiles: <a href="http://switchfromshapefile.org/">http://switchfromshapefile.org/</a></p>
+<p>While shapefiles are common and widely supported, there are several downsides:</p>
+<ul>
+<li>Multi-file format causes sharing issues</li>
+<li>Attribute (column) names limited to 10 characters</li>
+<li>No more than 255 total attributes</li>
+<li>Total size limit of 2 GB</li>
+</ul>
+<section id="alternatives-for-consideration" class="level4">
+<h4 class="anchored" data-anchor-id="alternatives-for-consideration">Alternatives for Consideration</h4>
+<ul>
+<li><strong>OGC GeoPackage</strong> <i style="color: green;" class="bi bi-check2-circle"></i>
+<ul>
+<li>Leading replacement for .shp</li>
+</ul></li>
+<li><strong>GeoJSON</strong>
+<ul>
+<li>Very good for web mapping and transfer</li>
+</ul></li>
+<li><strong>OGC GML</strong></li>
+<li><strong>OGC KML</strong></li>
+<li><strong>Esri GeoDatabase</strong>
+<ul>
+<li>Suitable if operating within only ESRI products</li>
+</ul></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="coordinate-reference-systems-crs" class="level2">
@@ -427,17 +466,30 @@ ul.task-list li input[type="checkbox"] {
 <section id="mobile-applications" class="level3">
 <h3 class="anchored" data-anchor-id="mobile-applications">Mobile Applications</h3>
 <p>Many apps available for field data collection.</p>
+<section id="esri-field-maps-for-esri" class="level4">
+<h4 class="anchored" data-anchor-id="esri-field-maps-for-esri">Esri Field Maps (for Esri)</h4>
 <ul>
-<li><strong>Esri Field Maps</strong> – ArcGIS Online – ArcGIS Pro</li>
-<li><strong>QField</strong> or <strong>Mergin Maps</strong> – QGIS</li>
-<li><strong>Avenza Maps</strong> – Works with multiple programs</li>
+<li>Integrates with ArcGIS Online and ArcGIS Pro</li>
+<li>Both Android and iOS support</li>
+</ul>
+</section>
+<section id="qfield-or-mergin-maps-for-qgis" class="level4">
+<h4 class="anchored" data-anchor-id="qfield-or-mergin-maps-for-qgis">QField or Mergin Maps (for QGIS)</h4>
+<ul>
+<li>Integrates with QGIS Cloud environment</li>
+</ul>
+</section>
+<section id="avenza-maps-for-anything" class="level4">
+<h4 class="anchored" data-anchor-id="avenza-maps-for-anything">Avenza Maps (for anything)</h4>
+<ul>
+<li>Works with multiple programs</li>
 </ul>
 <p>Can be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip.</p>
 </section>
 </section>
+</section>
 <section id="spatial-operations" class="level2">
 <h2 class="anchored" data-anchor-id="spatial-operations">Spatial Operations</h2>
-<p><strong>First Law of Geography (Tobler’s Law):</strong> “Everything is related to everything else, but near things are more related than distant things.”</p>
 <section id="extraction" class="level3">
 <h3 class="anchored" data-anchor-id="extraction">Extraction</h3>
 <ul>
@@ -926,14 +978,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-      <i class="bi bi-cc-circle" role="img">
-</i> 
- 2024 - btjepkes
-  </li>  
-</ul>
-    </div>   
+<p xmlns:cc="http://creativecommons.org/ns#">
+This work is licensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a>
+</p>
+</div>   
     <div class="nav-footer-center">
 <p>Created with R and Quarto by <a href="https://btjepkes.github.io">btjepkes</a>.</p>
 </div>

@@ -228,7 +228,7 @@
     "href": "index.html#workshop-schedule",
     "title": "Getting Started",
     "section": "Workshop Schedule",
-    "text": "Workshop Schedule\nThis workshop is set to take approximately 4 hours to complete and will cover a diverse range of GIS topics. The following schedule outlines the general sections for each topic covered.\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n1. GIS Concepts\n\n\nData types, file formats, projections, software, and tools.\n\n\n\n\n2. Intro to ArcGIS Pro\n\n\nInterface, catalog, adding data, symbology, layouts, geoprocessing tools\n\n\n\n\n3. Scripting in ArcGIS Pro\n\n\nJupyter, ArcPy, visualization, and workflows.\n\n\n\n\n4. Spatial Data in R\n\n\nVector and raster packages, spatial operations, cartography.\n\n\n\n\n\nNo matching items"
+    "text": "Workshop Schedule\nThis workshop is set to take approximately 4 hours to complete and will cover a diverse range of GIS topics. The following schedule outlines the general sections for each topic covered.\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n1. GIS Concepts\n\n\nData types, file formats, projections, software, and tools.\n\n\n\n\n2. Intro to ArcGIS Pro\n\n\nInterface, catalog, adding data, symbology, layouts, tools\n\n\n\n\n3. Scripting in ArcGIS Pro\n\n\nJupyter, ArcPy, visualization, and workflows.\n\n\n\n\n4. Spatial Data in R\n\n\nVector and raster packages, spatial operations, cartography.\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "gis-concepts.html",

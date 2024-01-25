@@ -4,6 +4,7 @@ project:
 
 website:
   title: "GIS Workshop - 2024"
+  favicon: layer-group-solid.svg
   search:
     location: sidebar
     type: textbox
@@ -28,7 +29,7 @@ website:
     #logo: "slides/logo.png"
     search: true
     contents: 
-      - text: "This workshop is kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri."
+      - text: "This workshop is kindly hosted by the Wildlife and Fisheries Sciences Graduate Student Organization at the Univeristy of Missouri-Columbia."
       - href: https://gisgeography.com/gis-dictionary-definition-glossary/
         text: GIS Term Dictionary
         icon: question-circle-fill

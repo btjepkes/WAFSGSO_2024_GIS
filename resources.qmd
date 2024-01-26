@@ -11,7 +11,7 @@ title: "Resources"
 
 ## ArcGIS Pro
 
-
+- [Esri Spatial Statistics Resources](https://spatialstats-analysis-1.hub.arcgis.com/) ~ Tutorials on using spatial analysis tools in the Esri environment.
 
 ## Projections
 
@@ -27,3 +27,5 @@ title: "Resources"
 ## Data Sources
 
 - [lterdatasampler](https://lter.github.io/lterdatasampler/) ~ R package with sample LTER data
+- [Open Land Map](https://openlandmap.org) ~ Data portal to the world's environmental data
+- [Earth Map](https://earthmap.org) ~ Tool for quick multi-temporal environmental and climate analysis.

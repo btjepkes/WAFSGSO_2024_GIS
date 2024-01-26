@@ -143,5 +143,9 @@ table td:nth-child(1)  {
   padding-top: 2em;
   padding-bottom: 2em;
 }
+
+  .nav-footer-center {
+    margin-top: 1em;
+  }
   
 }

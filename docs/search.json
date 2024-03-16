@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "spatial-data-in-R.html",
+    "href": "spatial-data-in-R.html",
+    "title": "4. Spatial Data in R",
+    "section": "",
+    "text": "Allows for reproducible science and workflows (sound familiar?)\nOpen source (free) option to build maps, perform analyses, and convert data\nIntegrates with thousands of other R packages for modeling, spatial statistics, and visualization\nWell-documented and plenty of examples from a growing community of R users"
+  },
+  {
+    "objectID": "spatial-data-in-R.html#why-use-r-for-spatial-analysis",
+    "href": "spatial-data-in-R.html#why-use-r-for-spatial-analysis",
+    "title": "4. Spatial Data in R",
+    "section": "",
+    "text": "Allows for reproducible science and workflows (sound familiar?)\nOpen source (free) option to build maps, perform analyses, and convert data\nIntegrates with thousands of other R packages for modeling, spatial statistics, and visualization\nWell-documented and plenty of examples from a growing community of R users"
+  },
+  {
     "objectID": "slides/outline.html#follow-along",
     "href": "slides/outline.html#follow-along",
     "title": "GIS for Fisheries and Wildlife Sciences",
@@ -151,7 +165,7 @@
     "href": "slides/outline.html#contact-resources",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Contact & Resources",
-    "text": "Contact & Resources\nReach out with inquiries:\n\nBenjamin Tjepkes ~ bwtbgm@missouri.edu\nWesley Fitzsimmons ~ waf8xt@missouri.edu\n\nWorkshop Resources:\nTinyURL\n\n\n\n© The Authors | 2024.03.20"
+    "text": "Contact & Resources\nReach out with inquiries:\n\nBenjamin Tjepkes ~ bwtbgm@missouri.edu\nWesley Fitzsimmons ~ waf8xt@missouri.edu\n\nWorkshop Resources:\nTinyURL\n\n\n\n\n© The Authors | 2024.03.20"
   },
   {
     "objectID": "resources.html",
@@ -235,14 +249,14 @@
     "href": "gis-concepts.html",
     "title": "1. GIS Concepts",
     "section": "",
-    "text": "First Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”"
+    "text": "GIS = Geographic Information System\n\nThe tool that we use to capture, store, process, analyze, and visualize spatial information.\nHelps us understand and assess patterns in spatial locations and attributes about those locations.\n\n\n\n\n\nFirst Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”"
   },
   {
     "objectID": "gis-concepts.html#introduction",
     "href": "gis-concepts.html#introduction",
     "title": "1. GIS Concepts",
     "section": "",
-    "text": "First Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”"
+    "text": "GIS = Geographic Information System\n\nThe tool that we use to capture, store, process, analyze, and visualize spatial information.\nHelps us understand and assess patterns in spatial locations and attributes about those locations.\n\n\n\n\n\nFirst Law of Geography (Tobler’s Law): “Everything is related to everything else, but near things are more related than distant things.”"
   },
   {
     "objectID": "gis-concepts.html#spatial-data-types",

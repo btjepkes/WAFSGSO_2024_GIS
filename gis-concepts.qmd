@@ -7,6 +7,11 @@ subtitle: "Data types, file formats, projections, software, and tools."
 
 ### What is GIS?
 
+GIS = **G**eographic **I**nformation **S**ystem
+
+- The tool that we use to capture, store, process, analyze, and visualize spatial information.
+- Helps us understand and assess patterns in spatial locations and attributes about those locations.
+
 ### What are spatial data?
 
 > **First Law of Geography (Tobler's Law):**

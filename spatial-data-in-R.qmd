@@ -3,4 +3,9 @@ title: "4. Spatial Data in R"
 subtitle: "Vector and raster packages, spatial operations, cartography."
 ---
 
-## Introduction
+## Why Use R for Spatial Analysis?
+
+- Allows for reproducible science and workflows (sound familiar?)
+- Open source (free) option to build maps, perform analyses, and convert data
+- Integrates with thousands of other R packages for modeling, spatial statistics, and visualization
+- Well-documented and plenty of examples from a growing community of R users

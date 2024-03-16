@@ -4,14 +4,42 @@
     "href": "spatial-data-in-R.html",
     "title": "4. Spatial Data in R",
     "section": "",
-    "text": "Allows for reproducible science and workflows (sound familiar?)\nOpen source (free) option to build maps, perform analyses, and convert data\nIntegrates with thousands of other R packages for modeling, spatial statistics, and visualization\nWell-documented and plenty of examples from a growing community of R users"
+    "text": "R = the language\n\nR is a powerful programming language and statistical environment widely used for data analysis and visualization.\nWide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science.\n\nRStudio = the IDE\n\nIntegrated development environment for R (and Python, Julia)\nProvides a nice interface with data sources and tables, allows for code completion and syntax highlighting\nAlternatives = VSCode, Jupyter Notebook"
   },
   {
-    "objectID": "spatial-data-in-R.html#why-use-r-for-spatial-analysis",
-    "href": "spatial-data-in-R.html#why-use-r-for-spatial-analysis",
+    "objectID": "spatial-data-in-R.html#what-is-r-and-rstudio",
+    "href": "spatial-data-in-R.html#what-is-r-and-rstudio",
     "title": "4. Spatial Data in R",
     "section": "",
-    "text": "Allows for reproducible science and workflows (sound familiar?)\nOpen source (free) option to build maps, perform analyses, and convert data\nIntegrates with thousands of other R packages for modeling, spatial statistics, and visualization\nWell-documented and plenty of examples from a growing community of R users"
+    "text": "R = the language\n\nR is a powerful programming language and statistical environment widely used for data analysis and visualization.\nWide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science.\n\nRStudio = the IDE\n\nIntegrated development environment for R (and Python, Julia)\nProvides a nice interface with data sources and tables, allows for code completion and syntax highlighting\nAlternatives = VSCode, Jupyter Notebook"
+  },
+  {
+    "objectID": "spatial-data-in-R.html#why-use-r-for-spatial-data",
+    "href": "spatial-data-in-R.html#why-use-r-for-spatial-data",
+    "title": "4. Spatial Data in R",
+    "section": "Why Use R for Spatial Data?",
+    "text": "Why Use R for Spatial Data?\n\nOpen source (free) option to build maps, perform analyses, and convert data\n\nIf working with non-profits or in academia, many entities have expertise in R\n\nAllows for reproducible science and workflows (sound familiar?)\n\nSupplementary material for manuscripts\nCo-workers can use entire scripts or snippets to update models and maps\n\nIntegrates with thousands of other R packages for modeling, spatial statistics, and visualization\nWell-documented and plenty of examples from a growing community of R users"
+  },
+  {
+    "objectID": "spatial-data-in-R.html#basics-of-r-programming",
+    "href": "spatial-data-in-R.html#basics-of-r-programming",
+    "title": "4. Spatial Data in R",
+    "section": "Basics of R Programming",
+    "text": "Basics of R Programming\nEach programming language has specific ways of doing things, and R is no different.\n\nData Structures\n\nVectors: One-dimensional arrays that can hold numeric, character, or logical values.\nMatrices: Two-dimensional arrays with rows and columns.\nData Frames: Tabular data structures similar to spreadsheets, consisting of rows and columns.\nLists: Collections of objects, which can be of different types.\n\n\n\nBasic Operations\n\nArithmetic operations: +, -, *, /\nLogical operations: &lt;, &gt;, ==, !=\nAssignment operators: &lt;-, =\nFunction calls: functionName(argument, argument)"
+  },
+  {
+    "objectID": "spatial-data-in-R.html#common-r-packages",
+    "href": "spatial-data-in-R.html#common-r-packages",
+    "title": "4. Spatial Data in R",
+    "section": "Common R Packages",
+    "text": "Common R Packages"
+  },
+  {
+    "objectID": "spatial-data-in-R.html#common-r-spatial-packages",
+    "href": "spatial-data-in-R.html#common-r-spatial-packages",
+    "title": "4. Spatial Data in R",
+    "section": "Common R Spatial Packages",
+    "text": "Common R Spatial Packages"
   },
   {
     "objectID": "slides/outline.html#follow-along",

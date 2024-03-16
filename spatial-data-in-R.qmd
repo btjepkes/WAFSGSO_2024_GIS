@@ -3,9 +3,46 @@ title: "4. Spatial Data in R"
 subtitle: "Vector and raster packages, spatial operations, cartography."
 ---
 
-## Why Use R for Spatial Analysis?
+## What is R and RStudio?
 
-- Allows for reproducible science and workflows (sound familiar?)
-- Open source (free) option to build maps, perform analyses, and convert data
-- Integrates with thousands of other R packages for modeling, spatial statistics, and visualization
-- Well-documented and plenty of examples from a growing community of R users
+-   **R** = the language
+    -   R is a powerful programming language and statistical environment widely used for data analysis and visualization.
+    -   Wide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science.
+-   **RStudio** = the IDE
+    -   Integrated development environment for R (and Python, Julia)
+    -   Provides a nice interface with data sources and tables, allows for code completion and syntax highlighting
+    -   Alternatives = VSCode, Jupyter Notebook
+
+## Why Use R for Spatial Data?
+
+-   Open source (free) option to build maps, perform analyses, and convert data
+    -   If working with non-profits or in academia, many entities have expertise in R
+-   Allows for reproducible science and workflows (sound familiar?)
+    -   Supplementary material for manuscripts
+    -   Co-workers can use entire scripts or snippets to update models and maps
+-   Integrates with thousands of other R packages for modeling, spatial statistics, and visualization
+-   Well-documented and plenty of examples from a growing community of R users
+
+## Basics of R Programming
+
+Each programming language has specific ways of doing things, and R is no different.
+
+### Data Structures
+
+-   **Vectors:** One-dimensional arrays that can hold numeric, character, or logical values.
+-   **Matrices:** Two-dimensional arrays with rows and columns.
+-   **Data Frames:** Tabular data structures similar to spreadsheets, consisting of rows and columns.
+-   **Lists:** Collections of objects, which can be of different types.
+
+### Basic Operations
+
+-   **Arithmetic operations:** +, -, \*, /
+-   **Logical operations:** \<, \>, ==, !=
+-   **Assignment operators:** \<-, =
+-   **Function calls:** functionName(argument, argument)
+
+## Common R Packages
+
+-   
+
+## Common R Spatial Packages

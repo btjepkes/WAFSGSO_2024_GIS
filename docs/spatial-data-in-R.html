@@ -232,11 +232,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-use-r-for-spatial-data" id="toc-why-use-r-for-spatial-data" class="nav-link" data-scroll-target="#why-use-r-for-spatial-data">Why Use R for Spatial Data?</a></li>
   <li><a href="#basics-of-r-programming" id="toc-basics-of-r-programming" class="nav-link" data-scroll-target="#basics-of-r-programming">Basics of R Programming</a>
   <ul class="collapse">
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a></li>
   <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">Data Structures</a></li>
   <li><a href="#basic-operations" id="toc-basic-operations" class="nav-link" data-scroll-target="#basic-operations">Basic Operations</a></li>
   </ul></li>
-  <li><a href="#common-r-packages" id="toc-common-r-packages" class="nav-link" data-scroll-target="#common-r-packages">Common R Packages</a>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R Packages</a>
   <ul class="collapse">
+  <li><a href="#installing-loading-packages" id="toc-installing-loading-packages" class="nav-link" data-scroll-target="#installing-loading-packages">Installing &amp; Loading Packages</a></li>
   <li><a href="#the-tidyverse" id="toc-the-tidyverse" class="nav-link" data-scroll-target="#the-tidyverse">The Tidyverse</a></li>
   </ul></li>
   <li><a href="#common-r-spatial-packages" id="toc-common-r-spatial-packages" class="nav-link" data-scroll-target="#common-r-spatial-packages">Common R Spatial Packages</a>
@@ -244,6 +246,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#for-general-spatial-data-handling" id="toc-for-general-spatial-data-handling" class="nav-link" data-scroll-target="#for-general-spatial-data-handling">For General Spatial Data Handling</a></li>
   <li><a href="#for-ecology-natural-resources" id="toc-for-ecology-natural-resources" class="nav-link" data-scroll-target="#for-ecology-natural-resources">For Ecology &amp; Natural Resources</a></li>
   <li><a href="#for-mapping-cartography" id="toc-for-mapping-cartography" class="nav-link" data-scroll-target="#for-mapping-cartography">For Mapping &amp; Cartography</a></li>
+  <li><a href="#for-getting-spatial-data" id="toc-for-getting-spatial-data" class="nav-link" data-scroll-target="#for-getting-spatial-data">For Getting Spatial Data</a></li>
+  </ul></li>
+  <li><a href="#loading-spatial-data-into-r" id="toc-loading-spatial-data-into-r" class="nav-link" data-scroll-target="#loading-spatial-data-into-r">Loading Spatial Data Into R</a>
+  <ul class="collapse">
+  <li><a href="#vector-data" id="toc-vector-data" class="nav-link" data-scroll-target="#vector-data">Vector Data</a></li>
+  <li><a href="#raster-data" id="toc-raster-data" class="nav-link" data-scroll-target="#raster-data">Raster Data</a></li>
+  </ul></li>
+  <li><a href="#mapping-spatial-data-in-r" id="toc-mapping-spatial-data-in-r" class="nav-link" data-scroll-target="#mapping-spatial-data-in-r">Mapping Spatial Data In R</a>
+  <ul class="collapse">
+  <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot">ggplot</a></li>
+  <li><a href="#tmap" id="toc-tmap" class="nav-link" data-scroll-target="#tmap">tmap</a></li>
+  <li><a href="#mapview" id="toc-mapview" class="nav-link" data-scroll-target="#mapview">mapview</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -314,6 +328,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basics-of-r-programming" class="level2">
 <h2 class="anchored" data-anchor-id="basics-of-r-programming">Basics of R Programming</h2>
 <p>Each programming language has specific ways of doing things, and R is no different.</p>
+<section id="data-types" class="level3">
+<h3 class="anchored" data-anchor-id="data-types">Data Types</h3>
+</section>
 <section id="data-structures" class="level3">
 <h3 class="anchored" data-anchor-id="data-structures">Data Structures</h3>
 <section id="vectors" class="level4">
@@ -503,51 +520,120 @@ $data_frame
 </section>
 </section>
 </section>
-<section id="common-r-packages" class="level2">
-<h2 class="anchored" data-anchor-id="common-r-packages">Common R Packages</h2>
-<p>Packages are collections of functions in R. They extend the functionality by providing additional tools, common workflows, and accessible datasets for various purposes.</p>
+<section id="r-packages" class="level2">
+<h2 class="anchored" data-anchor-id="r-packages">R Packages</h2>
+<p>Packages in R are collections of functions curated by developers to make life easier. They extend the functionality by providing additional tools, common workflows, and accessible datasets.</p>
+<section id="installing-loading-packages" class="level3">
+<h3 class="anchored" data-anchor-id="installing-loading-packages">Installing &amp; Loading Packages</h3>
+<p>R packages can generally be downloaded/installed via two primary methods. (1) from the CRAN - Comprehensive R Archive Network, or (2) from a GitHub repository containing the package. While many popular packages are on CRAN, specific application packages might only be available on GitHub.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Installing packages from CRAN</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"package_name"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Installing packages from GitHub</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Install and load the remotes package (if not already installed)</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)}</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(remotes)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Install the package from the GitHub repository</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install_github</span>(<span class="st">"username/repository"</span>)</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading any installed package</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(package_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="the-tidyverse" class="level3">
 <h3 class="anchored" data-anchor-id="the-tidyverse">The Tidyverse</h3>
 <p>The <a href="https://www.tidyverse.org/">tidyverse</a> is a collection of R packages designed for data science and statistical analysis. It provides a cohesive framework for working with data by emphasizing consistency, readability, and efficiency.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Installing the tidyverse entirely, note the name as a string</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The core philosophy of the tidyverse centers around the principles outlined in the “tidy data” concept, where datasets are organized in a structured format with each variable forming a column, each observation forming a row, and each type of observational unit forming a table.</p>
 <ul>
-<li><a href="https://ggplot2.tidyverse.org/">ggplot2</a> - flexible package for creating static and interactive visualizations.</li>
-<li><a href="https://dplyr.tidyverse.org/">dplyr</a> - provides a grammar of data manipulation, providing a consistent set of verbs.</li>
-<li><a href="https://tidyr.tidyverse.org/">tidyr</a> -</li>
-<li><a href="https://readr.tidyverse.org/">readr</a> -</li>
-<li><a href="https://purrr.tidyverse.org/">purrr</a> -</li>
-<li><a href="https://tibble.tidyverse.org/">tibble</a> -</li>
-<li><a href="https://stringr.tidyverse.org/">stringr</a> -</li>
-<li><a href="https://forcats.tidyverse.org/">forcats</a> - provides a suite of useful tools that solve common problems with factors.</li>
+<li><a href="https://ggplot2.tidyverse.org/">ggplot2</a> - for creating static and interactive visualizations</li>
+<li><a href="https://dplyr.tidyverse.org/">dplyr</a> - for data manipulation, filtering, and summarizing</li>
+<li><a href="https://tidyr.tidyverse.org/">tidyr</a> - for getting data into tidy wide and tidy long formats</li>
+<li><a href="https://readr.tidyverse.org/">readr</a> - for reading flat files, like .csv and .tsv</li>
+<li><a href="https://purrr.tidyverse.org/">purrr</a> - for working with functions and vectors</li>
+<li><a href="https://tibble.tidyverse.org/">tibble</a> - for easy handling of tidy dataframes</li>
+<li><a href="https://stringr.tidyverse.org/">stringr</a> - for working with strings</li>
+<li><a href="https://forcats.tidyverse.org/">forcats</a> - for working with factors (categorical data)</li>
 </ul>
+<p>The tidyverse also introduced the pipe (<code>%&gt;%</code>) which allows the chaining of functions. RStudio now has a native pipe (<code>|&gt;</code>) that works with a variety of non-tidyverse packages. <strong>Note: ctrl+shift+M = shortcut</strong></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example code with piped functions, note the native R pipe used</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>present_veg_area <span class="ot">&lt;-</span> present_veg_sf <span class="sc">|&gt;</span> </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">BeaverVegCat =</span> <span class="fu">as.factor</span>(BeaverVegCat)) <span class="sc">|&gt;</span> </span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(LandscapeID, BeaverVegCat, Survey_Year) <span class="sc">|&gt;</span> </span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_veg_area_m2 =</span> <span class="fu">sum</span>(area_m2, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(LandscapeID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="common-r-spatial-packages" class="level2">
 <h2 class="anchored" data-anchor-id="common-r-spatial-packages">Common R Spatial Packages</h2>
 <p>There are likely over 100 R packages that can handle some aspect of spatial data, these are the most popular ones that we will explore some in the workshop. A more comprehensive list can be found here: <a href="https://cran.r-project.org/web/views/Spatial.html" class="uri">https://cran.r-project.org/web/views/Spatial.html</a></p>
-<p>Spatial packages in R are currently in a transition period, with many historically common packages being replaced by newer, more performant varieties.</p>
+<p>Spatial packages in R are currently in a transition period, with many historically common packages being replaced by newer, more performant varieties. E.g., <code>sp</code>, <code>rgdal</code>, <code>rgeos</code>, and <code>raster</code> are deprecated along with their spatial object types, but are often still dependencies.</p>
+<p><strong>Note:</strong> <i style="color: green;" class="bi bi-check2-circle"></i> <strong>indicates packages utilized in this workshop.</strong></p>
 <section id="for-general-spatial-data-handling" class="level3">
 <h3 class="anchored" data-anchor-id="for-general-spatial-data-handling">For General Spatial Data Handling</h3>
 <ul>
-<li>sf</li>
-<li>terra</li>
-<li>stars</li>
-<li>spatstat</li>
-<li>geometa</li>
-<li>ncdf4</li>
+<li><a href="https://r-spatial.github.io/sf/">sf</a> - for working with vector spatial data <i style="color: green;" class="bi bi-check2-circle"></i></li>
+<li><a href="https://rspatial.github.io/terra/">terra</a> - for working with raster spatial data <i style="color: green;" class="bi bi-check2-circle"></i></li>
+<li><a href="https://r-spatial.github.io/stars/">stars</a> - for working with spatial time series (vector and raster data cubes)</li>
+<li><a href="https://spatstat.org/">spatstat</a> - for spatial statistics, focusing on spatial point patterns</li>
+<li><a href="https://luukvdmeer.github.io/sfnetworks/">sfnetworks</a> - for analysis of geospatial networks</li>
+<li>geometa -</li>
+<li><a href="https://cirrus.ucsd.edu/~pierce/ncdf/">ncdf4</a> - for reading, writing, and manipulating netCDF files</li>
 </ul>
 </section>
 <section id="for-ecology-natural-resources" class="level3">
 <h3 class="anchored" data-anchor-id="for-ecology-natural-resources">For Ecology &amp; Natural Resources</h3>
 <ul>
+<li>rgbif</li>
 <li>landscapemetrics</li>
+<li></li>
 </ul>
 </section>
 <section id="for-mapping-cartography" class="level3">
 <h3 class="anchored" data-anchor-id="for-mapping-cartography">For Mapping &amp; Cartography</h3>
 <ul>
-<li></li>
+<li>ggplot2</li>
+<li>tmap</li>
+<li>mapsf</li>
+<li>cartography</li>
+<li>leaflet</li>
+<li>mapview</li>
+<li>plotly + ggplot2</li>
 </ul>
+</section>
+<section id="for-getting-spatial-data" class="level3">
+<h3 class="anchored" data-anchor-id="for-getting-spatial-data">For Getting Spatial Data</h3>
+<ul>
+<li>rnaturalearth - state and national boundaries across the United States and world</li>
+<li>tidycensus - population, state boundaries, and other census metrics</li>
+<li>tigris - TIGER/Line files (i.e., roads, highways) from U.S. Census</li>
+<li>geodata - diverse source of climate, elevation, admin boundaries, land use, and more</li>
+<li>elevatr - elevation rasters across the world</li>
+<li>osmdata - any and all Open Street Map features, including roads, buildings, and more</li>
+<li>spocc - many species occurrence repositories, including GBIF, BISON, iNaturalist, eBird</li>
+</ul>
+</section>
+</section>
+<section id="loading-spatial-data-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="loading-spatial-data-into-r">Loading Spatial Data Into R</h2>
+<section id="vector-data" class="level3">
+<h3 class="anchored" data-anchor-id="vector-data">Vector Data</h3>
+</section>
+<section id="raster-data" class="level3">
+<h3 class="anchored" data-anchor-id="raster-data">Raster Data</h3>
+</section>
+</section>
+<section id="mapping-spatial-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="mapping-spatial-data-in-r">Mapping Spatial Data In R</h2>
+<section id="ggplot" class="level3">
+<h3 class="anchored" data-anchor-id="ggplot">ggplot</h3>
+</section>
+<section id="tmap" class="level3">
+<h3 class="anchored" data-anchor-id="tmap">tmap</h3>
+</section>
+<section id="mapview" class="level3">
+<h3 class="anchored" data-anchor-id="mapview">mapview</h3>
 
 
 </section>

@@ -32,6 +32,8 @@ subtitle: "Vector and raster packages, spatial operations, cartography."
 
 Each programming language has specific ways of doing things, and R is no different.
 
+### Data Types
+
 ### Data Structures
 
 #### Vectors:
@@ -162,44 +164,115 @@ name_of_function(argument_1 = value_1,
                  argument_3 = value_3)
 ```
 
-## Common R Packages
+## R Packages
 
-Packages are collections of functions in R. They extend the functionality by providing additional tools, common workflows, and accessible datasets for various purposes.
+Packages in R are collections of functions curated by developers to make life easier. They extend the functionality by providing additional tools, common workflows, and accessible datasets.
+
+### Installing & Loading Packages
+
+R packages can generally be downloaded/installed via two primary methods. (1) from the CRAN - Comprehensive R Archive Network, or (2) from a GitHub repository containing the package. While many popular packages are on CRAN, specific application packages might only be available on GitHub.
+
+``` r
+# Installing packages from CRAN
+install.packages("package_name")
+
+# Installing packages from GitHub
+  ## Install and load the remotes package (if not already installed)
+  if (!requireNamespace("remotes", quietly = TRUE)) {
+    install.packages("remotes")}
+  library(remotes)
+  ## Install the package from the GitHub repository
+  install_github("username/repository")
+
+# Loading any installed package
+library(package_name)
+```
 
 ### The Tidyverse
 
 The [tidyverse](https://www.tidyverse.org/) is a collection of R packages designed for data science and statistical analysis. It provides a cohesive framework for working with data by emphasizing consistency, readability, and efficiency.
 
+``` r
+# Installing the tidyverse entirely, note the name as a string
+install.packages("tidyverse")
+```
+
 The core philosophy of the tidyverse centers around the principles outlined in the "tidy data" concept, where datasets are organized in a structured format with each variable forming a column, each observation forming a row, and each type of observational unit forming a table.
 
--   [ggplot2](https://ggplot2.tidyverse.org/) - flexible package for creating static and interactive visualizations.
--   [dplyr](https://dplyr.tidyverse.org/) - provides a grammar of data manipulation, providing a consistent set of verbs.
--   [tidyr](https://tidyr.tidyverse.org/) -
--   [readr](https://readr.tidyverse.org/) -
--   [purrr](https://purrr.tidyverse.org/) -
--   [tibble](https://tibble.tidyverse.org/) -
--   [stringr](https://stringr.tidyverse.org/) -
--   [forcats](https://forcats.tidyverse.org/) - provides a suite of useful tools that solve common problems with factors.
+-   [ggplot2](https://ggplot2.tidyverse.org/) - for creating static and interactive visualizations
+-   [dplyr](https://dplyr.tidyverse.org/) - for data manipulation, filtering, and summarizing
+-   [tidyr](https://tidyr.tidyverse.org/) - for getting data into tidy wide and tidy long formats
+-   [readr](https://readr.tidyverse.org/) - for reading flat files, like .csv and .tsv
+-   [purrr](https://purrr.tidyverse.org/) - for working with functions and vectors
+-   [tibble](https://tibble.tidyverse.org/) - for easy handling of tidy dataframes
+-   [stringr](https://stringr.tidyverse.org/) - for working with strings
+-   [forcats](https://forcats.tidyverse.org/) - for working with factors (categorical data)
+
+The tidyverse also introduced the pipe (`%>%`) which allows the chaining of functions. RStudio now has a native pipe (`|>`) that works with a variety of non-tidyverse packages. **Note: ctrl+shift+M = shortcut**
+
+``` r
+# Example code with piped functions, note the native R pipe used
+present_veg_area <- present_veg_sf |> 
+  mutate(BeaverVegCat = as.factor(BeaverVegCat)) |> 
+  group_by(LandscapeID, BeaverVegCat, Survey_Year) |> 
+  summarise(total_veg_area_m2 = sum(area_m2, na.rm = TRUE)) |> 
+  arrange(LandscapeID)
+```
 
 ## Common R Spatial Packages
 
 There are likely over 100 R packages that can handle some aspect of spatial data, these are the most popular ones that we will explore some in the workshop. A more comprehensive list can be found here: <https://cran.r-project.org/web/views/Spatial.html>
 
-Spatial packages in R are currently in a transition period, with many historically common packages being replaced by newer, more performant varieties.
+Spatial packages in R are currently in a transition period, with many historically common packages being replaced by newer, more performant varieties. E.g., `sp`, `rgdal`, `rgeos`, and `raster` are deprecated along with their spatial object types, but are often still dependencies.
+
+**Note:** <i style= "color: green;" class="bi bi-check2-circle"></i> **indicates packages utilized in this workshop.**
 
 ### For General Spatial Data Handling
 
--   sf
--   terra
--   stars
--   spatstat
--   geometa
--   ncdf4
+-   [sf](https://r-spatial.github.io/sf/) - for working with vector spatial data <i style= "color: green;" class="bi bi-check2-circle"></i>
+-   [terra](https://rspatial.github.io/terra/) - for working with raster spatial data <i style= "color: green;" class="bi bi-check2-circle"></i>
+-   [stars](https://r-spatial.github.io/stars/) - for working with spatial time series (vector and raster data cubes)
+-   [spatstat](https://spatstat.org/) - for spatial statistics, focusing on spatial point patterns
+-   [sfnetworks](https://luukvdmeer.github.io/sfnetworks/) - for analysis of geospatial networks
+-   geometa -
+-   [ncdf4](https://cirrus.ucsd.edu/~pierce/ncdf/) - for reading, writing, and manipulating netCDF files
 
 ### For Ecology & Natural Resources
 
+-   rgbif
 -   landscapemetrics
+-   
 
 ### For Mapping & Cartography
 
--   
+-   ggplot2
+-   tmap
+-   mapsf
+-   cartography
+-   leaflet
+-   mapview
+-   plotly + ggplot2
+
+### For Getting Spatial Data
+
+-   rnaturalearth - state and national boundaries across the United States and world
+-   tidycensus - population, state boundaries, and other census metrics
+-   tigris - TIGER/Line files (i.e., roads, highways) from U.S. Census
+-   geodata - diverse source of climate, elevation, admin boundaries, land use, and more
+-   elevatr - elevation rasters across the world
+-   osmdata - any and all Open Street Map features, including roads, buildings, and more
+-   spocc - many species occurrence repositories, including GBIF, BISON, iNaturalist, eBird
+
+## Loading Spatial Data Into R
+
+### Vector Data
+
+### Raster Data
+
+## Mapping Spatial Data In R
+
+### ggplot
+
+### tmap
+
+### mapview

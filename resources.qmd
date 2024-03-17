@@ -4,28 +4,31 @@ title: "Resources"
 
 ## General GIS
 
-- [GISGeography](https://gisgeography.com/) ~ All things GIS
-- [GIS Term Dictionary](https://gisgeography.com/gis-dictionary-definition-glossary/) ~ Various and general GIS definitions
-- [GDAL](https://gdal.org/index.html) ~ File formats and conversions
-- [PennState GEOG 486](https://www.e-education.psu.edu/geog486/) ~ Cartography and spatial data visualization
+- [GISGeography](https://gisgeography.com/) ~ All things GIS.
+- [GIS Term Dictionary](https://gisgeography.com/gis-dictionary-definition-glossary/) ~ Various and general GIS definitions.
+- [GDAL](https://gdal.org/index.html) ~ File formats and conversions.
+- [PennState GEOG 486](https://www.e-education.psu.edu/geog486/) ~ Cartography and spatial data visualization.
 
 ## ArcGIS Pro
 
 - [Esri Spatial Statistics Resources](https://spatialstats-analysis-1.hub.arcgis.com/) ~ Tutorials on using spatial analysis tools in the Esri environment.
+- [Esri Training](https://www.esri.com/training/) ~ Main education and training page for ArcGIS suite of products.
 
 ## Projections
 
-- [EPSG Projections](https://epsg.io/) ~ Projection codes and help selecting projections
+- [EPSG Projections](https://epsg.io/) ~ Projection codes and help selecting projections.
 
 ## Spatial Data in R
 
-- [Mapping in ggplot with sf](https://r-spatial.org/r/2018/10/25/ggplot2-sf-3.html) 
-- [Spatial Data Science Book](https://r-spatial.org/book/)
-- [Geocomputation with R](https://r.geocompx.org/)
+- [Mapping in ggplot with sf](https://r-spatial.org/r/2018/10/25/ggplot2-sf-3.html) ~ R-Spatial page on `sf` and `ggplot`.
+- [Spatial Data Science Book](https://r-spatial.org/book/) ~ Ebook on all things spatial data science in R.
+- [Geocomputation with R](https://r.geocompx.org/) ~ Another ebook on geostatisitcs in R.
+- [R-ArcGIS Bridge](https://www.esri.com/en-us/arcgis/products/r-arcgis-bridge/overview) ~ Overview of R-ArcGIS Bridge capabilities.
+- [CRAN Spatial Task View](https://cran.r-project.org/web/views/Spatial.html) ~ Contributed packages dealing with spatial data on CRAN.
 
 
 ## Data Sources
 
 - [lterdatasampler](https://lter.github.io/lterdatasampler/) ~ R package with sample LTER data
 - [Open Land Map](https://openlandmap.org) ~ Data portal to the world's environmental data
-- [Earth Map](https://earthmap.org) ~ Tool for quick multi-temporal environmental and climate analysis.
+- [Earth Map](https://earthmap.org) ~ Tool for quick multi-temporal environmental and climate analysis

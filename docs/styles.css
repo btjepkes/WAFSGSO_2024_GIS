@@ -11,6 +11,12 @@ h2 {
   border-bottom: 2px solid #F1B82D;
 }
 
+h4 {
+  background: rgba(0,0,0,0.1);
+  margin-left: -4px;
+  padding-left: 4px;
+}
+
 /* FIGURES */
 
 figure > figcaption {
@@ -58,7 +64,9 @@ table td:nth-child(1)  {
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
-  color: #F1B82D;
+  /*color: #F1B82D;*/
+  text-decoration: underline;
+  color: #fff;
   }
   
 

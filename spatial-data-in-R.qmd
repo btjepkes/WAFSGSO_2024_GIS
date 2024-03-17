@@ -5,23 +5,28 @@ subtitle: "Vector and raster packages, spatial operations, cartography."
 
 ## What is R and RStudio?
 
--   **R** = the language
-    -   R is a powerful programming language and statistical environment widely used for data analysis and visualization.
-    -   Wide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science.
--   **RStudio** = the IDE
-    -   Integrated development environment for R (and Python, Julia)
-    -   Provides a nice interface with data sources and tables, allows for code completion and syntax highlighting
-    -   Alternatives = VSCode, Jupyter Notebook
+### The Language (R)
+
+-   R is a powerful programming language used for data analysis and visualization
+-   Wide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science
+
+### The IDE (RStudio)
+
+-   Integrated development environment for R (and Python, Julia)
+-   Interface with data sources and tables, allows for code completion and syntax highlighting
+-   Alternatives = VSCode, Jupyter Notebook
+
+![RStudio interface](img-rstudio-interface.jpg)
 
 ## Why Use R for Spatial Data?
 
--   Open source (free) option to build maps, perform analyses, and convert data
+-   **Open source** (free) option to build maps, perform analyses, and convert data
     -   If working with non-profits or in academia, many entities have expertise in R
--   Allows for reproducible science and workflows (sound familiar?)
+-   Allows for **reproducible science** and workflows (sound familiar?)
     -   Supplementary material for manuscripts
     -   Co-workers can use entire scripts or snippets to update models and maps
--   Integrates with thousands of other R packages for modeling, spatial statistics, and visualization
--   Well-documented and plenty of examples from a growing community of R users
+-   **Integrates** with thousands of other R packages for modeling, spatial statistics, and visualization
+-   Well-documented and plenty of examples from a continuously **growing community** of R users
 
 ## Basics of R Programming
 
@@ -29,20 +34,172 @@ Each programming language has specific ways of doing things, and R is no differe
 
 ### Data Structures
 
--   **Vectors:** One-dimensional arrays that can hold numeric, character, or logical values.
--   **Matrices:** Two-dimensional arrays with rows and columns.
--   **Data Frames:** Tabular data structures similar to spreadsheets, consisting of rows and columns.
--   **Lists:** Collections of objects, which can be of different types.
+#### Vectors:
+
+One-dimensional arrays that can hold numeric, character, or logical values.
+
+```{r}
+# Numeric vector
+c(1, 2, 3, 4, 5)
+
+# Character vector
+c("apple", "banana", "orange", "grape", "kiwi")
+
+# Logical vector
+c(TRUE, FALSE, TRUE, FALSE, TRUE)
+```
+
+#### Matrices:
+
+Two-dimensional arrays with rows and columns of the same data type.
+
+```{r}
+# Create a matrix
+# Create a 3x3 matrix with data filled by row-wise
+matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE) 
+```
+
+#### Data Frames:
+
+Tabular data structures, similar to spreadsheets, consisting of rows and columns.
+
+```{r}
+# Create a data frame
+data.frame(
+  Name = c("John", "Alice", "Bob", "Emily"),
+  Age = c(25, 30, 35, 28),
+  Gender = c("Male", "Female", "Male", "Female"),
+  stringsAsFactors = FALSE
+)
+```
+
+#### Lists:
+
+Collections of objects, which can be of different data types.
+
+```{r}
+list(
+  numeric_vector = c(1, 2, 3),
+  character_vector = c("a", "b", "c"),
+  matrix_data = matrix(1:4, nrow = 2),
+  data_frame = data.frame(
+    Name = c("John", "Alice"),
+    Age = c(25, 30),
+    stringsAsFactors = FALSE
+  )
+)
+```
 
 ### Basic Operations
 
--   **Arithmetic operations:** +, -, \*, /
--   **Logical operations:** \<, \>, ==, !=
--   **Assignment operators:** \<-, =
--   **Function calls:** functionName(argument, argument)
+#### Arithmetic operations:
+
+These run mathematical operations on two or more elements.
+
+```{r}
+# Addition
+10 + 5
+
+# Subtraction
+10 - 5
+
+# Multiplication
+10 * 5
+
+# Division
+10 / 5
+
+# Explonetiation
+10 ^ 5
+
+# Square root
+sqrt(10)
+```
+
+#### Logical operations:
+
+These assess relationships between two or more elements.
+
+```{r}
+# Less than
+10 < 5
+
+# Greater than
+10 > 5
+
+# Equal to
+10 == 5
+
+# Not equal to
+10 != 5
+```
+
+#### Assignment operators:
+
+These assign values or groups of values to an object that is stored in memory.
+
+```{r}
+# Assigning numeric
+var_1 <- 10
+var_1
+
+# Assigning character strings
+var_2 <- "species"
+var_2
+
+# Assigning vector of strings
+var_3 <- c("sppA", "sppB", "sppC")
+var_3
+```
+
+#### Function calls:
+
+These pass a series of arguments to a pre-defined process, called a function.
+
+``` r
+name_of_function(argument_1 = value_1,
+                 argument_2 = value_2,
+                 argument_3 = value_3)
+```
 
 ## Common R Packages
 
--   
+Packages are collections of functions in R. They extend the functionality by providing additional tools, common workflows, and accessible datasets for various purposes.
+
+### The Tidyverse
+
+The [tidyverse](https://www.tidyverse.org/) is a collection of R packages designed for data science and statistical analysis. It provides a cohesive framework for working with data by emphasizing consistency, readability, and efficiency.
+
+The core philosophy of the tidyverse centers around the principles outlined in the "tidy data" concept, where datasets are organized in a structured format with each variable forming a column, each observation forming a row, and each type of observational unit forming a table.
+
+-   [ggplot2](https://ggplot2.tidyverse.org/) - flexible package for creating static and interactive visualizations.
+-   [dplyr](https://dplyr.tidyverse.org/) - provides a grammar of data manipulation, providing a consistent set of verbs.
+-   [tidyr](https://tidyr.tidyverse.org/) -
+-   [readr](https://readr.tidyverse.org/) -
+-   [purrr](https://purrr.tidyverse.org/) -
+-   [tibble](https://tibble.tidyverse.org/) -
+-   [stringr](https://stringr.tidyverse.org/) -
+-   [forcats](https://forcats.tidyverse.org/) - provides a suite of useful tools that solve common problems with factors.
 
 ## Common R Spatial Packages
+
+There are likely over 100 R packages that can handle some aspect of spatial data, these are the most popular ones that we will explore some in the workshop. A more comprehensive list can be found here: <https://cran.r-project.org/web/views/Spatial.html>
+
+Spatial packages in R are currently in a transition period, with many historically common packages being replaced by newer, more performant varieties.
+
+### For General Spatial Data Handling
+
+-   sf
+-   terra
+-   stars
+-   spatstat
+-   geometa
+-   ncdf4
+
+### For Ecology & Natural Resources
+
+-   landscapemetrics
+
+### For Mapping & Cartography
+
+-   

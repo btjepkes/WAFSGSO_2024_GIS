@@ -22,6 +22,8 @@ This workshop, **GIS for Fisheries and Wildlife Sciences**, provides a general i
 
 ## Workshop Objectives
 
+**The primary objective of this workshop is provide exposure to a variety of GIS systems available for working with spatial data for fisheries and wildlife projects.**
+
 -   To provide an overview of GIS concepts and data types.
 -   To introduce ArcGIS Pro (interface, projects, resources).
 -   To demonstrate common spatial operations and tools.

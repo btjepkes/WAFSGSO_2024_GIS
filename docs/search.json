@@ -4,42 +4,42 @@
     "href": "spatial-data-in-R.html",
     "title": "4. Spatial Data in R",
     "section": "",
-    "text": "R = the language\n\nR is a powerful programming language and statistical environment widely used for data analysis and visualization.\nWide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science.\n\nRStudio = the IDE\n\nIntegrated development environment for R (and Python, Julia)\nProvides a nice interface with data sources and tables, allows for code completion and syntax highlighting\nAlternatives = VSCode, Jupyter Notebook"
+    "text": "R is a powerful programming language used for data analysis and visualization\nWide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science\n\n\n\n\n\nIntegrated development environment for R (and Python, Julia)\nInterface with data sources and tables, allows for code completion and syntax highlighting\nAlternatives = VSCode, Jupyter Notebook\n\n\n\n\nRStudio interface"
   },
   {
     "objectID": "spatial-data-in-R.html#what-is-r-and-rstudio",
     "href": "spatial-data-in-R.html#what-is-r-and-rstudio",
     "title": "4. Spatial Data in R",
     "section": "",
-    "text": "R = the language\n\nR is a powerful programming language and statistical environment widely used for data analysis and visualization.\nWide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science.\n\nRStudio = the IDE\n\nIntegrated development environment for R (and Python, Julia)\nProvides a nice interface with data sources and tables, allows for code completion and syntax highlighting\nAlternatives = VSCode, Jupyter Notebook"
+    "text": "R is a powerful programming language used for data analysis and visualization\nWide range of packages and libraries, making it suitable for various scientific disciplines, including spatial data analysis in wildlife and fisheries science\n\n\n\n\n\nIntegrated development environment for R (and Python, Julia)\nInterface with data sources and tables, allows for code completion and syntax highlighting\nAlternatives = VSCode, Jupyter Notebook\n\n\n\n\nRStudio interface"
   },
   {
     "objectID": "spatial-data-in-R.html#why-use-r-for-spatial-data",
     "href": "spatial-data-in-R.html#why-use-r-for-spatial-data",
     "title": "4. Spatial Data in R",
     "section": "Why Use R for Spatial Data?",
-    "text": "Why Use R for Spatial Data?\n\nOpen source (free) option to build maps, perform analyses, and convert data\n\nIf working with non-profits or in academia, many entities have expertise in R\n\nAllows for reproducible science and workflows (sound familiar?)\n\nSupplementary material for manuscripts\nCo-workers can use entire scripts or snippets to update models and maps\n\nIntegrates with thousands of other R packages for modeling, spatial statistics, and visualization\nWell-documented and plenty of examples from a growing community of R users"
+    "text": "Why Use R for Spatial Data?\n\nOpen source (free) option to build maps, perform analyses, and convert data\n\nIf working with non-profits or in academia, many entities have expertise in R\n\nAllows for reproducible science and workflows (sound familiar?)\n\nSupplementary material for manuscripts\nCo-workers can use entire scripts or snippets to update models and maps\n\nIntegrates with thousands of other R packages for modeling, spatial statistics, and visualization\nWell-documented and plenty of examples from a continuously growing community of R users"
   },
   {
     "objectID": "spatial-data-in-R.html#basics-of-r-programming",
     "href": "spatial-data-in-R.html#basics-of-r-programming",
     "title": "4. Spatial Data in R",
     "section": "Basics of R Programming",
-    "text": "Basics of R Programming\nEach programming language has specific ways of doing things, and R is no different.\n\nData Structures\n\nVectors: One-dimensional arrays that can hold numeric, character, or logical values.\nMatrices: Two-dimensional arrays with rows and columns.\nData Frames: Tabular data structures similar to spreadsheets, consisting of rows and columns.\nLists: Collections of objects, which can be of different types.\n\n\n\nBasic Operations\n\nArithmetic operations: +, -, *, /\nLogical operations: &lt;, &gt;, ==, !=\nAssignment operators: &lt;-, =\nFunction calls: functionName(argument, argument)"
+    "text": "Basics of R Programming\nEach programming language has specific ways of doing things, and R is no different.\n\nData Structures\n\nVectors:\nOne-dimensional arrays that can hold numeric, character, or logical values.\n\n# Numeric vector\nc(1, 2, 3, 4, 5)\n\n[1] 1 2 3 4 5\n\n# Character vector\nc(\"apple\", \"banana\", \"orange\", \"grape\", \"kiwi\")\n\n[1] \"apple\"  \"banana\" \"orange\" \"grape\"  \"kiwi\"  \n\n# Logical vector\nc(TRUE, FALSE, TRUE, FALSE, TRUE)\n\n[1]  TRUE FALSE  TRUE FALSE  TRUE\n\n\n\n\nMatrices:\nTwo-dimensional arrays with rows and columns of the same data type.\n\n# Create a matrix\n# Create a 3x3 matrix with data filled by row-wise\nmatrix(1:9, nrow = 3, ncol = 3, byrow = TRUE) \n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n\n\n\n\nData Frames:\nTabular data structures, similar to spreadsheets, consisting of rows and columns.\n\n# Create a data frame\ndata.frame(\n  Name = c(\"John\", \"Alice\", \"Bob\", \"Emily\"),\n  Age = c(25, 30, 35, 28),\n  Gender = c(\"Male\", \"Female\", \"Male\", \"Female\"),\n  stringsAsFactors = FALSE\n)\n\n   Name Age Gender\n1  John  25   Male\n2 Alice  30 Female\n3   Bob  35   Male\n4 Emily  28 Female\n\n\n\n\nLists:\nCollections of objects, which can be of different data types.\n\nlist(\n  numeric_vector = c(1, 2, 3),\n  character_vector = c(\"a\", \"b\", \"c\"),\n  matrix_data = matrix(1:4, nrow = 2),\n  data_frame = data.frame(\n    Name = c(\"John\", \"Alice\"),\n    Age = c(25, 30),\n    stringsAsFactors = FALSE\n  )\n)\n\n$numeric_vector\n[1] 1 2 3\n\n$character_vector\n[1] \"a\" \"b\" \"c\"\n\n$matrix_data\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n$data_frame\n   Name Age\n1  John  25\n2 Alice  30\n\n\n\n\n\nBasic Operations\n\nArithmetic operations:\nThese run mathematical operations on two or more elements.\n\n# Addition\n10 + 5\n\n[1] 15\n\n# Subtraction\n10 - 5\n\n[1] 5\n\n# Multiplication\n10 * 5\n\n[1] 50\n\n# Division\n10 / 5\n\n[1] 2\n\n# Explonetiation\n10 ^ 5\n\n[1] 1e+05\n\n# Square root\nsqrt(10)\n\n[1] 3.162278\n\n\n\n\nLogical operations:\nThese assess relationships between two or more elements.\n\n# Less than\n10 &lt; 5\n\n[1] FALSE\n\n# Greater than\n10 &gt; 5\n\n[1] TRUE\n\n# Equal to\n10 == 5\n\n[1] FALSE\n\n# Not equal to\n10 != 5\n\n[1] TRUE\n\n\n\n\nAssignment operators:\nThese assign values or groups of values to an object that is stored in memory.\n\n# Assigning numeric\nvar_1 &lt;- 10\nvar_1\n\n[1] 10\n\n# Assigning character strings\nvar_2 &lt;- \"species\"\nvar_2\n\n[1] \"species\"\n\n# Assigning vector of strings\nvar_3 &lt;- c(\"sppA\", \"sppB\", \"sppC\")\nvar_3\n\n[1] \"sppA\" \"sppB\" \"sppC\"\n\n\n\n\nFunction calls:\nThese pass a series of arguments to a pre-defined process, called a function.\nname_of_function(argument_1 = value_1,\n                 argument_2 = value_2,\n                 argument_3 = value_3)"
   },
   {
     "objectID": "spatial-data-in-R.html#common-r-packages",
     "href": "spatial-data-in-R.html#common-r-packages",
     "title": "4. Spatial Data in R",
     "section": "Common R Packages",
-    "text": "Common R Packages"
+    "text": "Common R Packages\nPackages are collections of functions in R. They extend the functionality by providing additional tools, common workflows, and accessible datasets for various purposes.\n\nThe Tidyverse\nThe tidyverse is a collection of R packages designed for data science and statistical analysis. It provides a cohesive framework for working with data by emphasizing consistency, readability, and efficiency.\nThe core philosophy of the tidyverse centers around the principles outlined in the “tidy data” concept, where datasets are organized in a structured format with each variable forming a column, each observation forming a row, and each type of observational unit forming a table.\n\nggplot2 - flexible package for creating static and interactive visualizations.\ndplyr - provides a grammar of data manipulation, providing a consistent set of verbs.\ntidyr -\nreadr -\npurrr -\ntibble -\nstringr -\nforcats - provides a suite of useful tools that solve common problems with factors."
   },
   {
     "objectID": "spatial-data-in-R.html#common-r-spatial-packages",
     "href": "spatial-data-in-R.html#common-r-spatial-packages",
     "title": "4. Spatial Data in R",
     "section": "Common R Spatial Packages",
-    "text": "Common R Spatial Packages"
+    "text": "Common R Spatial Packages\nThere are likely over 100 R packages that can handle some aspect of spatial data, these are the most popular ones that we will explore some in the workshop. A more comprehensive list can be found here: https://cran.r-project.org/web/views/Spatial.html\nSpatial packages in R are currently in a transition period, with many historically common packages being replaced by newer, more performant varieties.\n\nFor General Spatial Data Handling\n\nsf\nterra\nstars\nspatstat\ngeometa\nncdf4\n\n\n\nFor Ecology & Natural Resources\n\nlandscapemetrics\n\n\n\nFor Mapping & Cartography"
   },
   {
     "objectID": "slides/outline.html#follow-along",
@@ -200,42 +200,42 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "GISGeography ~ All things GIS\nGIS Term Dictionary ~ Various and general GIS definitions\nGDAL ~ File formats and conversions\nPennState GEOG 486 ~ Cartography and spatial data visualization"
+    "text": "GISGeography ~ All things GIS.\nGIS Term Dictionary ~ Various and general GIS definitions.\nGDAL ~ File formats and conversions.\nPennState GEOG 486 ~ Cartography and spatial data visualization."
   },
   {
     "objectID": "resources.html#general-gis",
     "href": "resources.html#general-gis",
     "title": "Resources",
     "section": "",
-    "text": "GISGeography ~ All things GIS\nGIS Term Dictionary ~ Various and general GIS definitions\nGDAL ~ File formats and conversions\nPennState GEOG 486 ~ Cartography and spatial data visualization"
+    "text": "GISGeography ~ All things GIS.\nGIS Term Dictionary ~ Various and general GIS definitions.\nGDAL ~ File formats and conversions.\nPennState GEOG 486 ~ Cartography and spatial data visualization."
   },
   {
     "objectID": "resources.html#arcgis-pro",
     "href": "resources.html#arcgis-pro",
     "title": "Resources",
     "section": "ArcGIS Pro",
-    "text": "ArcGIS Pro\n\nEsri Spatial Statistics Resources ~ Tutorials on using spatial analysis tools in the Esri environment."
+    "text": "ArcGIS Pro\n\nEsri Spatial Statistics Resources ~ Tutorials on using spatial analysis tools in the Esri environment.\nEsri Training ~ Main education and training page for ArcGIS suite of products."
   },
   {
     "objectID": "resources.html#projections",
     "href": "resources.html#projections",
     "title": "Resources",
     "section": "Projections",
-    "text": "Projections\n\nEPSG Projections ~ Projection codes and help selecting projections"
+    "text": "Projections\n\nEPSG Projections ~ Projection codes and help selecting projections."
   },
   {
     "objectID": "resources.html#spatial-data-in-r",
     "href": "resources.html#spatial-data-in-r",
     "title": "Resources",
     "section": "Spatial Data in R",
-    "text": "Spatial Data in R\n\nMapping in ggplot with sf\nSpatial Data Science Book\nGeocomputation with R"
+    "text": "Spatial Data in R\n\nMapping in ggplot with sf ~ R-Spatial page on sf and ggplot.\nSpatial Data Science Book ~ Ebook on all things spatial data science in R.\nGeocomputation with R ~ Another ebook on geostatisitcs in R.\nR-ArcGIS Bridge ~ Overview of R-ArcGIS Bridge capabilities.\nCRAN Spatial Task View ~ Contributed packages dealing with spatial data on CRAN."
   },
   {
     "objectID": "resources.html#data-sources",
     "href": "resources.html#data-sources",
     "title": "Resources",
     "section": "Data Sources",
-    "text": "Data Sources\n\nlterdatasampler ~ R package with sample LTER data\nOpen Land Map ~ Data portal to the world’s environmental data\nEarth Map ~ Tool for quick multi-temporal environmental and climate analysis."
+    "text": "Data Sources\n\nlterdatasampler ~ R package with sample LTER data\nOpen Land Map ~ Data portal to the world’s environmental data\nEarth Map ~ Tool for quick multi-temporal environmental and climate analysis"
   },
   {
     "objectID": "index.html",
@@ -256,7 +256,7 @@
     "href": "index.html#workshop-objectives",
     "title": "Getting Started",
     "section": "Workshop Objectives",
-    "text": "Workshop Objectives\n\nTo provide an overview of GIS concepts and data types.\nTo introduce ArcGIS Pro (interface, projects, resources).\nTo demonstrate common spatial operations and tools.\nTo work through an example of programmatic GIS (Python).\nTo explore a variety of other tools and integrations (e.g., R)."
+    "text": "Workshop Objectives\nThe primary objective of this workshop is provide exposure to a variety of GIS systems available for working with spatial data for fisheries and wildlife projects.\n\nTo provide an overview of GIS concepts and data types.\nTo introduce ArcGIS Pro (interface, projects, resources).\nTo demonstrate common spatial operations and tools.\nTo work through an example of programmatic GIS (Python).\nTo explore a variety of other tools and integrations (e.g., R)."
   },
   {
     "objectID": "index.html#data-downloads",

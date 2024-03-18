@@ -14,6 +14,7 @@ subtitle: "Vector and raster packages, spatial operations, and cartography."
 
 -   Integrated development environment for R (and Python, Julia)
 -   Interface with data sources and tables, allows for code completion and syntax highlighting
+-   Allows for easy access to version control functionality, such as git and GitHub
 -   Alternatives = VSCode, Jupyter Notebook
 
 ![RStudio interface](img-rstudio-interface.jpg)
@@ -34,9 +35,11 @@ Each programming language has specific ways of doing things, and R is no differe
 
 ### Data Classes
 
+Depending on which operations you are performing, the data class will make a huge difference. These classes determine how R treats and operates on the data.
+
 #### Numeric
 
-Numeric data class represents continuous numerical values.
+Numeric data class represents continuous numerical values. E.g., temperature
 
 ```{r}
 # Print a numeric vector
@@ -45,7 +48,7 @@ c(3.14, 2.718, -10, 100.5)
 
 #### Integer
 
-Integer data class represents whole numbers without decimal points.
+Integer data class represents whole numbers without decimal points. E.g., counts
 
 ```{r}
 # Print an integer vector
@@ -54,7 +57,7 @@ c(1L, 2L, -5L, 100L)
 
 #### Character
 
-Character data class represents text strings.
+Character data class represents text strings. E..g., identification
 
 ```{r}
 # Creating a character vector
@@ -63,7 +66,7 @@ c("apple", "banana", "cherry")
 
 #### Factor
 
-Factor data class represents categorical variables with a fixed set of possible values.
+Factor data class represents categorical variables with a fixed set of possible values. E.g., land cover
 
 ```{r}
 # Creating a factor vector
@@ -74,7 +77,7 @@ factor(c("male", "female", "female", "male"),
 
 #### Logical
 
-Logical data class represents binary values indicating true or false.
+Logical data class represents binary values indicating true or false. E.g., presence/abscence
 
 ```{r}
 # Creating a logical vector
@@ -258,7 +261,9 @@ The core philosophy of the tidyverse centers around the principles outlined in t
 -   [stringr](https://stringr.tidyverse.org/) - for working with strings
 -   [forcats](https://forcats.tidyverse.org/) - for working with factors (categorical data)
 
-The tidyverse also introduced the pipe (`%>%`) which allows the chaining of functions. RStudio now has a native pipe (`|>`) that works with a variety of non-tidyverse packages. **Note: ctrl+shift+M = shortcut**
+#### Piping Functions
+
+The tidyverse also introduced the pipe (`%>%`) which allows the chaining of functions. Pipes enable expressive code where the output of a previous function becomes the first argument of the next function, enabling *chaining*. RStudio now has a native pipe (`|>`) that works with a variety of non-tidyverse packages. **Note: ctrl+shift+M = shortcut**
 
 ``` r
 # Example code with piped functions, note the native R pipe used
@@ -309,24 +314,163 @@ Spatial packages in R are currently in a transition period, with many historical
 
 ### For Getting Spatial Data
 
--   rnaturalearth - state and national boundaries across the United States and world
--   tidycensus - population, state boundaries, and other census metrics
--   tigris - TIGER/Line files (i.e., roads, highways) from U.S. Census
--   geodata - diverse source of climate, elevation, admin boundaries, land use, and more
--   elevatr - elevation rasters across the world
--   osmdata - any and all Open Street Map features, including roads, buildings, and more
--   spocc - many species occurrence repositories, including GBIF, BISON, iNaturalist, eBird
+-   [rnaturalearth](http://ropensci.github.io/rnaturalearth/) - state and national boundaries across the United States and world
+-   [tidycensus](https://walker-data.com/tidycensus/) - population, state boundaries, and other census metrics
+-   [tigris](https://github.com/walkerke/tigris) - TIGER/Line files (i.e., roads, highways) from U.S. Census
+-   [geodata](https://github.com/rspatial/geodata) - diverse source of climate, elevation, admin boundaries, land use, and more
+-   [elevatr](https://github.com/jhollist/elevatr) - elevation rasters across the world
+-   [osmdata](https://docs.ropensci.org/osmdata/) - any and all Open Street Map features, including roads, buildings, and more
+-   [spocc](https://docs.ropensci.org/spocc/) - many species occurrence repositories, including GBIF, BISON, iNaturalist, eBird
 
 ## Loading Spatial Data Into R
 
+Several R packages can load spatial data into the R environment, but we will focus on `sf` and `terra` for this workshop. Note that creating an R spatial object does not save it to a file directory automatically, it simply loads the spatial information into your current R session (in memory). For large files, it can be useful to subset to only include a specific area of interest (AOI).
+
 ### Vector Data
+
+Remember that the vector data model represents points, lines, and polygons. We can load these spatial features into our R environment with the `sf` package using the `st_read()` function. But first we use the `st_layers` function to identify all the layers we have available to us in our geopackage.
+
+``` r
+## Reference spatial layers from geopackage (n = 25)
+gpkg_dsn <- "BeaverHabitatSelection.gpkg"
+gpkg_layers <- sf::st_layers(dsn = gpkg_dsn)
+
+## Load in beaver-absent vegetation layer
+absent_veg_sf <- sf::st_read(dsn = gpkg_dsn,
+                             layer = gpkg_layers$name[3])
+```
+
+If we need to reference a **shapefile** in our directory, we can still use `st_read()` but need to specify the .shp extension in our function.
+
+``` r
+# Set the file path to your shapefile (.shp)
+path <- "path/to/your/shapefile.shp"
+
+# Read the shapefile using sf::st_read()
+shapefile <- sf::st_read(path)
+```
+
+#### Simple Feature Geometry Types
+
+The "sf" in `sf` stands for simple features, which is an open data standard by the Open Geospatial Consortium (OGC). This standard is used across many software systems (e.g., QGIS, PostGIS) and contains seven core geometry types that are supported by `sf`.
+
+-   **Single Geometries**
+    -   POINT - by using `st_point()`
+    -   LINESTRING - by using `st_linestring()`
+    -   POLYGON - by using `st_polygon()`
+-   **Multiple Geometries**
+    -   MULTIPOINT - by using `st_multipoint()`
+    -   MULTILINESTRING - by using `st_multilinestring()`
+    -   MULTIPOLYGON - by using `st_multipolygon()`
+-   **Geometry Collections**
+    -   GEOMETRYCOLLECTION - by using `st_geometrycollection()`
 
 ### Raster Data
 
+Remember that the raster data model represents the world with a continuous grid of cells, called pixels. We can load raster files (e.g., .tif) into our R environment using the `rast()` function in the `terra` package.
+
+``` r
+# Set tje file path to your raster, in this case a .tif
+raster_filepath = system.file("raster/srtm.tif")
+
+# Read the raster as a SpatRaster
+my_rast = rast(raster_filepath)
+```
+
+Every raster object has a header that can be viewed by calling the object in the console. This contains information like the dimensions and CRS of the raster.
+
+``` r
+# Call the raster object to view its header
+my_rast
+
+#> class       : SpatRaster 
+#> dimensions  : 457, 465, 1  (nrow, ncol, nlyr)
+#> resolution  : 0.000833, 0.000833  (x, y)
+#> extent      : -113, -113, 37.1, 37.5  (xmin, xmax, ymin, ymax)
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+#> source      : srtm.tif 
+#> name        : srtm 
+#> min value   : 1024 
+#> max value   : 2892
+```
+
+It is important to note that several other R packages still require raster data to be in the older format handled by the `raster` package. In this case, we can coerce our SpatRaster into the `raster` format.
+
+``` r
+# Convert to a RasterLayer
+my_RasterLayer <- raster::raster(my_rast)
+
+# Convert to a RasterStack
+my_RasterStack <- raster::stack(my_rast, my_rast)
+```
+
+## Spatial Filtering and Operations
+
+### Joining
+
+``` r
+world_coffee = left_join(world, coffee_data)
+#> Joining with `by = join_by(name_long)`
+
+class(world_coffee)
+#> [1] "sf"         "tbl_df"     "tbl"        "data.frame"
+```
+
+### Raster Calculations
+
+### Summarizing Data
+
+``` r
+world_agg4  = world |> 
+  group_by(continent) |> 
+  summarize(Pop = sum(pop, na.rm = TRUE),
+            Area = sum(area_km2),
+            N = n())
+```
+
 ## Mapping Spatial Data In R
+
+As we saw before, several packages can create maps in R so we have several to pick from. Which one you use will depend on your familiarity with the package and the purpose of the map you are creating.
+
+In general, there are two types of maps we will create in R: **(1) static**, such as those for publications, and **(2) interactive/dynamic,** such as those we can view on our computer screens and allow us to zoom in and drag to navigate around the map.
 
 ### ggplot
 
+``` r
+library(ggplot2)
+
+# Create a map using ggplot2
+ggplot() +
+  geom_sf(data = World,
+          aes(group = group),
+          fill = "lightblue",
+          color = "black") +
+  labs(title = "Map using ggplot2") +
+  theme_minimal()
+```
+
 ### tmap
 
+``` r
+library(tmap)
+
+# Create a map using tmap
+tm_shape(World) +
+  tm_polygons(col = "lightblue",
+              border.col = "black") +
+  tm_layout(title = "Map using tmap")
+```
+
 ### mapview
+
+``` r
+library(mapview)
+
+# Create a map using mapview
+mapview(World,
+        zcol = NULL,
+        col.regions = "lightblue",
+        legend = TRUE, 
+        map.types = "Esri.WorldGrayCanvas",
+        layer.name = "Map using mapview")
+```

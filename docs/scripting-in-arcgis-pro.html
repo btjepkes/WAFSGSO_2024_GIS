@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -190,7 +224,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#what-is-programmatic-gis" id="toc-what-is-programmatic-gis" class="nav-link" data-scroll-target="#what-is-programmatic-gis">What is programmatic GIS?</a></li>
+  <li><a href="#why-use-scripting-for-gis" id="toc-why-use-scripting-for-gis" class="nav-link" data-scroll-target="#why-use-scripting-for-gis">Why use scripting for GIS?</a></li>
+  <li><a href="#what-is-python" id="toc-what-is-python" class="nav-link" data-scroll-target="#what-is-python">What is Python?</a></li>
+  <li><a href="#what-is-jupyter" id="toc-what-is-jupyter" class="nav-link" data-scroll-target="#what-is-jupyter">What is Jupyter?</a></li>
+  </ul></li>
+  <li><a href="#basics-of-python-programming" id="toc-basics-of-python-programming" class="nav-link" data-scroll-target="#basics-of-python-programming">Basics of Python Programming</a>
+  <ul class="collapse">
+  <li><a href="#data-classes-and-structures" id="toc-data-classes-and-structures" class="nav-link" data-scroll-target="#data-classes-and-structures">Data Classes and Structures</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -219,8 +263,68 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="what-is-programmatic-gis" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-programmatic-gis">What is programmatic GIS?</h3>
+<p>Programmatic GIS refers to the practice of using programming languages and scripts to perform geospatial analysis, automate GIS tasks, and develop custom geospatial applications. Rather than relying solely on graphical user interfaces (GUIs) of GIS software, programmatic GIS empowers users to harness the full capabilities of GIS through code.</p>
+<p>While the GUI is a vital part of GIS and creates a venue for speedy learning, it can be very slow (esp.&nbsp;in ArcGIS Pro) and does not make sense for large scope projects or repetitive tasks.</p>
+</section>
+<section id="why-use-scripting-for-gis" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-scripting-for-gis">Why use scripting for GIS?</h3>
+<ul>
+<li>Allows for reproducible science and workflows
+<ul>
+<li>Supplementary material for manuscripts</li>
+</ul></li>
+<li>Turns repetitive tasks into simple tools</li>
+<li>Some tools are only available in the coding interface</li>
+<li>Integrates with other tools and methods
+<ul>
+<li>Modules, extensions, APIs</li>
+<li>Data wrangling and visualization</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-is-python" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-python">What is Python?</h3>
+<p>Python is a versatile and powerful programming language widely used in various fields, including web development, data science, artificial intelligence, and, importantly, GIS.</p>
+<p>While R is widely used across academia, many private industries use Python as the standard language for programmatic GIS. Python is the primary coding language used in ArcGIS Pro, along with Arcade (Esri’s proprietary language).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="what-is-jupyter" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-jupyter">What is Jupyter?</h3>
+<p>Jupyter Notebooks are interactive computing environments that allow you to combine live code, equations, visualizations, and narrative text all in one document. They support multiple programming languages, including Python, R, and Julia, making them versatile tools for various data analysis tasks.</p>
+<p>Jupyter Notebooks is installed as part of the ArcGIS Pro installation process or added later using the ArcGIS Pro package manager. Once installed, you can launch Jupyter Notebooks directly from the ArcGIS Pro interface or a Python command prompt.</p>
+</section>
+</section>
+<section id="basics-of-python-programming" class="level2">
+<h2 class="anchored" data-anchor-id="basics-of-python-programming">Basics of Python Programming</h2>
+<section id="data-classes-and-structures" class="level3">
+<h3 class="anchored" data-anchor-id="data-classes-and-structures">Data Classes and Structures</h3>
+<p>Python provides several built-in data classes and structures that allow developers to organize and manipulate data efficiently.</p>
+<section id="numbers" class="level4">
+<h4 class="anchored" data-anchor-id="numbers">Numbers</h4>
+</section>
+<section id="strings" class="level4">
+<h4 class="anchored" data-anchor-id="strings">Strings</h4>
+</section>
+<section id="lists" class="level4">
+<h4 class="anchored" data-anchor-id="lists">Lists</h4>
+</section>
+<section id="tuples" class="level4">
+<h4 class="anchored" data-anchor-id="tuples">Tuples</h4>
+</section>
+<section id="dictionaries" class="level4">
+<h4 class="anchored" data-anchor-id="dictionaries">Dictionaries</h4>
+</section>
+<section id="sets" class="level4">
+<h4 class="anchored" data-anchor-id="sets">Sets</h4>
+</section>
+<section id="boolean" class="level4">
+<h4 class="anchored" data-anchor-id="boolean">Boolean</h4>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

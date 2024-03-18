@@ -12,6 +12,11 @@ GIS = **G**eographic **I**nformation **S**ystem
 - The tool that we use to capture, store, process, analyze, and visualize spatial information.
 - Helps us understand and assess patterns in spatial locations and attributes about those locations.
 
+GISc = **G**eographic **I**nformation **Sc**ience
+
+- The study of geographic phenomena, spatial relationships, and patterns using computational techniques and spatial analysis tools.
+- Integrates principles from geography, computer science, mathematics, and other disciplines to analyze and interpret spatial data, aiding in decision-making processes across various fields.
+
 ### What are spatial data?
 
 > **First Law of Geography (Tobler's Law):**
@@ -103,6 +108,9 @@ While shapefiles are common and widely supported, there are several downsides:
 
 ### Geographic CRS
 
+Representing a 3D sphere as a 3D model
+
+- 
 
 ### Projected CRS
 

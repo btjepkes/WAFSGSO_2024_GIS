@@ -253,6 +253,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#vector-data" id="toc-vector-data" class="nav-link" data-scroll-target="#vector-data">Vector Data</a></li>
   <li><a href="#raster-data" id="toc-raster-data" class="nav-link" data-scroll-target="#raster-data">Raster Data</a></li>
   </ul></li>
+  <li><a href="#spatial-filtering-and-operations" id="toc-spatial-filtering-and-operations" class="nav-link" data-scroll-target="#spatial-filtering-and-operations">Spatial Filtering and Operations</a>
+  <ul class="collapse">
+  <li><a href="#joining" id="toc-joining" class="nav-link" data-scroll-target="#joining">Joining</a></li>
+  <li><a href="#raster-calculations" id="toc-raster-calculations" class="nav-link" data-scroll-target="#raster-calculations">Raster Calculations</a></li>
+  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link" data-scroll-target="#summarizing-data">Summarizing Data</a></li>
+  </ul></li>
   <li><a href="#mapping-spatial-data-in-r" id="toc-mapping-spatial-data-in-r" class="nav-link" data-scroll-target="#mapping-spatial-data-in-r">Mapping Spatial Data In R</a>
   <ul class="collapse">
   <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot">ggplot</a></li>
@@ -299,6 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Integrated development environment for R (and Python, Julia)</li>
 <li>Interface with data sources and tables, allows for code completion and syntax highlighting</li>
+<li>Allows for easy access to version control functionality, such as git and GitHub</li>
 <li>Alternatives = VSCode, Jupyter Notebook</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
@@ -330,9 +337,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Each programming language has specific ways of doing things, and R is no different. The following section contains a general introduction to R classes and data types.</p>
 <section id="data-classes" class="level3">
 <h3 class="anchored" data-anchor-id="data-classes">Data Classes</h3>
+<p>Depending on which operations you are performing, the data class will make a huge difference. These classes determine how R treats and operates on the data.</p>
 <section id="numeric" class="level4">
 <h4 class="anchored" data-anchor-id="numeric">Numeric</h4>
-<p>Numeric data class represents continuous numerical values.</p>
+<p>Numeric data class represents continuous numerical values. E.g., temperature</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print a numeric vector</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fl">3.14</span>, <span class="fl">2.718</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="fl">100.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -343,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="integer" class="level4">
 <h4 class="anchored" data-anchor-id="integer">Integer</h4>
-<p>Integer data class represents whole numbers without decimal points.</p>
+<p>Integer data class represents whole numbers without decimal points. E.g., counts</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print an integer vector</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>L, <span class="dv">2</span>L, <span class="sc">-</span><span class="dv">5</span>L, <span class="dv">100</span>L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -354,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="character" class="level4">
 <h4 class="anchored" data-anchor-id="character">Character</h4>
-<p>Character data class represents text strings.</p>
+<p>Character data class represents text strings. E..g., identification</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a character vector</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -365,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="factor" class="level4">
 <h4 class="anchored" data-anchor-id="factor">Factor</h4>
-<p>Factor data class represents categorical variables with a fixed set of possible values.</p>
+<p>Factor data class represents categorical variables with a fixed set of possible values. E.g., land cover</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a factor vector</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>),</span>
@@ -379,7 +387,7 @@ Levels: male female</code></pre>
 </section>
 <section id="logical" class="level4">
 <h4 class="anchored" data-anchor-id="logical">Logical</h4>
-<p>Logical data class represents binary values indicating true or false.</p>
+<p>Logical data class represents binary values indicating true or false. E.g., presence/abscence</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a logical vector</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -619,13 +627,16 @@ $data_frame
 <li><a href="https://stringr.tidyverse.org/">stringr</a> - for working with strings</li>
 <li><a href="https://forcats.tidyverse.org/">forcats</a> - for working with factors (categorical data)</li>
 </ul>
-<p>The tidyverse also introduced the pipe (<code>%&gt;%</code>) which allows the chaining of functions. RStudio now has a native pipe (<code>|&gt;</code>) that works with a variety of non-tidyverse packages. <strong>Note: ctrl+shift+M = shortcut</strong></p>
+<section id="piping-functions" class="level4">
+<h4 class="anchored" data-anchor-id="piping-functions">Piping Functions</h4>
+<p>The tidyverse also introduced the pipe (<code>%&gt;%</code>) which allows the chaining of functions. Pipes enable expressive code where the output of a previous function becomes the first argument of the next function, enabling <em>chaining</em>. RStudio now has a native pipe (<code>|&gt;</code>) that works with a variety of non-tidyverse packages. <strong>Note: ctrl+shift+M = shortcut</strong></p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example code with piped functions, note the native R pipe used</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>present_veg_area <span class="ot">&lt;-</span> present_veg_sf <span class="sc">|&gt;</span> </span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">BeaverVegCat =</span> <span class="fu">as.factor</span>(BeaverVegCat)) <span class="sc">|&gt;</span> </span>
 <span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(LandscapeID, BeaverVegCat, Survey_Year) <span class="sc">|&gt;</span> </span>
 <span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_veg_area_m2 =</span> <span class="fu">sum</span>(area_m2, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(LandscapeID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 </section>
 <section id="common-r-spatial-packages" class="level2">
@@ -672,35 +683,147 @@ $data_frame
 <section id="for-getting-spatial-data" class="level3">
 <h3 class="anchored" data-anchor-id="for-getting-spatial-data">For Getting Spatial Data</h3>
 <ul>
-<li>rnaturalearth - state and national boundaries across the United States and world</li>
-<li>tidycensus - population, state boundaries, and other census metrics</li>
-<li>tigris - TIGER/Line files (i.e., roads, highways) from U.S. Census</li>
-<li>geodata - diverse source of climate, elevation, admin boundaries, land use, and more</li>
-<li>elevatr - elevation rasters across the world</li>
-<li>osmdata - any and all Open Street Map features, including roads, buildings, and more</li>
-<li>spocc - many species occurrence repositories, including GBIF, BISON, iNaturalist, eBird</li>
+<li><a href="http://ropensci.github.io/rnaturalearth/">rnaturalearth</a> - state and national boundaries across the United States and world</li>
+<li><a href="https://walker-data.com/tidycensus/">tidycensus</a> - population, state boundaries, and other census metrics</li>
+<li><a href="https://github.com/walkerke/tigris">tigris</a> - TIGER/Line files (i.e., roads, highways) from U.S. Census</li>
+<li><a href="https://github.com/rspatial/geodata">geodata</a> - diverse source of climate, elevation, admin boundaries, land use, and more</li>
+<li><a href="https://github.com/jhollist/elevatr">elevatr</a> - elevation rasters across the world</li>
+<li><a href="https://docs.ropensci.org/osmdata/">osmdata</a> - any and all Open Street Map features, including roads, buildings, and more</li>
+<li><a href="https://docs.ropensci.org/spocc/">spocc</a> - many species occurrence repositories, including GBIF, BISON, iNaturalist, eBird</li>
 </ul>
 </section>
 </section>
 <section id="loading-spatial-data-into-r" class="level2">
 <h2 class="anchored" data-anchor-id="loading-spatial-data-into-r">Loading Spatial Data Into R</h2>
+<p>Several R packages can load spatial data into the R environment, but we will focus on <code>sf</code> and <code>terra</code> for this workshop. Note that creating an R spatial object does not save it to a file directory automatically, it simply loads the spatial information into your current R session (in memory). For large files, it can be useful to subset to only include a specific area of interest (AOI).</p>
 <section id="vector-data" class="level3">
 <h3 class="anchored" data-anchor-id="vector-data">Vector Data</h3>
+<p>Remember that the vector data model represents points, lines, and polygons. We can load these spatial features into our R environment with the <code>sf</code> package using the <code>st_read()</code> function. But first we use the <code>st_layers</code> function to identify all the layers we have available to us in our geopackage.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Reference spatial layers from geopackage (n = 25)</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>gpkg_dsn <span class="ot">&lt;-</span> <span class="st">"BeaverHabitatSelection.gpkg"</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>gpkg_layers <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_layers</span>(<span class="at">dsn =</span> gpkg_dsn)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Load in beaver-absent vegetation layer</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>absent_veg_sf <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_read</span>(<span class="at">dsn =</span> gpkg_dsn,</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">layer =</span> gpkg_layers<span class="sc">$</span>name[<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If we need to reference a <strong>shapefile</strong> in our directory, we can still use <code>st_read()</code> but need to specify the .shp extension in our function.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the file path to your shapefile (.shp)</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">"path/to/your/shapefile.shp"</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the shapefile using sf::st_read()</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>shapefile <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_read</span>(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="simple-feature-geometry-types" class="level4">
+<h4 class="anchored" data-anchor-id="simple-feature-geometry-types">Simple Feature Geometry Types</h4>
+<p>The “sf” in <code>sf</code> stands for simple features, which is an open data standard by the Open Geospatial Consortium (OGC). This standard is used across many software systems (e.g., QGIS, PostGIS) and contains seven core geometry types that are supported by <code>sf</code>.</p>
+<ul>
+<li><strong>Single Geometries</strong>
+<ul>
+<li>POINT - by using <code>st_point()</code></li>
+<li>LINESTRING - by using <code>st_linestring()</code></li>
+<li>POLYGON - by using <code>st_polygon()</code></li>
+</ul></li>
+<li><strong>Multiple Geometries</strong>
+<ul>
+<li>MULTIPOINT - by using <code>st_multipoint()</code></li>
+<li>MULTILINESTRING - by using <code>st_multilinestring()</code></li>
+<li>MULTIPOLYGON - by using <code>st_multipolygon()</code></li>
+</ul></li>
+<li><strong>Geometry Collections</strong>
+<ul>
+<li>GEOMETRYCOLLECTION - by using <code>st_geometrycollection()</code></li>
+</ul></li>
+</ul>
+</section>
 </section>
 <section id="raster-data" class="level3">
 <h3 class="anchored" data-anchor-id="raster-data">Raster Data</h3>
+<p>Remember that the raster data model represents the world with a continuous grid of cells, called pixels. We can load raster files (e.g., .tif) into our R environment using the <code>rast()</code> function in the <code>terra</code> package.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set tje file path to your raster, in this case a .tif</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>raster_filepath <span class="ot">=</span> <span class="fu">system.file</span>(<span class="st">"raster/srtm.tif"</span>)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the raster as a SpatRaster</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>my_rast <span class="ot">=</span> <span class="fu">rast</span>(raster_filepath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Every raster object has a header that can be viewed by calling the object in the console. This contains information like the dimensions and CRS of the raster.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the raster object to view its header</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>my_rast</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; class       : SpatRaster </span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; dimensions  : 457, 465, 1  (nrow, ncol, nlyr)</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; resolution  : 0.000833, 0.000833  (x, y)</span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; extent      : -113, -113, 37.1, 37.5  (xmin, xmax, ymin, ymax)</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; source      : srtm.tif </span></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; name        : srtm </span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; min value   : 1024 </span></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; max value   : 2892</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It is important to note that several other R packages still require raster data to be in the older format handled by the <code>raster</code> package. In this case, we can coerce our SpatRaster into the <code>raster</code> format.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a RasterLayer</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>my_RasterLayer <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">raster</span>(my_rast)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a RasterStack</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>my_RasterStack <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">stack</span>(my_rast, my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="spatial-filtering-and-operations" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-filtering-and-operations">Spatial Filtering and Operations</h2>
+<section id="joining" class="level3">
+<h3 class="anchored" data-anchor-id="joining">Joining</h3>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>world_coffee <span class="ot">=</span> <span class="fu">left_join</span>(world, coffee_data)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Joining with `by = join_by(name_long)`</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(world_coffee)</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "sf"         "tbl_df"     "tbl"        "data.frame"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="raster-calculations" class="level3">
+<h3 class="anchored" data-anchor-id="raster-calculations">Raster Calculations</h3>
+</section>
+<section id="summarizing-data" class="level3">
+<h3 class="anchored" data-anchor-id="summarizing-data">Summarizing Data</h3>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>world_agg4  <span class="ot">=</span> world <span class="sc">|&gt;</span> </span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span> </span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Pop =</span> <span class="fu">sum</span>(pop, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Area =</span> <span class="fu">sum</span>(area_km2),</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">N =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="mapping-spatial-data-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="mapping-spatial-data-in-r">Mapping Spatial Data In R</h2>
+<p>As we saw before, several packages can create maps in R so we have several to pick from. Which one you use will depend on your familiarity with the package and the purpose of the map you are creating.</p>
+<p>In general, there are two types of maps we will create in R: <strong>(1) static</strong>, such as those for publications, and <strong>(2) interactive/dynamic,</strong> such as those we can view on our computer screens and allow us to zoom in and drag to navigate around the map.</p>
 <section id="ggplot" class="level3">
 <h3 class="anchored" data-anchor-id="ggplot">ggplot</h3>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a map using ggplot2</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> World,</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">group =</span> group),</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">"lightblue"</span>,</span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Map using ggplot2"</span>) <span class="sc">+</span></span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="tmap" class="level3">
 <h3 class="anchored" data-anchor-id="tmap">tmap</h3>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a map using tmap</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(World) <span class="sc">+</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">col =</span> <span class="st">"lightblue"</span>,</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">border.col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">title =</span> <span class="st">"Map using tmap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="mapview" class="level3">
 <h3 class="anchored" data-anchor-id="mapview">mapview</h3>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mapview)</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a map using mapview</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mapview</span>(World,</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">zcol =</span> <span class="cn">NULL</span>,</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.regions =</span> <span class="st">"lightblue"</span>,</span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">map.types =</span> <span class="st">"Esri.WorldGrayCanvas"</span>,</span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">layer.name =</span> <span class="st">"Map using mapview"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

@@ -4,3 +4,55 @@ subtitle: "Jupyter, ArcPy, visualization, and workflows."
 ---
 
 ## Introduction
+
+### What is programmatic GIS?
+
+Programmatic GIS refers to the practice of using programming languages and scripts to perform geospatial analysis, automate GIS tasks, and develop custom geospatial applications. Rather than relying solely on graphical user interfaces (GUIs) of GIS software, programmatic GIS empowers users to harness the full capabilities of GIS through code.
+
+While the GUI is a vital part of GIS and creates a venue for speedy learning, it can be very slow (esp. in ArcGIS Pro) and does not make sense for large scope projects or repetitive tasks.
+
+### Why use scripting for GIS?
+
+-   Allows for reproducible science and workflows
+    -   Supplementary material for manuscripts
+-   Turns repetitive tasks into simple tools
+-   Some tools are only available in the coding interface
+-   Integrates with other tools and methods
+    -   Modules, extensions, APIs
+    -   Data wrangling and visualization
+
+### What is Python?
+
+Python is a versatile and powerful programming language widely used in various fields, including web development, data science, artificial intelligence, and, importantly, GIS.
+
+While R is widely used across academia, many private industries use Python as the standard language for programmatic GIS. Python is the primary coding language used in ArcGIS Pro, along with Arcade (Esri's proprietary language).
+
+``` python
+import arcpy
+```
+
+### What is Jupyter?
+
+Jupyter Notebooks are interactive computing environments that allow you to combine live code, equations, visualizations, and narrative text all in one document. They support multiple programming languages, including Python, R, and Julia, making them versatile tools for various data analysis tasks.
+
+Jupyter Notebooks is installed as part of the ArcGIS Pro installation process or added later using the ArcGIS Pro package manager. Once installed, you can launch Jupyter Notebooks directly from the ArcGIS Pro interface or a Python command prompt.
+
+## Basics of Python Programming
+
+### Data Classes and Structures
+
+Python provides several built-in data classes and structures that allow developers to organize and manipulate data efficiently.
+
+#### Numbers
+
+#### Strings
+
+#### Lists
+
+#### Tuples
+
+#### Dictionaries
+
+#### Sets
+
+#### Boolean

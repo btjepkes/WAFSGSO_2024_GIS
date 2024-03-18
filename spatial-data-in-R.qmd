@@ -1,6 +1,6 @@
 ---
 title: "4. Spatial Data in R"
-subtitle: "Vector and raster packages, spatial operations, cartography."
+subtitle: "Vector and raster packages, spatial operations, and cartography."
 ---
 
 ## What is R and RStudio?
@@ -30,11 +30,61 @@ subtitle: "Vector and raster packages, spatial operations, cartography."
 
 ## Basics of R Programming
 
-Each programming language has specific ways of doing things, and R is no different.
+Each programming language has specific ways of doing things, and R is no different. The following section contains a general introduction to R classes and data types.
 
-### Data Types
+### Data Classes
 
-### Data Structures
+#### Numeric
+
+Numeric data class represents continuous numerical values.
+
+```{r}
+# Print a numeric vector
+c(3.14, 2.718, -10, 100.5)
+```
+
+#### Integer
+
+Integer data class represents whole numbers without decimal points.
+
+```{r}
+# Print an integer vector
+c(1L, 2L, -5L, 100L)
+```
+
+#### Character
+
+Character data class represents text strings.
+
+```{r}
+# Creating a character vector
+c("apple", "banana", "cherry")
+```
+
+#### Factor
+
+Factor data class represents categorical variables with a fixed set of possible values.
+
+```{r}
+# Creating a factor vector
+factor(c("male", "female", "female", "male"),
+       # specify levels
+       levels = c("male", "female"))
+```
+
+#### Logical
+
+Logical data class represents binary values indicating true or false.
+
+```{r}
+# Creating a logical vector
+c(TRUE, FALSE, TRUE, TRUE)
+
+# Specify binary as logical
+as.logical(c(1,1,0,1,0))
+```
+
+### Data Types/Structures
 
 #### Vectors:
 
@@ -234,24 +284,28 @@ Spatial packages in R are currently in a transition period, with many historical
 -   [stars](https://r-spatial.github.io/stars/) - for working with spatial time series (vector and raster data cubes)
 -   [spatstat](https://spatstat.org/) - for spatial statistics, focusing on spatial point patterns
 -   [sfnetworks](https://luukvdmeer.github.io/sfnetworks/) - for analysis of geospatial networks
--   geometa -
+-   [geometa](https://github.com/eblondel/geometa/wiki) - for writing and reading OGC/ISO geographic metadata in R
 -   [ncdf4](https://cirrus.ucsd.edu/~pierce/ncdf/) - for reading, writing, and manipulating netCDF files
+-   [mapedit](https://r-spatial.org/r/2017/01/30/mapedit_intro.html) - for drawing, editing, and deleting spatial data interactively in R
 
 ### For Ecology & Natural Resources
 
--   rgbif
--   landscapemetrics
--   
+-   [rgbif](https://github.com/ropensci/rgbif) - interface with the GBIF to download and view species occurrence records from database
+-   [landscapemetrics](https://r-spatialecology.github.io/landscapemetrics/) - for landscape ecology metric calculations (FRAGSTATS for R)
+-   [spatialEco](https://github.com/jeffreyevans/spatialEco) - for spatial analysis and modelling of ecological systems
+-   [ade4](https://adeverse.github.io/ade4/) - some capabilities for spatial multivariate analysis methods for ecology
+-   [adehabitatHR](https://cran.r-project.org/web/packages/adehabitatHR/index.html) - a collection of tools for analyzing wildlife habitat selection and spatial ecology
+-   [dismo](https://rspatial.org/raster/sdm/) - tools for species distribution modeling and ecological niche modeling
 
 ### For Mapping & Cartography
 
--   ggplot2
--   tmap
--   mapsf
--   cartography
--   leaflet
--   mapview
--   plotly + ggplot2
+-   [ggplot2](https://ggplot2.tidyverse.org/) - creating static maps in the grammar of graphics style <i style= "color: green;" class="bi bi-check2-circle"></i>
+-   [tmap](https://r-tmap.github.io/tmap/) - simple thematic maps, including both static and interactive map options <i style= "color: green;" class="bi bi-check2-circle"></i>
+-   [mapsf](https://riatelab.github.io/mapsf/) - simple map creation using sf objects in the ggplot2 system, successor of `cartography`
+-   [leaflet](https://rstudio.github.io/leaflet/index.html) - for creating interactive web maps, including popups and basemaps
+-   [mapview](https://r-spatial.github.io/mapview/) - provides an interactive viewer for exploring spatial data <i style= "color: green;" class="bi bi-check2-circle"></i>
+-   [plotly](https://plotly.com/r/getting-started/) - turns maps built with ggplot2 into interactive charts
+-   [ggspatial](https://paleolimbot.github.io/ggspatial/index.html) - adds spatial geometries and annotations to ggplot2
 
 ### For Getting Spatial Data
 

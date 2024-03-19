@@ -5,11 +5,65 @@ subtitle: "Interface, catalog, adding data, symbology, layouts, tools."
 
 ## Introduction
 
+ArcGIS Pro is a comprehensive GIS application that enables users to create, manage, analyze, and share spatial data in both 2D and 3D environments. It serves as a central hub for all your GIS work, providing tools for data visualization, geoprocessing, cartography, and more.
 
-### Geodatabases & Catalog
+Whether you're a GIS professional, a researcher, or a student, ArcGIS Pro offers a versatile platform to explore, analyze, and communicate spatial information.
+
+### AGOL
+
+One of the many benefits of ArcGIS Pro is that is provides integrations with other Esri products, such as ArcGIS Online.
+
+![](img-agol-apps.jpg)
+
+
+## Licensing
+
+There are 3 types or categories of ArcGIS Pro licenses available. In addition to the base installation of Pro, there are also Extensions that can provided extended functionality.
+
+
+### ArcGIS Pro Single Use License:
+
+- A Single Use License is assigned to a single machine and is tied to a specific ArcGIS Pro installation.
+- It's ideal for individual users or small teams who require exclusive access to ArcGIS Pro on a dedicated workstation.
+- This license type is perpetual, meaning it does not expire, but it is only valid for the version of ArcGIS Pro it is assigned to.
+
+### ArcGIS Pro Named User License:
+
+- A Named User License is assigned to individual users and requires authentication through ArcGIS Online or ArcGIS Enterprise.
+- Named User Licenses are typically associated with an organization's subscription to ArcGIS Online or ArcGIS Enterprise.
+- Users can access ArcGIS Pro from any machine connected to the internet, providing flexibility and mobility.
+- This license type allows for easy collaboration, sharing, and access to additional ArcGIS Online services and content.
+
+### ArcGIS Pro Concurrent Use License:
+
+- A Concurrent Use License allows multiple users to share a pool of licenses hosted on a license manager.
+- Users can access ArcGIS Pro from any machine connected to the network where the license manager is installed.
+- The number of concurrent licenses available is determined by the license administrator and can be adjusted based on usage requirements.
+- This license type is suitable for organizations with a large number of users who may not require full-time access to ArcGIS Pro.
+
+### ArcGIS Pro Extensions:
+
+- ArcGIS Pro offers various extensions that provide additional functionality beyond the core software.
+- Examples of extensions include Spatial Analyst, 3D Analyst, Geostatistical Analyst, and Image Analyst.
+- Extensions can be purchased separately and added to existing ArcGIS Pro licenses as needed, allowing users to customize their workflows based on specific requirements.
+
+## Interface
+
+### Catalog
 
 ![ArcGIS Catalog Structure.](img-ArcCatalog.jpg)
 
+### Geodatabase Structure
+
 ![Geodatabase structure.](img-geodatabase.jpg)
 
+### Geoprocessing Tools
 
+![Geoprocessing Pane](img-geoprocessing-pane.png)
+
+
+![Geoprocessing Pane](img-geoprocessing-tools.png)
+
+### Cartography & Map Layouts
+
+![ArcGIS Pro Layout](img-pro-layout.jpg)

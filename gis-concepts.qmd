@@ -7,26 +7,30 @@ subtitle: "Data types, file formats, projections, software, and tools."
 
 ### What is GIS?
 
-GIS = **G**eographic **I**nformation **S**ystem
+#### GIS = **Geographic Information System**
 
 - The tool that we use to capture, store, process, analyze, and visualize spatial information.
 - Helps us understand and assess patterns in spatial locations and attributes about those locations.
 
-GISc = **G**eographic **I**nformation **Sc**ience
+#### GISc = **Geographic Information Science**
 
 - The study of geographic phenomena, spatial relationships, and patterns using computational techniques and spatial analysis tools.
 - Integrates principles from geography, computer science, mathematics, and other disciplines to analyze and interpret spatial data, aiding in decision-making processes across various fields.
 
-### What are spatial data?
 
-> **First Law of Geography (Tobler's Law):**
-> "Everything is related to everything else, but near things are more related than distant things."
+### Why Learn GIS for Natural Resources?
 
-- 
+- **Spatial Analysis:** GIS enables spatial analysis techniques that help in understanding the spatial patterns and relationships within natural resource datasets. Analyzing habitat suitability, identifying biodiversity hotspots, assessing landscape connectivity, and evaluating environmental impacts.
 
-### Why Learn GIS?
+- **Resource Management:** GIS facilitates the management of natural resources by providing tools for inventory, monitoring, and planning. It allows for the integration of various data sources, such as satellite imagery, field surveys, and remote sensing data, to assess the condition of ecosystems, track changes over time, and develop sustainable management strategies.
+
+- **Decision Support:** GIS serves as a decision support tool for natural resource management by enabling stakeholders to visualize complex spatial data and model different scenarios. It helps in prioritizing conservation efforts, allocating resources efficiently, and evaluating the potential impacts of alternative management actions.
+
+- **JOBS!**
 
 ## Spatial Data Types
+
+### What are spatial data?
 
 How the surface of the Earth is represented digitally.
 
@@ -35,6 +39,7 @@ How the surface of the Earth is represented digitally.
   - Vector
   - Raster
   - Networks
+  - LiDAR (point clouds)
 - Many file formats / extensions for each
   - Examples: .tiff, .shp, .gdb
 
@@ -53,6 +58,10 @@ Represents space as points, lines, and polygons.
 More than **80 different vector file types** available across software and systems!
 
 - NetCDF
+- Shapefile
+- GeoJSON
+- Esri Geodatabase Feature Class
+- KML
 
 ### Raster
 
@@ -62,7 +71,11 @@ Represents space as a grid of pixels or cells.
 
 #### Common Raster Data Types:
 
--
+- Imagine IMG
+- GeoTIFF & Cloud Optimized GeoTIFF
+- netCDG
+- CRF (Cloud raster format)
+- BAG (Bathymetric Attributed Grid)
 
 ### Data Type Considerations
 
@@ -70,13 +83,29 @@ Represents space as a grid of pixels or cells.
 
 Spatial data files do their best to represent the world. Accuracy needs will depend on each use case. Mapping an entire state vs. a single forest stand. Each sensor and GPS receiver will vary.
 
-Raster Advantages:
+#### Raster Advantages:
 
-Raster Disadvantages:
+- **Continuous Representation:** Raster data models are well-suited for representing continuous phenomena, such as elevation, temperature, and precipitation.
+- **Efficient Storage:** Raster datasets can be more compactly stored than vector datasets, especially for large continuous areas.
+- **Analytical Capabilities:** Raster data supports various spatial analysis techniques, such as surface analysis, proximity analysis, and interpolation, enabling detailed quantitative analysis
 
-Vector Advantages:
+#### Raster Disadvantages:
 
-Vector Disadvantages:
+- **Loss of Detail:** Raster datasets may lose detail when representing complex geometries or sharp boundaries, leading to generalization or smoothing of features.
+- **Large File Sizes:** High-resolution raster datasets can result in large file sizes, which may require significant storage space and computing resources for processing and analysis.
+- **Limited Attribute Information:** Raster data typically stores attribute information at the pixel level, which may limit the types of attribute analysis that can be performed
+
+#### Vector Advantages:
+
+- **Precise Representation:** Vector data models accurately represent discrete features with well-defined boundaries, making them suitable for representing infrastructure, boundaries, and administrative units.
+- **Compact Storage:** Vector datasets can efficiently store attribute information associated with spatial features, enabling detailed attribute analysis and queries.
+- **Topology Support:** Vector data models support topological relationships between features, such as connectivity and adjacency, which facilitate spatial analysis and data integrity checks.
+- **Flexible Editing:** Vector data can be easily edited and updated, allowing for precise modifications to individual features or attributes without affecting neighboring features.
+
+#### Vector Disadvantages:
+
+- **Complex Geometries:** Vector data may struggle to represent continuous phenomena or complex geometries accurately, leading to oversimplification or data loss.
+- **Increased Storage Requirements:** Vector datasets can require more storage space compared to raster datasets, especially for datasets with complex geometries or extensive attribute information.
 
 ### A Note on Shapefiles
 
@@ -92,13 +121,10 @@ While shapefiles are common and widely supported, there are several downsides:
 #### Alternatives for Consideration
 
 - **OGC GeoPackage** <i style= "color: green;" class="bi bi-check2-circle"></i>
-  - Leading replacement for .shp
 - **GeoJSON**
-  - Very good for web mapping and transfer
 - **OGC GML**
 - **OGC KML**
 - **Esri GeoDatabase**
-  - Suitable if operating within only ESRI products
 
 ## Coordinate Reference Systems (CRS)
 
@@ -110,7 +136,9 @@ While shapefiles are common and widely supported, there are several downsides:
 
 Representing a 3D sphere as a 3D model
 
-- 
+- Geographic coordinate reference systems identify any location on the Earth’s surface using two values — longitude and latitude
+  - **Longitude** = angular distance East-West from the Prime Meridian plane
+  - **Latitude** = angular distance North or South of the equatorial plane
 
 ### Projected CRS
 
@@ -135,15 +163,54 @@ Representing a 3D sphere on a 2D surface
 
 ::::
 
-
+Explore more projection info here: https://www.geo-projections.com/
 
 ### CRS Nomenclature
 
-- English Name
-- WKT ~ Well Known Text
-- WKID ~ Well Known Identifier (ESRI)
-- EPSG
-- PROJ.4
+Coordinate reference systems have various names or ways of referring to them in GIS software. This is especially prominent in programmatic GIS where a GUI dropdown menu of projections is not an option. See more here: [https://epsg.io/](https://epsg.io/).
+
+#### English Name
+
+```r
+North American Datum 1983
+```
+
+#### WKT ~ Well Known Text
+
+```r
+GEOGCS["NAD83",
+    DATUM["North_American_Datum_1983",
+        SPHEROID["GRS 1980",6378137,298.257222101],
+        TOWGS84[0,0,0,0,0,0,0]],
+    PRIMEM["Greenwich",0,
+        AUTHORITY["EPSG","8901"]],
+    UNIT["degree",0.0174532925199433,
+        AUTHORITY["EPSG","9122"]],
+    AUTHORITY["EPSG","4269"]]
+```
+
+#### WKID ~ Well Known Identifier (ESRI)
+
+```r
+GEOGCS["GCS_North_American_1983",
+    DATUM["D_North_American_1983",
+        SPHEROID["GRS_1980",6378137.0,298.257222101]],
+    PRIMEM["Greenwich",0.0],
+    UNIT["Degree",0.0174532925199433]]
+```
+
+#### EPSG
+
+```r
+4269
+```
+
+#### PROJ.4
+
+```r
++proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs +type=crs
+```
+
 
 ## Software & Programs
 
@@ -177,6 +244,20 @@ Many different types and levels of GIS software available. See more examples [he
 
 ### GPS Recievers
 
+GPS receivers range in both price and accuracy.
+
+#### Recreational Grade
+
+Recreational grade GPS receivers are sold at most box stores and at many sporting goods and camping stores. They are also available widely through Internet retailers. These units are the least expensive grade and are generally accurate to within +/- 25 feet (7.6 meters). These receivers run in the $100 to $600 range and are the type most often purchased by the general public.
+
+#### Mapping Grade
+
+Mapping grade GPS receivers are generally sold by “high end” and licensed resellers. These GPS receivers are typically less user-friendly than the recreational GPS, and they cost significantly more. Mapping grade GPS are more accurate than recreational units, commonly to within a meter (~3 feet).
+
+#### Survey Grade
+
+Survey grade GPS receivers are the most accurate and the most expensive. They are accurate to within a centimeter and can cost in the tens of thousands of dollars.
+
 
 ### Mobile Applications
 
@@ -199,59 +280,92 @@ Can be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the int
 
 ## Spatial Operations
 
+Spatial operations in GIS refer to a set of analytical techniques and functions used to manipulate, analyze, and derive new spatial information from existing geographic datasets. These operations involve the manipulation of spatial data to answer specific questions, identify patterns, and support decision-making processes.
+
+**Tobler's First Law of Geography**, often summarized as "Everything is related to everything else, but near things are more related than distant things," has profound implications for spatial analysis and GIS operations. The law essentially suggests that spatial relationships are influenced by distance, with closer features or locations being more strongly related or similar than those farther apart.
+
+Many GIS operations and spatial analysis techniques are inherently based on Tobler's First Law of Geography, as they leverage proximity and spatial relationships to derive meaningful insights and make informed decisions.
+
+
 ### Extraction
 
-- Clip
-- Select
-- Split
-- Split By Attributes
+#### Clip
+
+This operation involves extracting a portion of one layer based on the extent of another layer. It retains only those features from the input layer that fall within the spatial extent of the clip layer.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/help/analysis/raster-functions/GUID-CB622424-46AD-4688-BCA1-8AB0C6562E55-web.png)
+
+#### Select
+
+Selecting features involves choosing specific geographic features from a layer based on certain criteria, such as attribute values or spatial relationships.
+
+#### Split
+
+Splitting divides one or more input features into separate features based on a specified line or polygon boundary.
+
+#### Split By Attributes
+
+This operation divides features based on attribute values. It creates separate output datasets for each unique attribute value.
 
 ### Overlay
 
-Tools to overlay multiple feature classes to combine, erase, modify, or update spatial features, resulting in a new feature class. New information is created when overlaying one set of features with another. (Esri)
+#### Erase
 
-- Erase
-- Identity
-- Intersect
-- Spatial Join
-- Union
-- Update
+Erase removes portions of one layer that overlap with another layer, leaving only the areas where the two layers do not overlap.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-40F0B845-07D7-4269-8E32-A5977821ADA2-web.gif)
+
+#### Identity
+
+Identity produces a new layer that preserves the geometries of both input layers. It assigns attributes from both layers to the output, and where they overlap, it retains the attributes of both layers.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-049EC20F-8846-489D-B161-00D99AE78946-web.gif)
+
+#### Intersect
+
+Intersect creates a new layer that contains only the areas where features from input layers overlap. The output retains the attributes from both input layers.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-93B78EC9-4024-43AC-87BF-765FAD873B00-web.gif)
+
+#### Spatial Join
+
+Spatial Join combines attributes from two layers based on their spatial relationship. It creates a new layer with attributes from both input layers, using a specified spatial relationship (e.g., intersect, contain, within).
+
+#### Union
+
+Union combines the geometries and attributes of two or more input layers to create a new layer that represents the geometric and attribute combination of all input layers.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-5F802619-B3DC-4D01-B58F-A2B90CD33647-web.gif)
+
+#### Update
+
+Update operation involves modifying attributes or geometries of features in a layer based on the attributes or geometries of another layer.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-E1E14FD9-5487-4E02-9230-1F43D51864F8-web.gif)
 
 ### Proximity
 
+#### Near
+
+Near identifies features in one layer that are closest to features in another layer. It calculates distances between features and reports the nearest feature(s) based on specified criteria.
+
+#### Buffer
+
+Buffering is a spatial operation in GIS that involves creating a zone or area around a geographic feature, typically represented as a point, line, or polygon. This zone is defined by a specified distance or buffer radius.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-267CF0D1-DB92-456F-A8FE-F819981F5467-web.png)
 
 ### Other
-re-project, dissolve.
 
+#### Re-project
 
-## Types of Maps
+Reprojection involves transforming geographic data from one coordinate system to another, typically to match the coordinate system of other data or to facilitate analysis.
 
-- [https://www.e-education.psu.edu/geog486/](https://www.e-education.psu.edu/geog486/)
+#### Dissolve
 
-### Reference Maps
+Dissolve combines adjacent polygons or features that share a common attribute value into a single feature. It merges geometries and aggregates attributes based on the specified dissolve field.
 
-Used for navigation or to identify points of interest.
+#### Summarize Within
 
-### Presentation Maps
-
-Used in news articles and in journals.
-
-### Statistical Maps
-
-
-#### Choropleth
-
-Data need to be normalized! Animals per unit area (density) or Attribute per individual (rate)
-
-#### Dot Density
-
-#### Proportional Symbol
-
-#### Cartogram
-
-#### Flow Map
-
-#### Density Map
-
-
+Summarize Within is a spatial operation in GIS that involves aggregating data from one layer based on the spatial relationship with features from another layer. It calculates statistics or aggregates attributes of features within the boundaries of other features.
 

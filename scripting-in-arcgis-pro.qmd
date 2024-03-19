@@ -37,6 +37,8 @@ Jupyter Notebooks are interactive computing environments that allow you to combi
 
 Jupyter Notebooks is installed as part of the ArcGIS Pro installation process or added later using the ArcGIS Pro package manager. Once installed, you can launch Jupyter Notebooks directly from the ArcGIS Pro interface or a Python command prompt.
 
+![Jupyter Notebook within ArcGIS Pro](img-jupyter-nb.png)
+
 ## Basics of Python Programming
 
 ### Data Classes and Structures
@@ -45,14 +47,149 @@ Python provides several built-in data classes and structures that allow develope
 
 #### Numbers
 
+**Integer (int)**: Integers represent whole numbers without any decimal point.
+
+**Float (float)**: Floats represent real numbers with a decimal point.
+
+``` python
+# Example of integers
+x = 5
+y = -10
+z = 0
+
+print(x, y, z)  # Output: 5 -10 0
+
+
+# Example of floats
+a = 3.14
+b = -0.5
+c = 2.0
+
+print(a, b, c)  # Output: 3.14 -0.5 2.0
+```
+
 #### Strings
+
+**String (str)**: Strings are sequences of characters, enclosed within single quotes (' ') or double quotes (" ").
+
+``` python
+# Example of strings
+name = "Alice"
+message = 'Hello, world!'
+
+print(name)     # Output: Alice
+print(message)  # Output: Hello, world!
+```
+
+#### Boolean
+
+**Boolean (bool)**: Booleans represent truth values, either True or False.
+
+``` python
+# Example of booleans
+is_valid = True
+is_greater = False
+
+print(is_valid)    # Output: True
+print(is_greater)  # Output: False
+```
 
 #### Lists
 
+**List**: Lists are ordered collections of items, which can be of any data type. Lists are mutable, meaning they can be changed after creation.
+
+``` python
+# Example of lists
+numbers = [1, 2, 3, 4, 5]
+fruits = ['apple', 'banana', 'orange']
+
+print(numbers)  # Output: [1, 2, 3, 4, 5]
+print(fruits)   # Output: ['apple', 'banana', 'orange']
+```
+
 #### Tuples
+
+**Tuple**: Tuples are similar to lists, but they are immutable once created.
+
+``` python
+# Example of tuples
+point = (10, 20)
+colors = ('red', 'green', 'blue')
+
+print(point)   # Output: (10, 20)
+print(colors)  # Output: ('red', 'green', 'blue')
+```
 
 #### Dictionaries
 
+**Dictionary (dict)**: Dictionaries are unordered collections of key-value pairs. Each key must be unique.
+
+``` python
+# Example of dictionaries
+person = {'name': 'Alice', 'age': 30, 'city': 'New York'}
+grades = {'math': 90, 'science': 85, 'history': 88}
+
+print(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York'}
+print(grades)  # Output: {'math': 90, 'science': 85, 'history': 88}
+```
+
 #### Sets
 
-#### Boolean
+**Set**: Sets are unordered collections of unique elements. They are useful for mathematical operations like union, intersection, etc.
+
+``` python
+# Example of sets
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+print(set1)  # Output: {1, 2, 3, 4, 5}
+print(set2)  # Output: {4, 5, 6, 7, 8}
+```
+
+## Common Geospatial Packages
+
+Python has both base and extended functionality where the latter is provided by external packages (i.e., modules) that can be installed, and then imported into our workspace.
+
+## Python in ArcGIS
+
+`arcpy` is the main python module to interact with the ArcGIS ecosystem and will be the focus of our exploration today.
+
+``` python
+import arcpy
+
+roads = "c:/base/data.gdb/roads"
+output = "c:/base/data.gdb/roads_Buffer"
+
+# Run Buffer using the variables set above and pass the remaining 
+# parameters in as strings
+arcpy.Buffer_analysis(roads, output, "distance", "FULL", "ROUND", "NONE")
+```
+
+### Best Practices and Tips:
+
+#### 1. Writing Efficient and Readable arcpy Scripts:
+
+-   Use meaningful variable names and comments to enhance code readability.
+-   Break down complex tasks into smaller, modular functions.
+-   Optimize arcpy scripts by minimizing unnecessary loops and operations.
+
+#### 2. Managing Memory and Resources:
+
+-   Release resources and locks on datasets using `del` statements and `arcpy.ClearWorkspaceCache_management()`.
+-   Use context managers (`with` statements) for managing arcpy environments and cursors to ensure proper resource cleanup.
+
+#### 3. Documenting Code and Workflows:
+
+-   Document arcpy scripts with clear and concise comments explaining the purpose of each section and important steps.
+-   Maintain separate documentation files or READMEs detailing script usage, input/output data, and dependencies.
+
+#### 4. Debugging and Troubleshooting arcpy Scripts:
+
+-   Use print statements and logging to debug arcpy scripts.
+-   Handle errors gracefully using try-except blocks to prevent script failures.
+-   Utilize arcpy's error handling mechanisms to identify and resolve issues.
+
+#### 5. Version Control and Collaboration:
+
+-   Use version control systems (e.g., Git) to track changes and collaborate with team members on arcpy projects.
+-   Establish coding standards and conventions for consistent arcpy script development within the team.

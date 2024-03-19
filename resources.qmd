@@ -1,5 +1,6 @@
 ---
 title: "Resources"
+subtitle: "Websites, ebooks, and more to help learn GIS."
 ---
 
 ## General GIS

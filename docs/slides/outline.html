@@ -420,11 +420,12 @@ Wesley Fitzsimmons
 <section id="follow-along" class="slide level2" data-background-color="black">
 <h2>Follow Along…</h2>
 <div class="footer">
-
+<p>https://btjepkes.github.io/WAFSGSO_2024_GIS/</p>
 </div>
-<p>Add in link to course documents/site.</p>
-
-<img data-src="img-rivers.webp" class="r-stretch"></section>
+<div style="margin-top: 200px; font-size: 2em; color: white;">
+<p>https://tinyurl.com/yw9p59s2</p>
+</div>
+</section>
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
 <div class="footer">
@@ -498,10 +499,24 @@ Wesley Fitzsimmons
 <div class="footer">
 
 </div>
+<h4 id="gis-geographic-information-system">GIS = <strong>Geographic Information System</strong></h4>
 <ul>
-<li>Started simply as a way to store and query <strong>spatial data</strong></li>
-<li>Capable ecosystem of tools &amp; techniques</li>
+<li>The tool that we use to capture, store, process, analyze, and visualize spatial information.</li>
+<li>Helps us understand and assess patterns in spatial locations and attributes about those locations.</li>
 </ul>
+<p>This is the tool in the toolbox.</p>
+</section>
+<section id="what-is-gis-1" class="slide level2">
+<h2>What is GIS?</h2>
+<div class="footer">
+
+</div>
+<h4 id="gisc-geographic-information-science">GISc = <strong>Geographic Information Science</strong></h4>
+<ul>
+<li>The study of geographic phenomena, spatial relationships, and patterns using computational techniques and spatial analysis tools.</li>
+<li>Integrates principles from geography, computer science, mathematics, and other disciplines to analyze and interpret spatial data, aiding in decision-making processes across various fields.</li>
+</ul>
+<p>This is the science that guides the tool.</p>
 </section>
 <section id="why-learn-gis" class="slide level2">
 <h2>Why Learn GIS?</h2>
@@ -509,52 +524,114 @@ Wesley Fitzsimmons
 
 </div>
 <ul>
-<li>Everywhere is somewhere</li>
-<li>Adds another dimension to data</li>
-<li>JOBS!</li>
+<li><strong>Spatial Analysis:</strong> GIS enables spatial analysis techniques that help in understanding the spatial patterns and relationships within natural resource datasets.</li>
 </ul>
+<p>E.g., Analyzing habitat suitability, identifying biodiversity hotspots, assessing landscape connectivity, and evaluating environmental impacts.</p>
+</section>
+<section id="why-learn-gis-1" class="slide level2">
+<h2>Why Learn GIS?</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li><strong>Resource Management:</strong> GIS facilitates the management of natural resources by providing tools for inventory, monitoring, and planning.</li>
+</ul>
+<p>E.g., The integration of various data sources, such as satellite imagery, field surveys, and remote sensing data, to assess the condition of ecosystems, track changes over time, and develop sustainable management strategies.</p>
+</section>
+<section id="why-learn-gis-2" class="slide level2">
+<h2>Why Learn GIS?</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li><strong>Decision Support:</strong> GIS serves as a decision support tool for natural resource management by enabling stakeholders to visualize complex spatial data and model different scenarios.</li>
+</ul>
+<p>E.g., Prioritizing conservation efforts, allocating resources efficiently, and evaluating the potential impacts of alternative management actions.</p>
+</section>
+<section id="why-learn-gis-3" class="slide level2">
+<h2>Why Learn GIS?</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li><strong>JOBS!</strong></li>
+</ul>
+<p>E.g., Research biologists, land managers, GIS specialists, conservation planners</p>
+<p><br><br></p>
+<p><strong><em>Note: GIS courses are widely accepted for professional certifications, like CWB</em></strong></p>
 </section>
 <section id="spatial-data-types" class="slide level2">
 <h2>Spatial Data Types</h2>
+<div class="footer">
+
+</div>
 <p>How the surface of the Earth is represented digitally</p>
 <ul>
-<li><p>Spatial coordinates = X, Y, sometimes Z</p></li>
-<li><p>Types of spatial data models (types)</p>
+<li>Spatial coordinates = X, Y, sometimes Z</li>
+<li>Types of spatial data models (types)
 <ul>
-<li><p>Vector</p></li>
-<li><p>Raster</p></li>
-<li><p>Networks</p></li>
+<li>Vector</li>
+<li>Raster</li>
+<li>Networks</li>
+<li>LiDAR (point clouds)</li>
 </ul></li>
-<li><p>Many file formats / extensions for each</p>
-<ul>
-<li>Examples: .tiff, .shp, .gdb</li>
-</ul></li>
+<li>Many file formats / extensions (e.g., .tif, .shp, .gdb)</li>
 </ul>
 </section>
 <section id="vector-data" class="slide level2">
 <h2>Vector Data</h2>
+<div class="footer">
+
+</div>
+<p>Represents space as points, lines, and polygons.</p>
+<ul>
+<li><strong>Points</strong> – single vertex</li>
+<li><strong>Lines</strong> – two or more vertices</li>
+<li><strong>Polygon</strong> – three or more vertices with the last vertex equal to the first</li>
+</ul>
+</section>
+<section id="vector-data-1" class="slide level2">
+<h2>Vector Data</h2>
+<div class="footer">
+
+</div>
 <p>Represents space as points, lines, and polygons</p>
 
 <img data-src="img-vector-data-model-carto.jpeg" class="r-stretch quarto-figure-center"><p class="caption">Source: Carto</p></section>
-<section id="vector-file-formats" class="slide level2">
-<h2>Vector File Formats</h2>
+<section id="common-vector-data-types" class="slide level2">
+<h2>Common Vector Data Types:</h2>
 <div class="footer">
 
 </div>
+<p>More than <strong>80 different vector file types</strong> available across software and systems!</p>
+<ul>
+<li>NetCDF</li>
+<li>Shapefile</li>
+<li>GeoJSON</li>
+<li>Esri Geodatabase Feature Class</li>
+<li>KML</li>
+</ul>
 </section>
 <section id="raster-data" class="slide level2">
 <h2>Raster Data</h2>
-<p>Represents space as a grid of pixels</p>
-
-<img data-src="img-raster-data-model-carto.jpeg" class="r-stretch quarto-figure-center"><p class="caption">Source: Carto</p><div class="footer">
-<p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#navigation-menu">Navigation</a></p>
-</div>
-</section>
-<section id="raster-file-formats" class="slide level2">
-<h2>Raster File Formats</h2>
 <div class="footer">
 
 </div>
+<p>Represents space as a grid of pixels</p>
+
+<img data-src="img-raster-data-model-carto.jpeg" class="r-stretch quarto-figure-center"><p class="caption">Source: Carto</p></section>
+<section id="common-raster-data-types" class="slide level2">
+<h2>Common Raster Data Types:</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li>Imagine IMG</li>
+<li>GeoTIFF &amp; Cloud Optimized GeoTIFF</li>
+<li>netCDF raster version</li>
+<li>CRF (Cloud raster format)</li>
+<li>BAG (Bathymetric Attributed Grid)</li>
+</ul>
 </section>
 <section id="data-type-considerations" class="slide level2">
 <h2>Data Type Considerations</h2>
@@ -571,20 +648,153 @@ Wesley Fitzsimmons
 </ul></li>
 </ul>
 </section>
-<section id="projections-aka-crs" class="slide level2">
-<h2>Projections (aka CRS)</h2>
+<section id="raster-advantages" class="slide level2">
+<h2>Raster Advantages:</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li><strong>Continuous Representation:</strong> Raster data models are well-suited for representing continuous phenomena, such as elevation, temperature, and precipitation.</li>
+<li><strong>Efficient Storage:</strong> Raster datasets can be more compactly stored than vector datasets, especially for large continuous areas.</li>
+<li><strong>Analytical Capabilities:</strong> Raster data supports various spatial analysis techniques, such as surface analysis, proximity analysis, and interpolation, enabling detailed quantitative analysis</li>
+</ul>
+</section>
+<section id="raster-disadvantages" class="slide level2">
+<h2>Raster Disadvantages:</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li><strong>Loss of Detail:</strong> Raster datasets may lose detail when representing complex geometries or sharp boundaries, leading to generalization or smoothing of features.</li>
+<li><strong>Large File Sizes:</strong> High-resolution raster datasets can result in large file sizes, which may require significant storage space and computing resources.</li>
+<li><strong>Limited Attribute Information:</strong> Raster data typically stores attribute information at the pixel level, which may limit the types of attribute analysis that can be performed</li>
+</ul>
+</section>
+<section id="vector-advantages" class="slide level2">
+<h2>Vector Advantages:</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li><strong>Precise Representation:</strong> Vector data models accurately represent discrete features with well-defined boundaries, making them suitable for representing infrastructure, boundaries, and administrative units.</li>
+<li><strong>Compact Storage:</strong> Vector datasets can efficiently store attribute information associated with spatial features, enabling detailed attribute analysis and queries.</li>
+<li><strong>Topology Support:</strong> Vector data models support topological relationships between features, such as connectivity and adjacency, which facilitate spatial analysis and data integrity checks.</li>
+<li><strong>Flexible Editing:</strong> Vector data can be easily edited and updated, allowing for precise modifications to individual features or attributes without affecting neighboring features.</li>
+</ul>
+</section>
+<section id="vector-disadvantages" class="slide level2">
+<h2>Vector Disadvantages:</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li><strong>Complex Geometries:</strong> Vector data may struggle to represent continuous phenomena or complex geometries accurately, leading to oversimplification or data loss.</li>
+<li><strong>Increased Storage Requirements:</strong> Vector datasets can require more storage space compared to raster datasets, especially for datasets with complex geometries or extensive attribute information.</li>
+</ul>
+</section>
+<section id="a-note-on-shapefiles" class="slide level2">
+<h2>A Note on Shapefiles</h2>
+<div class="footer">
+
+</div>
+<p>Stop Using Shapefiles: <a href="http://switchfromshapefile.org/">http://switchfromshapefile.org/</a></p>
+<p>While shapefiles are common and widely supported, there are several downsides:</p>
+<ul>
+<li>Multi-file format causes sharing issues</li>
+<li>Attribute (column) names limited to 10 characters</li>
+<li>No more than 255 total attributes</li>
+<li>Total size limit of 2 GB</li>
+</ul>
+</section>
+<section id="alternatives-for-the-shp" class="slide level2">
+<h2>Alternatives for the SHP</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li><strong>OGC GeoPackage</strong> <i style="color: green;" class="bi bi-check2-circle"></i></li>
+<li><strong>GeoJSON</strong></li>
+<li><strong>OGC GML</strong></li>
+<li><strong>OGC KML</strong></li>
+<li><strong>Esri GeoDatabase</strong></li>
+</ul>
+</section>
+<section id="coordinate-reference-systems" class="slide level2">
+<h2>Coordinate Reference Systems</h2>
+<div class="footer">
+
+</div>
+<ul>
+<li>Abbreviated as CRS or GRS or PRS
+<ul>
+<li>GRS = geographic (unprojected)</li>
+<li>PRS = projected</li>
+</ul></li>
+<li>Often the most confusing part of introductory GIS</li>
+<li>Layers need to have same CRS for spatial operations</li>
+<li>Units are different for each!</li>
+</ul>
+</section>
+<section id="geographic-crs" class="slide level2">
+<h2>Geographic CRS</h2>
+<div class="footer">
+
+</div>
+<p>Representing a 3D sphere as a 3D model</p>
+<ul>
+<li>Geographic coordinate reference systems identify any location on the Earth’s surface using two values — longitude and latitude
+<ul>
+<li><strong>Longitude</strong> = angular distance East-West from the Prime Meridian plane</li>
+<li><strong>Latitude</strong> = angular distance North or South of the equatorial plane</li>
+</ul></li>
+<li>Units are in degrees</li>
+</ul>
+</section>
+<section id="projections-crs" class="slide level2">
+<h2>Projections CRS</h2>
+<div class="footer">
+<p>Learn more: https://www.geo-projections.com/</p>
+</div>
 <p>Representing a 3D sphere on a 2D surface</p>
 <ul>
-<li>Often the most confusing part of introductory GIS</li>
 <li>No perfect projection exists (prioritize for needs)</li>
 <li>Different regions and states have their own projections</li>
-<li>Many software have <strong>on-the-fly projection</strong></li>
-<li>Layers need to have same CRS for spatial operations</li>
+<li>Many software have on-the-fly projection</li>
 </ul>
+</section>
+<section id="projections-crs-1" class="slide level2">
+<h2>Projections CRS</h2>
+<div class="footer">
+
+</div>
+<div class="quarto-layout-panel" data-layout="[ 30, 56 ]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 34.9%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../img-tissots-mercator.png"></p>
+<figcaption>Mercator</figcaption>
+</figure>
+</div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 65.1%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../img-tissots-mollweide.png"></p>
+<figcaption>Mollweide (Equal Area)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="crs-nomenclature" class="slide level2">
 <h2>CRS Nomenclature</h2>
-<p>Different ways to reference a CRS.</p>
+<div class="footer">
+<p>See more here: <a href="https://epsg.io/">https://epsg.io/</a>.</p>
+</div>
+<p>Coordinate reference systems have various names or ways of referring to them in GIS software.</p>
+<p>This is especially prominent in programmatic GIS where a GUI dropdown menu of projections is not an option.</p>
 <ul>
 <li>English Name</li>
 <li>WKT ~ Well Known Text</li>
@@ -592,8 +802,51 @@ Wesley Fitzsimmons
 <li>PROJ.4</li>
 </ul>
 </section>
+<section id="crs-nomenclature-1" class="slide level2">
+<h2>CRS Nomenclature</h2>
+<div class="footer">
+<p>See more here: <a href="https://epsg.io/">https://epsg.io/</a>.</p>
+</div>
+<h4 id="english-name">English Name</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>North American Datum <span class="dv">1983</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="epsg">EPSG</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="dv">4269</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="proj.4">PROJ.4</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="sc">+</span>proj<span class="ot">=</span>longlat <span class="sc">+</span>ellps<span class="ot">=</span>GRS80 <span class="sc">+</span>towgs84<span class="ot">=</span><span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span> <span class="sc">+</span>no_defs <span class="sc">+</span>type<span class="ot">=</span>crs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="crs-nomenclature-2" class="slide level2">
+<h2>CRS Nomenclature</h2>
+<div class="footer">
+<p>See more here: <a href="https://epsg.io/">https://epsg.io/</a>.</p>
+</div>
+<h4 id="wkt-well-known-text">WKT ~ Well Known Text</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>GEOGCS[<span class="st">"NAD83"</span>,</span>
+<span id="cb4-2"><a></a>    DATUM[<span class="st">"North_American_Datum_1983"</span>,</span>
+<span id="cb4-3"><a></a>        SPHEROID[<span class="st">"GRS 1980"</span>,<span class="dv">6378137</span>,<span class="fl">298.257222101</span>],</span>
+<span id="cb4-4"><a></a>        TOWGS84[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>]],</span>
+<span id="cb4-5"><a></a>    PRIMEM[<span class="st">"Greenwich"</span>,<span class="dv">0</span>,</span>
+<span id="cb4-6"><a></a>        AUTHORITY[<span class="st">"EPSG"</span>,<span class="st">"8901"</span>]],</span>
+<span id="cb4-7"><a></a>    UNIT[<span class="st">"degree"</span>,<span class="fl">0.0174532925199433</span>,</span>
+<span id="cb4-8"><a></a>        AUTHORITY[<span class="st">"EPSG"</span>,<span class="st">"9122"</span>]],</span>
+<span id="cb4-9"><a></a>    AUTHORITY[<span class="st">"EPSG"</span>,<span class="st">"4269"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="crs-nomenclature-3" class="slide level2">
+<h2>CRS Nomenclature</h2>
+<div class="footer">
+<p>See more here: <a href="https://epsg.io/">https://epsg.io/</a>.</p>
+</div>
+<h4 id="wkid-well-known-identifier-esri">WKID ~ Well Known Identifier (ESRI)</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>GEOGCS[<span class="st">"GCS_North_American_1983"</span>,</span>
+<span id="cb5-2"><a></a>    DATUM[<span class="st">"D_North_American_1983"</span>,</span>
+<span id="cb5-3"><a></a>        SPHEROID[<span class="st">"GRS_1980"</span>,<span class="fl">6378137.0</span>,<span class="fl">298.257222101</span>]],</span>
+<span id="cb5-4"><a></a>    PRIMEM[<span class="st">"Greenwich"</span>,<span class="fl">0.0</span>],</span>
+<span id="cb5-5"><a></a>    UNIT[<span class="st">"Degree"</span>,<span class="fl">0.0174532925199433</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="software-programs" class="slide level2">
 <h2>Software &amp; Programs</h2>
+<div class="footer">
+
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="proprietary">Proprietary</h3>
@@ -616,6 +869,9 @@ Wesley Fitzsimmons
 </section>
 <section id="web-geospatial-tools" class="slide level2">
 <h2>Web Geospatial Tools</h2>
+<div class="footer">
+
+</div>
 <ul>
 <li>ArcGIS Online</li>
 <li>Google Earth Engine</li>
@@ -625,20 +881,203 @@ Wesley Fitzsimmons
 <li>Felt</li>
 </ul>
 </section>
-<section id="common-file-types" class="slide level2">
-<h2>Common File Types</h2>
-<p>How spatial data and attributes are stored and transferred</p>
+<section id="field-collection" class="slide level2">
+<h2>Field Collection</h2>
+<div class="footer">
+
+</div>
+<h3 id="gps-recievers">GPS Recievers</h3>
+<p>GPS receivers, or Global Positioning System receivers, are electronic devices that use signals from satellites to determine the receiver’s location on Earth.</p>
+<p>GPS receivers range in both price and accuracy.</p>
 <ul>
-<li></li>
+<li>Recreational Grade</li>
+<li>Mapping Grade</li>
+<li>Survey Grade</li>
 </ul>
+</section>
+<section id="field-collection-1" class="slide level2">
+<h2>Field Collection</h2>
+<div class="footer">
+
+</div>
+<h4 id="recreational-grade">Recreational Grade</h4>
+<p>Recreational grade GPS receivers are sold at most box stores and at many sporting goods and camping stores. They are also available widely through Internet retailers. These units are the least expensive grade and are generally accurate to within +/- 25 feet (7.6 meters). These receivers run in the $100 to $600 range and are the type most often purchased by the general public.</p>
+</section>
+<section id="field-collection-2" class="slide level2">
+<h2>Field Collection</h2>
+<div class="footer">
+
+</div>
+<h4 id="mapping-grade">Mapping Grade</h4>
+<p>Mapping grade GPS receivers are generally sold by “high end” and licensed resellers. These GPS receivers are typically less user-friendly than the recreational GPS, and they cost significantly more. Mapping grade GPS are more accurate than recreational units, commonly to within a meter (~3 feet).</p>
+</section>
+<section id="field-collection-3" class="slide level2">
+<h2>Field Collection</h2>
+<div class="footer">
+
+</div>
+<h4 id="survey-grade">Survey Grade</h4>
+<p>Survey grade GPS receivers are the most accurate and the most expensive. They are accurate to within a centimeter and can cost in the tens of thousands of dollars.</p>
 </section>
 <section id="apps-for-field-collection" class="slide level2">
 <h2>Apps for Field Collection</h2>
+<div class="footer">
+
+</div>
+<p>Many apps available for field data collection.</p>
+<p><br></p>
+<h4 id="esri-field-maps-for-esri">Esri Field Maps (for Esri)</h4>
 <ul>
-<li><p>Esri: Esri Field Maps – ArcGIS Online – ArcGIS Pro</p></li>
-<li><p>QGIS: QField or Mergin Maps – QGIS</p></li>
-<li><p>Avenza Maps – Works with multiple programs</p></li>
+<li>Integrates with ArcGIS Online and ArcGIS Pro</li>
+<li>Both Android and iOS support</li>
 </ul>
+<h4 id="qfield-or-mergin-maps-for-qgis">QField or Mergin Maps (for QGIS)</h4>
+<ul>
+<li>Integrates with QGIS Cloud environment</li>
+</ul>
+</section>
+<section id="apps-for-field-collection-1" class="slide level2">
+<h2>Apps for Field Collection</h2>
+<div class="footer">
+
+</div>
+<p>Many apps available for field data collection.</p>
+<p><br></p>
+<h4 id="avenza-maps-for-anything">Avenza Maps (for anything)</h4>
+<ul>
+<li>Works with multiple programs</li>
+</ul>
+<p>Can be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip.</p>
+</section>
+<section id="spatial-operations" class="slide level2">
+<h2>Spatial Operations</h2>
+<div class="footer">
+
+</div>
+<p>Spatial operations in GIS refer to a set of analytical techniques and functions used to manipulate, analyze, and derive new spatial information from existing geographic datasets.</p>
+<p>These operations involve the manipulation of spatial data to answer specific questions, identify patterns, and support decision-making processes.</p>
+</section>
+<section id="spatial-operations-1" class="slide level2">
+<h2>Spatial Operations</h2>
+<div class="footer">
+
+</div>
+<p><strong>Tobler’s First Law of Geography</strong>, often summarized as “Everything is related to everything else, but near things are more related than distant things,” has profound implications for spatial analysis and GIS operations.</p>
+<p><br></p>
+<p>Many GIS operations and spatial analysis techniques are inherently based on Tobler’s First Law of Geography, as they leverage proximity and spatial relationships to derive meaningful insights and make informed decisions.</p>
+</section>
+<section id="common-spatial-operations" class="slide level2">
+<h2>Common Spatial Operations</h2>
+<div class="footer">
+
+</div>
+<p>There are a various types or groups of spatial operations.</p>
+<ul>
+<li>Extraction</li>
+<li>Overlay</li>
+<li>Proximity</li>
+<li>Others</li>
+</ul>
+</section>
+<section id="extraction" class="slide level2">
+<h2>Extraction</h2>
+<div class="footer">
+
+</div>
+<h4 id="clip">Clip</h4>
+<p>This operation involves extracting a portion of one layer based on the extent of another layer. It retains only those features from the input layer that fall within the spatial extent of the clip layer.</p>
+<h4 id="select">Select</h4>
+<p>Selecting features involves choosing specific geographic features from a layer based on certain criteria, such as attribute values or spatial relationships.</p>
+</section>
+<section id="extraction-1" class="slide level2">
+<h2>Extraction</h2>
+<div class="footer">
+
+</div>
+<h4 id="split">Split</h4>
+<p>Splitting divides one or more input features into separate features based on a specified line or polygon boundary.</p>
+<h4 id="split-by-attributes">Split By Attributes</h4>
+<p>This operation divides features based on attribute values. It creates separate output datasets for each unique attribute value.</p>
+</section>
+<section id="overlay" class="slide level2">
+<h2>Overlay</h2>
+<div class="footer">
+
+</div>
+<h4 id="erase">Erase</h4>
+<p>Erase removes portions of one layer that overlap with another layer, leaving only the areas where the two layers do not overlap.</p>
+
+<img data-src="https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-40F0B845-07D7-4269-8E32-A5977821ADA2-web.gif" class="r-stretch"></section>
+<section id="overlay-1" class="slide level2">
+<h2>Overlay</h2>
+<div class="footer">
+
+</div>
+<h4 id="identity">Identity</h4>
+<p>Identity produces a new layer that preserves the geometries of both input layers. It assigns attributes from both layers to the output, and where they overlap, it retains the attributes of both layers.</p>
+
+<img data-src="https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-049EC20F-8846-489D-B161-00D99AE78946-web.gif" class="r-stretch"></section>
+<section id="overlay-2" class="slide level2">
+<h2>Overlay</h2>
+<div class="footer">
+
+</div>
+<h4 id="intersect">Intersect</h4>
+<p>Intersect creates a new layer that contains only the areas where features from input layers overlap. The output retains the attributes from both input layers.</p>
+
+<img data-src="https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-93B78EC9-4024-43AC-87BF-765FAD873B00-web.gif" class="r-stretch"></section>
+<section id="overlay-3" class="slide level2">
+<h2>Overlay</h2>
+<div class="footer">
+
+</div>
+<h4 id="spatial-join">Spatial Join</h4>
+<p>Spatial Join combines attributes from two layers based on their spatial relationship. It creates a new layer with attributes from both input layers, using a specified spatial relationship (e.g., intersect, contain, within).</p>
+</section>
+<section id="overlay-4" class="slide level2">
+<h2>Overlay</h2>
+<div class="footer">
+
+</div>
+<h4 id="union">Union</h4>
+<p>Union combines the geometries and attributes of two or more input layers to create a new layer that represents the geometric and attribute combination of all input layers.</p>
+
+<img data-src="https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-5F802619-B3DC-4D01-B58F-A2B90CD33647-web.gif" class="r-stretch"></section>
+<section id="overlay-5" class="slide level2">
+<h2>Overlay</h2>
+<div class="footer">
+
+</div>
+<h4 id="update">Update</h4>
+<p>Update operation involves modifying attributes or geometries of features in a layer based on the attributes or geometries of another layer.</p>
+
+<img data-src="https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-E1E14FD9-5487-4E02-9230-1F43D51864F8-web.gif" class="r-stretch"></section>
+<section id="proximity" class="slide level2">
+<h2>Proximity</h2>
+<div class="footer">
+
+</div>
+<h4 id="near">Near</h4>
+<p>Near identifies features in one layer that are closest to features in another layer. It calculates distances between features and reports the nearest feature(s) based on specified criteria.</p>
+</section>
+<section id="proximity-1" class="slide level2">
+<h2>Proximity</h2>
+<div class="footer">
+
+</div>
+<h4 id="buffer">Buffer</h4>
+<p>Buffering is a spatial operation in GIS that involves creating a zone or area around a geographic feature, typically represented as a point, line, or polygon. This zone is defined by a specified distance or buffer radius.</p>
+
+<img data-src="https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-267CF0D1-DB92-456F-A8FE-F819981F5467-web.png" class="r-stretch"></section>
+<section id="other" class="slide level2">
+<h2>Other</h2>
+<div class="footer">
+
+</div>
+<h4 id="dissolve">Dissolve</h4>
+<p>Dissolve combines adjacent polygons or features that share a common attribute value into a single feature. It merges geometries and aggregates attributes based on the specified dissolve field.</p>
+<h4 id="summarize-within">Summarize Within</h4>
+<p>Summarize Within is a spatial operation in GIS that involves aggregating data from one layer based on the spatial relationship with features from another layer. It calculates statistics or aggregates attributes of features within the boundaries of other features.</p>
 </section></section>
 <section id="break-time" class="title-slide slide level1 center" data-background-color="black">
 <h1>Break Time!</h1>
@@ -672,6 +1111,27 @@ Wesley Fitzsimmons
 </div>
 <p>Basics of scripting in ArcGIS Pro using Jupyter.</p>
 </section>
+<section id="what-is-programmatic-gis" class="slide level2">
+<h2>What is programmatic GIS?</h2>
+<div class="footer">
+
+</div>
+<p>Programmatic GIS refers to the practice of using programming languages and scripts to:</p>
+<ul>
+<li>perform geospatial analysis,</li>
+<li>automate GIS tasks, and</li>
+<li>develop custom geospatial applications.</li>
+</ul>
+</section>
+<section id="what-is-programmatic-gis-1" class="slide level2">
+<h2>What is programmatic GIS?</h2>
+<div class="footer">
+
+</div>
+<p>Rather than relying solely on graphical user interfaces (GUIs) of GIS software, programmatic GIS empowers users to harness the full capabilities of GIS through code.</p>
+<p><br></p>
+<p>While the GUI is a vital part of GIS and creates a venue for speedy learning, it can be very slow (esp.&nbsp;in ArcGIS Pro) and does not make sense for large scope projects or repetitive tasks.</p>
+</section>
 <section id="why-use-scripting-for-gis" class="slide level2">
 <h2>Why use scripting for GIS?</h2>
 <ul>
@@ -690,6 +1150,104 @@ Wesley Fitzsimmons
 <div class="footer">
 
 </div>
+</section>
+<section id="what-is-python" class="slide level2">
+<h2>What is Python?</h2>
+<div class="footer">
+
+</div>
+<p>Python is a versatile and powerful programming language widely used in various fields, including web development, data science, artificial intelligence, and, importantly, GIS.</p>
+<ul>
+<li>While R is widely used across academia, many private industries use Python as the standard language for programmatic GIS.</li>
+<li>Python is the primary coding language used in ArcGIS Pro, along with Arcade (Esri’s proprietary language).</li>
+</ul>
+</section>
+<section id="what-is-jupyter" class="slide level2">
+<h2>What is Jupyter?</h2>
+<div class="footer">
+
+</div>
+<p>Jupyter Notebooks are interactive computing environments that allow you to combine live code, equations, visualizations, and narrative text all in one document.</p>
+<p>They support multiple programming languages, including Python, R, and Julia, making them versatile tools for various data analysis tasks.</p>
+</section>
+<section id="what-is-jupyter-1" class="slide level2">
+<h2>What is Jupyter?</h2>
+<div class="footer">
+
+</div>
+<p>Jupyter Notebooks is installed as part of the ArcGIS Pro installation process or added later using the ArcGIS Pro package manager.</p>
+<p>Once installed, you can launch Jupyter Notebooks directly from the ArcGIS Pro interface or a Python command prompt.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>jupyter notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="what-is-jupyter-2" class="slide level2">
+<h2>What is Jupyter?</h2>
+<div class="footer">
+
+</div>
+
+<img data-src="../img-jupyter-nb.png" class="r-stretch"></section>
+<section id="python-in-arcgis-pro" class="slide level2">
+<h2>Python in ArcGIS Pro</h2>
+<div class="footer">
+
+</div>
+<p><code>arcpy</code> is the main python module to interact with the ArcGIS ecosystem and will be the focus of our exploration today.</p>
+<p><br></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">import</span> arcpy</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a>roads <span class="op">=</span> <span class="st">"c:/base/data.gdb/roads"</span></span>
+<span id="cb7-4"><a></a>output <span class="op">=</span> <span class="st">"c:/base/data.gdb/roads_Buffer"</span></span>
+<span id="cb7-5"><a></a></span>
+<span id="cb7-6"><a></a><span class="co"># Run Buffer using the variables set above and pass the remaining </span></span>
+<span id="cb7-7"><a></a><span class="co"># parameters in as strings</span></span>
+<span id="cb7-8"><a></a>arcpy.Buffer_analysis(roads, output, <span class="st">"distance"</span>, <span class="st">"FULL"</span>, <span class="st">"ROUND"</span>, <span class="st">"NONE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="best-practices" class="slide level2">
+<h2>Best Practices</h2>
+<div class="footer">
+
+</div>
+<ol type="1">
+<li>Writing Efficient and Readable <code>arcpy</code> Scripts:</li>
+</ol>
+<ul>
+<li>Use meaningful variable names and comments to enhance code readability.</li>
+<li>Break down complex tasks into smaller, modular functions.</li>
+<li>Optimize <code>arcpy</code> scripts by minimizing unnecessary loops and operations.</li>
+</ul>
+</section>
+<section id="best-practices-1" class="slide level2">
+<h2>Best Practices</h2>
+<div class="footer">
+
+</div>
+<ol start="2" type="1">
+<li>Documenting Code and Workflows:</li>
+</ol>
+<ul>
+<li>Document arcpy scripts with clear and concise comments explaining the purpose of each section and important steps.</li>
+<li>Maintain separate documentation files or READMEs detailing script usage, input/output data, and dependencies.</li>
+</ul>
+</section>
+<section id="best-practices-2" class="slide level2">
+<h2>Best Practices</h2>
+<div class="footer">
+
+</div>
+<ol start="3" type="1">
+<li>Version Control and Collaboration:</li>
+</ol>
+<ul>
+<li>Use version control systems (e.g., Git) to track changes and collaborate with team members on <code>arcpy</code> projects.</li>
+<li>Establish coding standards and conventions for consistent <code>arcpy</code> script development within the team.</li>
+</ul>
+</section>
+<section id="hands-on-exercise" class="slide level2">
+<h2>Hands-on Exercise</h2>
+<div class="footer">
+
+</div>
+<p>Now we will explore how to open, run, and output Python code in ArcGIS Pro!</p>
 </section></section>
 <section id="break-time-2" class="title-slide slide level1 center" data-background-color="black">
 <h1>Break Time!</h1>
@@ -707,15 +1265,11 @@ Wesley Fitzsimmons
 </div>
 <p>Basic introduction to handling spatial data in R/RStudio.</p>
 </section>
-<section id="why-use-r-for-spatial-analysis" class="slide level2">
-<h2>Why Use R for Spatial Analysis?</h2>
+<section id="see-webpage-for-r-content" class="slide level2">
+<h2>See webpage for R content!</h2>
 <div class="footer">
 
 </div>
-<ul>
-<li>All the cool researchers are using it</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="questions-1" class="title-slide slide level1 center" data-background-image="img-rivers.webp" data-background-opacity="0.1">
@@ -733,12 +1287,12 @@ Wesley Fitzsimmons
 <li><p>Wesley Fitzsimmons ~ waf8xt@missouri.edu</p></li>
 </ul>
 <h3 id="workshop-resources">Workshop Resources:</h3>
-<p><a href="">TinyURL</a></p>
+<p><a href="https://btjepkes.github.io/WAFSGSO_2024_GIS/resources.html">Resources</a></p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>© The Authors | 2024.03.20</p>
+<p>© The Authors | 2024.03.19</p>
 </div>
 </div>
 </section></section>

@@ -253,10 +253,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#vector-data" id="toc-vector-data" class="nav-link" data-scroll-target="#vector-data">Vector Data</a></li>
   <li><a href="#raster-data" id="toc-raster-data" class="nav-link" data-scroll-target="#raster-data">Raster Data</a></li>
   </ul></li>
-  <li><a href="#spatial-filtering-and-operations" id="toc-spatial-filtering-and-operations" class="nav-link" data-scroll-target="#spatial-filtering-and-operations">Spatial Filtering and Operations</a>
+  <li><a href="#spatial-operations" id="toc-spatial-operations" class="nav-link" data-scroll-target="#spatial-operations">Spatial Operations</a>
   <ul class="collapse">
   <li><a href="#joining" id="toc-joining" class="nav-link" data-scroll-target="#joining">Joining</a></li>
-  <li><a href="#raster-calculations" id="toc-raster-calculations" class="nav-link" data-scroll-target="#raster-calculations">Raster Calculations</a></li>
   <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link" data-scroll-target="#summarizing-data">Summarizing Data</a></li>
   </ul></li>
   <li><a href="#mapping-spatial-data-in-r" id="toc-mapping-spatial-data-in-r" class="nav-link" data-scroll-target="#mapping-spatial-data-in-r">Mapping Spatial Data In R</a>
@@ -764,8 +763,9 @@ $data_frame
 <span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>my_RasterStack <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">stack</span>(my_rast, my_rast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="spatial-filtering-and-operations" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-filtering-and-operations">Spatial Filtering and Operations</h2>
+<section id="spatial-operations" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-operations">Spatial Operations</h2>
+<p>Here are some example spatial options in R using <code>sf</code> and the <code>tidyverse</code>.</p>
 <section id="joining" class="level3">
 <h3 class="anchored" data-anchor-id="joining">Joining</h3>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>world_coffee <span class="ot">=</span> <span class="fu">left_join</span>(world, coffee_data)</span>
@@ -773,9 +773,6 @@ $data_frame
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(world_coffee)</span>
 <span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "sf"         "tbl_df"     "tbl"        "data.frame"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="raster-calculations" class="level3">
-<h3 class="anchored" data-anchor-id="raster-calculations">Raster Calculations</h3>
 </section>
 <section id="summarizing-data" class="level3">
 <h3 class="anchored" data-anchor-id="summarizing-data">Summarizing Data</h3>

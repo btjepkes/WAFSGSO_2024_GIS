@@ -150,6 +150,18 @@ print(set2)  # Output: {4, 5, 6, 7, 8}
 
 Python has both base and extended functionality where the latter is provided by external packages (i.e., modules) that can be installed, and then imported into our workspace.
 
+-   **GeoPandas**: GeoPandas extends the Pandas library to work with geometric data types, allowing for easy manipulation and analysis of spatial datasets.
+
+-   **Shapely**: Shapely is a library for geometric operations and manipulations of geometries (points, lines, and polygons). It is often used in conjunction with GeoPandas.
+
+-   **Fiona**: Fiona is a Python wrapper around the OGR library, providing an interface for reading and writing spatial data formats (e.g., Shapefile, GeoJSON, etc.).
+
+-   **Pyproj**: Pyproj is a Python interface to the PROJ library, allowing for geospatial transformations, conversions between coordinate reference systems, and calculations of distances and areas.
+
+-   **GDAL (Geospatial Data Abstraction Library)**: GDAL is a powerful library for reading, writing, and processing raster and vector geospatial data formats. It is often used in combination with other Python libraries like Fiona and Rasterio.
+
+-   **Rasterio**: Rasterio is a Python library for reading and writing raster geospatial data formats. It provides an intuitive interface for working with raster datasets, including georeferencing and processing.
+
 ## Python in ArcGIS
 
 `arcpy` is the main python module to interact with the ArcGIS ecosystem and will be the focus of our exploration today.

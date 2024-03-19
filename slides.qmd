@@ -4,7 +4,7 @@ title: "Slides"
 
 ## Presentation Slides
 
-The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click [here]().
+The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom.
 
 ```{=html}
 <iframe class="slide-deck" src="slides/outline.html"></iframe>

@@ -18,7 +18,7 @@ format:
     logo: logo.png
     controls: true
     slide-number: true # shows slide number
-    footer: "&copy; The Authors | 2024.03.20" # text for footer of all slides
+    footer: "&copy; The Authors | 2024.03.19" # text for footer of all slides
     transition: slide # set slide-to-slide transition
     background-transition: fade # set background transition
     css: styles.css
@@ -27,11 +27,13 @@ format:
 ## Follow Along... {background-color="black"}
 
 ::: footer
+https://btjepkes.github.io/WAFSGSO_2024_GIS/
 :::
 
-Add in link to course documents/site.
+:::{style="margin-top: 200px; font-size: 2em; color: white;"}
+https://tinyurl.com/yw9p59s2
+:::
 
-![](img-rivers.webp)
 
 ## Housekeeping
 
@@ -108,61 +110,138 @@ Understanding spatial data, software, and tools.
 ::: footer
 :::
 
--   Started simply as a way to store and query **spatial data**
--   Capable ecosystem of tools & techniques
+#### GIS = **Geographic Information System**
+
+- The tool that we use to capture, store, process, analyze, and visualize spatial information.
+- Helps us understand and assess patterns in spatial locations and attributes about those locations.
+
+This is the tool in the toolbox.
+
+## What is GIS?
+
+::: footer
+:::
+
+#### GISc = **Geographic Information Science**
+
+- The study of geographic phenomena, spatial relationships, and patterns using computational techniques and spatial analysis tools.
+- Integrates principles from geography, computer science, mathematics, and other disciplines to analyze and interpret spatial data, aiding in decision-making processes across various fields.
+
+This is the science that guides the tool.
 
 ## Why Learn GIS?
 
 ::: footer
 :::
 
--   Everywhere is somewhere
--   Adds another dimension to data
--   JOBS!
+- **Spatial Analysis:** GIS enables spatial analysis techniques that help in understanding the spatial patterns and relationships within natural resource datasets.
+
+E.g., Analyzing habitat suitability, identifying biodiversity hotspots, assessing landscape connectivity, and evaluating environmental impacts.
+
+## Why Learn GIS?
+
+::: footer
+:::
+
+- **Resource Management:** GIS facilitates the management of natural resources by providing tools for inventory, monitoring, and planning.
+
+E.g., The integration of various data sources, such as satellite imagery, field surveys, and remote sensing data, to assess the condition of ecosystems, track changes over time, and develop sustainable management strategies.
+
+## Why Learn GIS?
+
+::: footer
+:::
+
+- **Decision Support:** GIS serves as a decision support tool for natural resource management by enabling stakeholders to visualize complex spatial data and model different scenarios.
+
+E.g., Prioritizing conservation efforts, allocating resources efficiently, and evaluating the potential impacts of alternative management actions.
+
+## Why Learn GIS?
+
+::: footer
+:::
+
+- **JOBS!**
+
+E.g., Research biologists, land managers, GIS specialists, conservation planners
+
+<br><br>
+
+***Note: GIS courses are widely accepted for professional certifications, like CWB***
 
 ## Spatial Data Types
+
+::: footer
+:::
 
 How the surface of the Earth is represented digitally
 
 -   Spatial coordinates = X, Y, sometimes Z
-
 -   Types of spatial data models (types)
-
     -   Vector
-
     -   Raster
-
     -   Networks
+    -   LiDAR (point clouds)
 
--   Many file formats / extensions for each
-
-    -   Examples: .tiff, .shp, .gdb
+-   Many file formats / extensions (e.g., .tif, .shp, .gdb)
 
 ## Vector Data
+
+::: footer
+:::
+
+Represents space as points, lines, and polygons.
+
+- **Points** -- single vertex
+- **Lines** -- two or more vertices
+- **Polygon** -- three or more vertices with the last vertex equal to the first
+
+
+## Vector Data
+
+::: footer
+:::
 
 Represents space as points, lines, and polygons
 
 ![Source: Carto](img-vector-data-model-carto.jpeg)
 
-## Vector File Formats
+## Common Vector Data Types:
 
 ::: footer
 :::
 
+More than **80 different vector file types** available across software and systems!
+
+- NetCDF
+- Shapefile
+- GeoJSON
+- Esri Geodatabase Feature Class
+- KML
+
+
 ## Raster Data
+
+::: footer
+:::
 
 Represents space as a grid of pixels
 
 ![Source: Carto](img-raster-data-model-carto.jpeg)
 
-::: footer
-Learn more: [Navigation](https://quarto.org/docs/presentations/revealjs/presenting.html#navigation-menu)
-:::
 
-## Raster File Formats
+
+## Common Raster Data Types:
 
 ::: footer
 :::
+
+- Imagine IMG
+- GeoTIFF & Cloud Optimized GeoTIFF
+- netCDF raster version
+- CRF (Cloud raster format)
+- BAG (Bathymetric Attributed Grid)
+
 
 ## Data Type Considerations
 
@@ -175,27 +254,211 @@ Learn more: [Navigation](https://quarto.org/docs/presentations/revealjs/presenti
 -   Accuracy needs will depend on each use case
     -   Mapping an entire state vs. a single forest stand
     -   Each sensor and GPS receiver will vary
+    
+## Raster Advantages:
 
-## Projections (aka CRS)
+::: footer
+:::
+
+- **Continuous Representation:** Raster data models are well-suited for representing continuous phenomena, such as elevation, temperature, and precipitation.
+- **Efficient Storage:** Raster datasets can be more compactly stored than vector datasets, especially for large continuous areas.
+- **Analytical Capabilities:** Raster data supports various spatial analysis techniques, such as surface analysis, proximity analysis, and interpolation, enabling detailed quantitative analysis
+
+## Raster Disadvantages:
+
+::: footer
+:::
+
+- **Loss of Detail:** Raster datasets may lose detail when representing complex geometries or sharp boundaries, leading to generalization or smoothing of features.
+- **Large File Sizes:** High-resolution raster datasets can result in large file sizes, which may require significant storage space and computing resources.
+- **Limited Attribute Information:** Raster data typically stores attribute information at the pixel level, which may limit the types of attribute analysis that can be performed
+
+
+## Vector Advantages:
+
+::: footer
+:::
+
+- **Precise Representation:** Vector data models accurately represent discrete features with well-defined boundaries, making them suitable for representing infrastructure, boundaries, and administrative units.
+- **Compact Storage:** Vector datasets can efficiently store attribute information associated with spatial features, enabling detailed attribute analysis and queries.
+- **Topology Support:** Vector data models support topological relationships between features, such as connectivity and adjacency, which facilitate spatial analysis and data integrity checks.
+- **Flexible Editing:** Vector data can be easily edited and updated, allowing for precise modifications to individual features or attributes without affecting neighboring features.
+
+## Vector Disadvantages:
+
+::: footer
+:::
+
+- **Complex Geometries:** Vector data may struggle to represent continuous phenomena or complex geometries accurately, leading to oversimplification or data loss.
+- **Increased Storage Requirements:** Vector datasets can require more storage space compared to raster datasets, especially for datasets with complex geometries or extensive attribute information.
+
+
+## A Note on Shapefiles
+
+::: footer
+:::
+
+Stop Using Shapefiles: [http://switchfromshapefile.org/](http://switchfromshapefile.org/)
+
+While shapefiles are common and widely supported, there are several downsides:
+
+- Multi-file format causes sharing issues
+- Attribute (column) names limited to 10 characters
+- No more than 255 total attributes
+- Total size limit of 2 GB
+
+## Alternatives for the SHP
+
+::: footer
+:::
+
+- **OGC GeoPackage** <i style= "color: green;" class="bi bi-check2-circle"></i>
+- **GeoJSON**
+- **OGC GML**
+- **OGC KML**
+- **Esri GeoDatabase**
+
+## Coordinate Reference Systems
+
+::: footer
+:::
+
+- Abbreviated as CRS or GRS or PRS
+  - GRS = geographic (unprojected)
+  - PRS = projected
+- Often the most confusing part of introductory GIS
+- Layers need to have same CRS for spatial operations
+- Units are different for each!
+
+
+## Geographic CRS
+
+::: footer
+:::
+
+Representing a 3D sphere as a 3D model
+
+- Geographic coordinate reference systems identify any location on the Earth’s surface using two values — longitude and latitude
+  - **Longitude** = angular distance East-West from the Prime Meridian plane
+  - **Latitude** = angular distance North or South of the equatorial plane
+- Units are in degrees
+
+
+## Projections CRS
+
+::: footer
+
+Learn more: https://www.geo-projections.com/
+
+:::
 
 Representing a 3D sphere on a 2D surface
 
--   Often the most confusing part of introductory GIS
--   No perfect projection exists (prioritize for needs)
--   Different regions and states have their own projections
--   Many software have **on-the-fly projection**
--   Layers need to have same CRS for spatial operations
+- No perfect projection exists (prioritize for needs)
+- Different regions and states have their own projections
+- Many software have on-the-fly projection
+
+
+## Projections CRS
+
+::: footer
+:::
+
+:::: {layout="[ 30, 56 ]"}
+
+::: {#first-column}
+![Mercator](../img-tissots-mercator.png)
+:::
+
+::: {#second-column}
+
+![Mollweide (Equal Area)](../img-tissots-mollweide.png)
+:::
+
+::::
 
 ## CRS Nomenclature
 
-Different ways to reference a CRS.
+::: footer
+See more here: [https://epsg.io/](https://epsg.io/).
+:::
+
+Coordinate reference systems have various names or ways of referring to them in GIS software.
+
+This is especially prominent in programmatic GIS where a GUI dropdown menu of projections is not an option. 
 
 -   English Name
 -   WKT \~ Well Known Text
 -   EPSG
 -   PROJ.4
 
+## CRS Nomenclature
+
+::: footer
+See more here: [https://epsg.io/](https://epsg.io/).
+:::
+
+#### English Name
+
+```r
+North American Datum 1983
+```
+
+#### EPSG
+
+```r
+4269
+```
+
+#### PROJ.4
+
+```r
++proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs +type=crs
+```
+
+## CRS Nomenclature
+
+::: footer
+See more here: [https://epsg.io/](https://epsg.io/).
+:::
+
+#### WKT ~ Well Known Text
+
+```r
+GEOGCS["NAD83",
+    DATUM["North_American_Datum_1983",
+        SPHEROID["GRS 1980",6378137,298.257222101],
+        TOWGS84[0,0,0,0,0,0,0]],
+    PRIMEM["Greenwich",0,
+        AUTHORITY["EPSG","8901"]],
+    UNIT["degree",0.0174532925199433,
+        AUTHORITY["EPSG","9122"]],
+    AUTHORITY["EPSG","4269"]]
+```
+
+
+## CRS Nomenclature
+
+::: footer
+See more here: [https://epsg.io/](https://epsg.io/).
+:::
+
+#### WKID ~ Well Known Identifier (ESRI)
+
+```r
+GEOGCS["GCS_North_American_1983",
+    DATUM["D_North_American_1983",
+        SPHEROID["GRS_1980",6378137.0,298.257222101]],
+    PRIMEM["Greenwich",0.0],
+    UNIT["Degree",0.0174532925199433]]
+```
+
+
+
 ## Software & Programs
+
+::: footer
+:::
 
 ::: columns
 ::: {.column width="50%"}
@@ -221,6 +484,9 @@ Different ways to reference a CRS.
 
 ## Web Geospatial Tools
 
+::: footer
+:::
+
 -   ArcGIS Online
 -   Google Earth Engine
 -   Leaflet
@@ -228,19 +494,243 @@ Different ways to reference a CRS.
 -   Mango Map
 -   Felt
 
-## Common File Types
+## Field Collection
 
-How spatial data and attributes are stored and transferred
+::: footer
+:::
 
--   
+### GPS Recievers
+
+GPS receivers, or Global Positioning System receivers, are electronic devices that use signals from satellites to determine the receiver's location on Earth.
+
+GPS receivers range in both price and accuracy.
+
+- Recreational Grade
+- Mapping Grade
+- Survey Grade
+
+## Field Collection
+
+::: footer
+:::
+
+#### Recreational Grade
+
+Recreational grade GPS receivers are sold at most box stores and at many sporting goods and camping stores. They are also available widely through Internet retailers. These units are the least expensive grade and are generally accurate to within +/- 25 feet (7.6 meters). These receivers run in the $100 to $600 range and are the type most often purchased by the general public.
+
+## Field Collection
+
+::: footer
+:::
+
+
+#### Mapping Grade
+
+Mapping grade GPS receivers are generally sold by “high end” and licensed resellers. These GPS receivers are typically less user-friendly than the recreational GPS, and they cost significantly more. Mapping grade GPS are more accurate than recreational units, commonly to within a meter (~3 feet).
+
+## Field Collection
+
+::: footer
+:::
+
+#### Survey Grade
+
+Survey grade GPS receivers are the most accurate and the most expensive. They are accurate to within a centimeter and can cost in the tens of thousands of dollars.
+
 
 ## Apps for Field Collection
 
--   Esri: Esri Field Maps -- ArcGIS Online -- ArcGIS Pro
+::: footer
+:::
 
--   QGIS: QField or Mergin Maps -- QGIS
+Many apps available for field data collection.
 
--   Avenza Maps -- Works with multiple programs
+<br>
+
+#### Esri Field Maps (for Esri)
+
+- Integrates with ArcGIS Online and ArcGIS Pro
+- Both Android and iOS support
+
+#### QField or Mergin Maps (for QGIS)
+
+- Integrates with QGIS Cloud environment
+
+## Apps for Field Collection
+
+::: footer
+:::
+
+Many apps available for field data collection.
+
+<br>
+
+#### Avenza Maps (for anything)
+
+- Works with multiple programs
+
+Can be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip.
+
+
+## Spatial Operations
+
+::: footer
+:::
+
+Spatial operations in GIS refer to a set of analytical techniques and functions used to manipulate, analyze, and derive new spatial information from existing geographic datasets. 
+
+These operations involve the manipulation of spatial data to answer specific questions, identify patterns, and support decision-making processes.
+
+## Spatial Operations
+
+::: footer
+:::
+
+
+**Tobler's First Law of Geography**, often summarized as "Everything is related to everything else, but near things are more related than distant things," has profound implications for spatial analysis and GIS operations.
+
+<br>
+
+Many GIS operations and spatial analysis techniques are inherently based on Tobler's First Law of Geography, as they leverage proximity and spatial relationships to derive meaningful insights and make informed decisions.
+
+## Common Spatial Operations
+
+::: footer
+:::
+
+There are a various types or groups of spatial operations.
+
+- Extraction
+- Overlay
+- Proximity
+- Others
+
+
+## Extraction
+
+::: footer
+:::
+
+#### Clip
+
+This operation involves extracting a portion of one layer based on the extent of another layer. It retains only those features from the input layer that fall within the spatial extent of the clip layer.
+
+
+#### Select
+
+Selecting features involves choosing specific geographic features from a layer based on certain criteria, such as attribute values or spatial relationships.
+
+## Extraction
+
+::: footer
+:::
+
+#### Split
+
+Splitting divides one or more input features into separate features based on a specified line or polygon boundary.
+
+#### Split By Attributes
+
+This operation divides features based on attribute values. It creates separate output datasets for each unique attribute value.
+
+## Overlay
+
+::: footer
+:::
+
+#### Erase
+
+Erase removes portions of one layer that overlap with another layer, leaving only the areas where the two layers do not overlap.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-40F0B845-07D7-4269-8E32-A5977821ADA2-web.gif)
+
+## Overlay
+
+::: footer
+:::
+
+#### Identity
+
+Identity produces a new layer that preserves the geometries of both input layers. It assigns attributes from both layers to the output, and where they overlap, it retains the attributes of both layers.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-049EC20F-8846-489D-B161-00D99AE78946-web.gif)
+
+## Overlay
+
+::: footer
+:::
+
+#### Intersect
+
+Intersect creates a new layer that contains only the areas where features from input layers overlap. The output retains the attributes from both input layers.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-93B78EC9-4024-43AC-87BF-765FAD873B00-web.gif)
+
+## Overlay
+
+::: footer
+:::
+
+#### Spatial Join
+
+Spatial Join combines attributes from two layers based on their spatial relationship. It creates a new layer with attributes from both input layers, using a specified spatial relationship (e.g., intersect, contain, within).
+
+## Overlay
+
+::: footer
+:::
+
+#### Union
+
+Union combines the geometries and attributes of two or more input layers to create a new layer that represents the geometric and attribute combination of all input layers.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-5F802619-B3DC-4D01-B58F-A2B90CD33647-web.gif)
+
+## Overlay
+
+::: footer
+:::
+
+#### Update
+
+Update operation involves modifying attributes or geometries of features in a layer based on the attributes or geometries of another layer.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-E1E14FD9-5487-4E02-9230-1F43D51864F8-web.gif)
+
+## Proximity
+
+::: footer
+:::
+
+#### Near
+
+Near identifies features in one layer that are closest to features in another layer. It calculates distances between features and reports the nearest feature(s) based on specified criteria.
+
+## Proximity
+
+::: footer
+:::
+
+#### Buffer
+
+Buffering is a spatial operation in GIS that involves creating a zone or area around a geographic feature, typically represented as a point, line, or polygon. This zone is defined by a specified distance or buffer radius.
+
+![](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/analysis/GUID-267CF0D1-DB92-456F-A8FE-F819981F5467-web.png)
+
+## Other
+
+::: footer
+:::
+
+
+#### Dissolve
+
+Dissolve combines adjacent polygons or features that share a common attribute value into a single feature. It merges geometries and aggregates attributes based on the specified dissolve field.
+
+#### Summarize Within
+
+Summarize Within is a spatial operation in GIS that involves aggregating data from one layer based on the spatial relationship with features from another layer. It calculates statistics or aggregates attributes of features within the boundaries of other features.
+
 
 # Break Time! {background-color="black"}
 
@@ -270,6 +760,30 @@ Introduction to ArcGIS Pro interface and capabilities.
 
 Basics of scripting in ArcGIS Pro using Jupyter.
 
+## What is programmatic GIS?
+
+::: footer
+:::
+
+Programmatic GIS refers to the practice of using programming languages and scripts to:
+
+- perform geospatial analysis, 
+- automate GIS tasks, and
+- develop custom geospatial applications.
+
+
+## What is programmatic GIS?
+
+::: footer
+:::
+
+Rather than relying solely on graphical user interfaces (GUIs) of GIS software, programmatic GIS empowers users to harness the full capabilities of GIS through code.
+
+<br>
+
+While the GUI is a vital part of GIS and creates a venue for speedy learning, it can be very slow (esp. in ArcGIS Pro) and does not make sense for large scope projects or repetitive tasks.
+
+
 ## Why use scripting for GIS?
 
 -   Allows for reproducible science and workflows
@@ -282,6 +796,111 @@ Basics of scripting in ArcGIS Pro using Jupyter.
 
 ::: footer
 :::
+
+
+## What is Python?
+
+::: footer
+:::
+
+Python is a versatile and powerful programming language widely used in various fields, including web development, data science, artificial intelligence, and, importantly, GIS.
+
+- While R is widely used across academia, many private industries use Python as the standard language for programmatic GIS.
+- Python is the primary coding language used in ArcGIS Pro, along with Arcade (Esri's proprietary language).
+
+
+## What is Jupyter?
+
+::: footer
+:::
+
+Jupyter Notebooks are interactive computing environments that allow you to combine live code, equations, visualizations, and narrative text all in one document.
+
+They support multiple programming languages, including Python, R, and Julia, making them versatile tools for various data analysis tasks.
+
+## What is Jupyter?
+
+::: footer
+:::
+
+Jupyter Notebooks is installed as part of the ArcGIS Pro installation process or added later using the ArcGIS Pro package manager.
+
+Once installed, you can launch Jupyter Notebooks directly from the ArcGIS Pro interface or a Python command prompt.
+
+```python
+jupyter notebook
+```
+
+## What is Jupyter?
+
+::: footer
+:::
+
+![](../img-jupyter-nb.png)
+
+
+## Python in ArcGIS Pro
+
+::: footer
+:::
+
+`arcpy` is the main python module to interact with the ArcGIS ecosystem and will be the focus of our exploration today.
+
+<br>
+
+```python
+import arcpy
+
+roads = "c:/base/data.gdb/roads"
+output = "c:/base/data.gdb/roads_Buffer"
+
+# Run Buffer using the variables set above and pass the remaining 
+# parameters in as strings
+arcpy.Buffer_analysis(roads, output, "distance", "FULL", "ROUND", "NONE")
+```
+
+## Best Practices
+
+::: footer
+:::
+
+
+1. Writing Efficient and Readable `arcpy` Scripts:
+
+- Use meaningful variable names and comments to enhance code readability.
+- Break down complex tasks into smaller, modular functions.
+- Optimize `arcpy` scripts by minimizing unnecessary loops and operations.
+
+## Best Practices
+
+::: footer
+:::
+
+2. Documenting Code and Workflows:
+
+- Document arcpy scripts with clear and concise comments explaining the purpose of each section and important steps.
+- Maintain separate documentation files or READMEs detailing script usage, input/output data, and dependencies.
+
+
+## Best Practices
+
+::: footer
+:::
+
+
+3. Version Control and Collaboration:
+
+- Use version control systems (e.g., Git) to track changes and collaborate with team members on `arcpy` projects.
+- Establish coding standards and conventions for consistent `arcpy` script development within the team.
+
+
+## Hands-on Exercise
+
+::: footer
+:::
+
+Now we will explore how to open, run, and output Python code in ArcGIS Pro!
+
 
 # Break Time! {background-color="black"}
 
@@ -297,16 +916,11 @@ Basics of scripting in ArcGIS Pro using Jupyter.
 
 Basic introduction to handling spatial data in R/RStudio.
 
-## Why Use R for Spatial Analysis?
+## See webpage for R content!
 
 ::: footer
 :::
 
--   All the cool researchers are using it
-
-```r
-library(sf)
-```
 
 # Questions? {background-image="img-rivers.webp" background-opacity="0.1"}
 
@@ -325,4 +939,4 @@ You made it to the end! Great job!
 
 ### Workshop Resources:
 
-[TinyURL]()
+[Resources](https://btjepkes.github.io/WAFSGSO_2024_GIS/resources.html)

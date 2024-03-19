@@ -404,7 +404,9 @@ my_RasterLayer <- raster::raster(my_rast)
 my_RasterStack <- raster::stack(my_rast, my_rast)
 ```
 
-## Spatial Filtering and Operations
+## Spatial Operations
+
+Here are some example spatial options in R using `sf` and the `tidyverse`.
 
 ### Joining
 
@@ -415,8 +417,6 @@ world_coffee = left_join(world, coffee_data)
 class(world_coffee)
 #> [1] "sf"         "tbl_df"     "tbl"        "data.frame"
 ```
-
-### Raster Calculations
 
 ### Summarizing Data
 

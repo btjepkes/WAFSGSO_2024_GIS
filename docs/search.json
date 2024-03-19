@@ -49,11 +49,11 @@
     "text": "Loading Spatial Data Into R\nSeveral R packages can load spatial data into the R environment, but we will focus on sf and terra for this workshop. Note that creating an R spatial object does not save it to a file directory automatically, it simply loads the spatial information into your current R session (in memory). For large files, it can be useful to subset to only include a specific area of interest (AOI).\n\nVector Data\nRemember that the vector data model represents points, lines, and polygons. We can load these spatial features into our R environment with the sf package using the st_read() function. But first we use the st_layers function to identify all the layers we have available to us in our geopackage.\n## Reference spatial layers from geopackage (n = 25)\ngpkg_dsn &lt;- \"BeaverHabitatSelection.gpkg\"\ngpkg_layers &lt;- sf::st_layers(dsn = gpkg_dsn)\n\n## Load in beaver-absent vegetation layer\nabsent_veg_sf &lt;- sf::st_read(dsn = gpkg_dsn,\n                             layer = gpkg_layers$name[3])\nIf we need to reference a shapefile in our directory, we can still use st_read() but need to specify the .shp extension in our function.\n# Set the file path to your shapefile (.shp)\npath &lt;- \"path/to/your/shapefile.shp\"\n\n# Read the shapefile using sf::st_read()\nshapefile &lt;- sf::st_read(path)\n\nSimple Feature Geometry Types\nThe “sf” in sf stands for simple features, which is an open data standard by the Open Geospatial Consortium (OGC). This standard is used across many software systems (e.g., QGIS, PostGIS) and contains seven core geometry types that are supported by sf.\n\nSingle Geometries\n\nPOINT - by using st_point()\nLINESTRING - by using st_linestring()\nPOLYGON - by using st_polygon()\n\nMultiple Geometries\n\nMULTIPOINT - by using st_multipoint()\nMULTILINESTRING - by using st_multilinestring()\nMULTIPOLYGON - by using st_multipolygon()\n\nGeometry Collections\n\nGEOMETRYCOLLECTION - by using st_geometrycollection()\n\n\n\n\n\nRaster Data\nRemember that the raster data model represents the world with a continuous grid of cells, called pixels. We can load raster files (e.g., .tif) into our R environment using the rast() function in the terra package.\n# Set tje file path to your raster, in this case a .tif\nraster_filepath = system.file(\"raster/srtm.tif\")\n\n# Read the raster as a SpatRaster\nmy_rast = rast(raster_filepath)\nEvery raster object has a header that can be viewed by calling the object in the console. This contains information like the dimensions and CRS of the raster.\n# Call the raster object to view its header\nmy_rast\n\n#&gt; class       : SpatRaster \n#&gt; dimensions  : 457, 465, 1  (nrow, ncol, nlyr)\n#&gt; resolution  : 0.000833, 0.000833  (x, y)\n#&gt; extent      : -113, -113, 37.1, 37.5  (xmin, xmax, ymin, ymax)\n#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) \n#&gt; source      : srtm.tif \n#&gt; name        : srtm \n#&gt; min value   : 1024 \n#&gt; max value   : 2892\nIt is important to note that several other R packages still require raster data to be in the older format handled by the raster package. In this case, we can coerce our SpatRaster into the raster format.\n# Convert to a RasterLayer\nmy_RasterLayer &lt;- raster::raster(my_rast)\n\n# Convert to a RasterStack\nmy_RasterStack &lt;- raster::stack(my_rast, my_rast)"
   },
   {
-    "objectID": "spatial-data-in-R.html#spatial-filtering-and-operations",
-    "href": "spatial-data-in-R.html#spatial-filtering-and-operations",
+    "objectID": "spatial-data-in-R.html#spatial-operations",
+    "href": "spatial-data-in-R.html#spatial-operations",
     "title": "4. Spatial Data in R",
-    "section": "Spatial Filtering and Operations",
-    "text": "Spatial Filtering and Operations\n\nJoining\nworld_coffee = left_join(world, coffee_data)\n#&gt; Joining with `by = join_by(name_long)`\n\nclass(world_coffee)\n#&gt; [1] \"sf\"         \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\nRaster Calculations\n\n\nSummarizing Data\nworld_agg4  = world |&gt; \n  group_by(continent) |&gt; \n  summarize(Pop = sum(pop, na.rm = TRUE),\n            Area = sum(area_km2),\n            N = n())"
+    "section": "Spatial Operations",
+    "text": "Spatial Operations\nHere are some example spatial options in R using sf and the tidyverse.\n\nJoining\nworld_coffee = left_join(world, coffee_data)\n#&gt; Joining with `by = join_by(name_long)`\n\nclass(world_coffee)\n#&gt; [1] \"sf\"         \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\nSummarizing Data\nworld_agg4  = world |&gt; \n  group_by(continent) |&gt; \n  summarize(Pop = sum(pop, na.rm = TRUE),\n            Area = sum(area_km2),\n            N = n())"
   },
   {
     "objectID": "spatial-data-in-R.html#mapping-spatial-data-in-r",
@@ -67,7 +67,7 @@
     "href": "slides/outline.html#follow-along",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Follow Along…",
-    "text": "Follow Along…\n\n\n\nAdd in link to course documents/site."
+    "text": "Follow Along…\n\nhttps://btjepkes.github.io/WAFSGSO_2024_GIS/\n\n\nhttps://tinyurl.com/yw9p59s2"
   },
   {
     "objectID": "slides/outline.html#housekeeping",
@@ -102,49 +102,84 @@
     "href": "slides/outline.html#what-is-gis",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "What is GIS?",
-    "text": "What is GIS?\n\n\n\n\nStarted simply as a way to store and query spatial data\nCapable ecosystem of tools & techniques"
+    "text": "What is GIS?\n\n\n\nGIS = Geographic Information System\n\nThe tool that we use to capture, store, process, analyze, and visualize spatial information.\nHelps us understand and assess patterns in spatial locations and attributes about those locations.\n\nThis is the tool in the toolbox."
+  },
+  {
+    "objectID": "slides/outline.html#what-is-gis-1",
+    "href": "slides/outline.html#what-is-gis-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "What is GIS?",
+    "text": "What is GIS?\n\n\n\nGISc = Geographic Information Science\n\nThe study of geographic phenomena, spatial relationships, and patterns using computational techniques and spatial analysis tools.\nIntegrates principles from geography, computer science, mathematics, and other disciplines to analyze and interpret spatial data, aiding in decision-making processes across various fields.\n\nThis is the science that guides the tool."
   },
   {
     "objectID": "slides/outline.html#why-learn-gis",
     "href": "slides/outline.html#why-learn-gis",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Why Learn GIS?",
-    "text": "Why Learn GIS?\n\n\n\n\nEverywhere is somewhere\nAdds another dimension to data\nJOBS!"
+    "text": "Why Learn GIS?\n\n\n\n\nSpatial Analysis: GIS enables spatial analysis techniques that help in understanding the spatial patterns and relationships within natural resource datasets.\n\nE.g., Analyzing habitat suitability, identifying biodiversity hotspots, assessing landscape connectivity, and evaluating environmental impacts."
+  },
+  {
+    "objectID": "slides/outline.html#why-learn-gis-1",
+    "href": "slides/outline.html#why-learn-gis-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Why Learn GIS?",
+    "text": "Why Learn GIS?\n\n\n\n\nResource Management: GIS facilitates the management of natural resources by providing tools for inventory, monitoring, and planning.\n\nE.g., The integration of various data sources, such as satellite imagery, field surveys, and remote sensing data, to assess the condition of ecosystems, track changes over time, and develop sustainable management strategies."
+  },
+  {
+    "objectID": "slides/outline.html#why-learn-gis-2",
+    "href": "slides/outline.html#why-learn-gis-2",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Why Learn GIS?",
+    "text": "Why Learn GIS?\n\n\n\n\nDecision Support: GIS serves as a decision support tool for natural resource management by enabling stakeholders to visualize complex spatial data and model different scenarios.\n\nE.g., Prioritizing conservation efforts, allocating resources efficiently, and evaluating the potential impacts of alternative management actions."
+  },
+  {
+    "objectID": "slides/outline.html#why-learn-gis-3",
+    "href": "slides/outline.html#why-learn-gis-3",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Why Learn GIS?",
+    "text": "Why Learn GIS?\n\n\n\n\nJOBS!\n\nE.g., Research biologists, land managers, GIS specialists, conservation planners\n\nNote: GIS courses are widely accepted for professional certifications, like CWB"
   },
   {
     "objectID": "slides/outline.html#spatial-data-types",
     "href": "slides/outline.html#spatial-data-types",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Spatial Data Types",
-    "text": "Spatial Data Types\nHow the surface of the Earth is represented digitally\n\nSpatial coordinates = X, Y, sometimes Z\nTypes of spatial data models (types)\n\nVector\nRaster\nNetworks\n\nMany file formats / extensions for each\n\nExamples: .tiff, .shp, .gdb"
+    "text": "Spatial Data Types\n\n\n\nHow the surface of the Earth is represented digitally\n\nSpatial coordinates = X, Y, sometimes Z\nTypes of spatial data models (types)\n\nVector\nRaster\nNetworks\nLiDAR (point clouds)\n\nMany file formats / extensions (e.g., .tif, .shp, .gdb)"
   },
   {
     "objectID": "slides/outline.html#vector-data",
     "href": "slides/outline.html#vector-data",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Vector Data",
-    "text": "Vector Data\nRepresents space as points, lines, and polygons\n\nSource: Carto"
+    "text": "Vector Data\n\n\n\nRepresents space as points, lines, and polygons.\n\nPoints – single vertex\nLines – two or more vertices\nPolygon – three or more vertices with the last vertex equal to the first"
   },
   {
-    "objectID": "slides/outline.html#vector-file-formats",
-    "href": "slides/outline.html#vector-file-formats",
+    "objectID": "slides/outline.html#vector-data-1",
+    "href": "slides/outline.html#vector-data-1",
     "title": "GIS for Fisheries and Wildlife Sciences",
-    "section": "Vector File Formats",
-    "text": "Vector File Formats"
+    "section": "Vector Data",
+    "text": "Vector Data\n\n\n\nRepresents space as points, lines, and polygons\n\nSource: Carto"
+  },
+  {
+    "objectID": "slides/outline.html#common-vector-data-types",
+    "href": "slides/outline.html#common-vector-data-types",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Common Vector Data Types:",
+    "text": "Common Vector Data Types:\n\n\n\nMore than 80 different vector file types available across software and systems!\n\nNetCDF\nShapefile\nGeoJSON\nEsri Geodatabase Feature Class\nKML"
   },
   {
     "objectID": "slides/outline.html#raster-data",
     "href": "slides/outline.html#raster-data",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Raster Data",
-    "text": "Raster Data\nRepresents space as a grid of pixels\n\nSource: Carto\nLearn more: Navigation"
+    "text": "Raster Data\n\n\n\nRepresents space as a grid of pixels\n\nSource: Carto"
   },
   {
-    "objectID": "slides/outline.html#raster-file-formats",
-    "href": "slides/outline.html#raster-file-formats",
+    "objectID": "slides/outline.html#common-raster-data-types",
+    "href": "slides/outline.html#common-raster-data-types",
     "title": "GIS for Fisheries and Wildlife Sciences",
-    "section": "Raster File Formats",
-    "text": "Raster File Formats"
+    "section": "Common Raster Data Types:",
+    "text": "Common Raster Data Types:\n\n\n\n\nImagine IMG\nGeoTIFF & Cloud Optimized GeoTIFF\nnetCDF raster version\nCRF (Cloud raster format)\nBAG (Bathymetric Attributed Grid)"
   },
   {
     "objectID": "slides/outline.html#data-type-considerations",
@@ -154,46 +189,270 @@
     "text": "Data Type Considerations\n\n\n\nRaster is faster, but vector seems more correcter\n\nSpatial data files do their best to represent the world\nAccuracy needs will depend on each use case\n\nMapping an entire state vs. a single forest stand\nEach sensor and GPS receiver will vary"
   },
   {
-    "objectID": "slides/outline.html#projections-aka-crs",
-    "href": "slides/outline.html#projections-aka-crs",
+    "objectID": "slides/outline.html#raster-advantages",
+    "href": "slides/outline.html#raster-advantages",
     "title": "GIS for Fisheries and Wildlife Sciences",
-    "section": "Projections (aka CRS)",
-    "text": "Projections (aka CRS)\nRepresenting a 3D sphere on a 2D surface\n\nOften the most confusing part of introductory GIS\nNo perfect projection exists (prioritize for needs)\nDifferent regions and states have their own projections\nMany software have on-the-fly projection\nLayers need to have same CRS for spatial operations"
+    "section": "Raster Advantages:",
+    "text": "Raster Advantages:\n\n\n\n\nContinuous Representation: Raster data models are well-suited for representing continuous phenomena, such as elevation, temperature, and precipitation.\nEfficient Storage: Raster datasets can be more compactly stored than vector datasets, especially for large continuous areas.\nAnalytical Capabilities: Raster data supports various spatial analysis techniques, such as surface analysis, proximity analysis, and interpolation, enabling detailed quantitative analysis"
+  },
+  {
+    "objectID": "slides/outline.html#raster-disadvantages",
+    "href": "slides/outline.html#raster-disadvantages",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Raster Disadvantages:",
+    "text": "Raster Disadvantages:\n\n\n\n\nLoss of Detail: Raster datasets may lose detail when representing complex geometries or sharp boundaries, leading to generalization or smoothing of features.\nLarge File Sizes: High-resolution raster datasets can result in large file sizes, which may require significant storage space and computing resources.\nLimited Attribute Information: Raster data typically stores attribute information at the pixel level, which may limit the types of attribute analysis that can be performed"
+  },
+  {
+    "objectID": "slides/outline.html#vector-advantages",
+    "href": "slides/outline.html#vector-advantages",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Vector Advantages:",
+    "text": "Vector Advantages:\n\n\n\n\nPrecise Representation: Vector data models accurately represent discrete features with well-defined boundaries, making them suitable for representing infrastructure, boundaries, and administrative units.\nCompact Storage: Vector datasets can efficiently store attribute information associated with spatial features, enabling detailed attribute analysis and queries.\nTopology Support: Vector data models support topological relationships between features, such as connectivity and adjacency, which facilitate spatial analysis and data integrity checks.\nFlexible Editing: Vector data can be easily edited and updated, allowing for precise modifications to individual features or attributes without affecting neighboring features."
+  },
+  {
+    "objectID": "slides/outline.html#vector-disadvantages",
+    "href": "slides/outline.html#vector-disadvantages",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Vector Disadvantages:",
+    "text": "Vector Disadvantages:\n\n\n\n\nComplex Geometries: Vector data may struggle to represent continuous phenomena or complex geometries accurately, leading to oversimplification or data loss.\nIncreased Storage Requirements: Vector datasets can require more storage space compared to raster datasets, especially for datasets with complex geometries or extensive attribute information."
+  },
+  {
+    "objectID": "slides/outline.html#a-note-on-shapefiles",
+    "href": "slides/outline.html#a-note-on-shapefiles",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "A Note on Shapefiles",
+    "text": "A Note on Shapefiles\n\n\n\nStop Using Shapefiles: http://switchfromshapefile.org/\nWhile shapefiles are common and widely supported, there are several downsides:\n\nMulti-file format causes sharing issues\nAttribute (column) names limited to 10 characters\nNo more than 255 total attributes\nTotal size limit of 2 GB"
+  },
+  {
+    "objectID": "slides/outline.html#alternatives-for-the-shp",
+    "href": "slides/outline.html#alternatives-for-the-shp",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Alternatives for the SHP",
+    "text": "Alternatives for the SHP\n\n\n\n\nOGC GeoPackage \nGeoJSON\nOGC GML\nOGC KML\nEsri GeoDatabase"
+  },
+  {
+    "objectID": "slides/outline.html#coordinate-reference-systems",
+    "href": "slides/outline.html#coordinate-reference-systems",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Coordinate Reference Systems",
+    "text": "Coordinate Reference Systems\n\n\n\n\nAbbreviated as CRS or GRS or PRS\n\nGRS = geographic (unprojected)\nPRS = projected\n\nOften the most confusing part of introductory GIS\nLayers need to have same CRS for spatial operations\nUnits are different for each!"
+  },
+  {
+    "objectID": "slides/outline.html#geographic-crs",
+    "href": "slides/outline.html#geographic-crs",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Geographic CRS",
+    "text": "Geographic CRS\n\n\n\nRepresenting a 3D sphere as a 3D model\n\nGeographic coordinate reference systems identify any location on the Earth’s surface using two values — longitude and latitude\n\nLongitude = angular distance East-West from the Prime Meridian plane\nLatitude = angular distance North or South of the equatorial plane\n\nUnits are in degrees"
+  },
+  {
+    "objectID": "slides/outline.html#projections-crs",
+    "href": "slides/outline.html#projections-crs",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Projections CRS",
+    "text": "Projections CRS\n\nLearn more: https://www.geo-projections.com/\n\nRepresenting a 3D sphere on a 2D surface\n\nNo perfect projection exists (prioritize for needs)\nDifferent regions and states have their own projections\nMany software have on-the-fly projection"
+  },
+  {
+    "objectID": "slides/outline.html#projections-crs-1",
+    "href": "slides/outline.html#projections-crs-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Projections CRS",
+    "text": "Projections CRS\n\n\n\n\n\n\n\n\n\nMercator\n\n\n\n\n\n\n\nMollweide (Equal Area)"
   },
   {
     "objectID": "slides/outline.html#crs-nomenclature",
     "href": "slides/outline.html#crs-nomenclature",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "CRS Nomenclature",
-    "text": "CRS Nomenclature\nDifferent ways to reference a CRS.\n\nEnglish Name\nWKT ~ Well Known Text\nEPSG\nPROJ.4"
+    "text": "CRS Nomenclature\n\nSee more here: https://epsg.io/.\n\nCoordinate reference systems have various names or ways of referring to them in GIS software.\nThis is especially prominent in programmatic GIS where a GUI dropdown menu of projections is not an option.\n\nEnglish Name\nWKT ~ Well Known Text\nEPSG\nPROJ.4"
+  },
+  {
+    "objectID": "slides/outline.html#crs-nomenclature-1",
+    "href": "slides/outline.html#crs-nomenclature-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "CRS Nomenclature",
+    "text": "CRS Nomenclature\n\nSee more here: https://epsg.io/.\n\nEnglish Name\nNorth American Datum 1983\nEPSG\n4269\nPROJ.4\n+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs +type=crs"
+  },
+  {
+    "objectID": "slides/outline.html#crs-nomenclature-2",
+    "href": "slides/outline.html#crs-nomenclature-2",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "CRS Nomenclature",
+    "text": "CRS Nomenclature\n\nSee more here: https://epsg.io/.\n\nWKT ~ Well Known Text\nGEOGCS[\"NAD83\",\n    DATUM[\"North_American_Datum_1983\",\n        SPHEROID[\"GRS 1980\",6378137,298.257222101],\n        TOWGS84[0,0,0,0,0,0,0]],\n    PRIMEM[\"Greenwich\",0,\n        AUTHORITY[\"EPSG\",\"8901\"]],\n    UNIT[\"degree\",0.0174532925199433,\n        AUTHORITY[\"EPSG\",\"9122\"]],\n    AUTHORITY[\"EPSG\",\"4269\"]]"
+  },
+  {
+    "objectID": "slides/outline.html#crs-nomenclature-3",
+    "href": "slides/outline.html#crs-nomenclature-3",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "CRS Nomenclature",
+    "text": "CRS Nomenclature\n\nSee more here: https://epsg.io/.\n\nWKID ~ Well Known Identifier (ESRI)\nGEOGCS[\"GCS_North_American_1983\",\n    DATUM[\"D_North_American_1983\",\n        SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],\n    PRIMEM[\"Greenwich\",0.0],\n    UNIT[\"Degree\",0.0174532925199433]]"
   },
   {
     "objectID": "slides/outline.html#software-programs",
     "href": "slides/outline.html#software-programs",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Software & Programs",
-    "text": "Software & Programs\n\n\nProprietary\n\nArcGIS Pro\nCadcorp\nMAPublisher\nCarto\n\n\nOpen-Source*\n\nQGIS\nGRASS GIS\nGeoDa\nR / Python / Julia\n\n*Many open-source software have paid tiers for extending functionality or rely on paid services for sharing"
+    "text": "Software & Programs\n\n\n\n\n\nProprietary\n\nArcGIS Pro\nCadcorp\nMAPublisher\nCarto\n\n\nOpen-Source*\n\nQGIS\nGRASS GIS\nGeoDa\nR / Python / Julia\n\n*Many open-source software have paid tiers for extending functionality or rely on paid services for sharing"
   },
   {
     "objectID": "slides/outline.html#web-geospatial-tools",
     "href": "slides/outline.html#web-geospatial-tools",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Web Geospatial Tools",
-    "text": "Web Geospatial Tools\n\nArcGIS Online\nGoogle Earth Engine\nLeaflet\nMapbox\nMango Map\nFelt"
+    "text": "Web Geospatial Tools\n\n\n\n\nArcGIS Online\nGoogle Earth Engine\nLeaflet\nMapbox\nMango Map\nFelt"
   },
   {
-    "objectID": "slides/outline.html#common-file-types",
-    "href": "slides/outline.html#common-file-types",
+    "objectID": "slides/outline.html#field-collection",
+    "href": "slides/outline.html#field-collection",
     "title": "GIS for Fisheries and Wildlife Sciences",
-    "section": "Common File Types",
-    "text": "Common File Types\nHow spatial data and attributes are stored and transferred"
+    "section": "Field Collection",
+    "text": "Field Collection\n\n\n\nGPS Recievers\nGPS receivers, or Global Positioning System receivers, are electronic devices that use signals from satellites to determine the receiver’s location on Earth.\nGPS receivers range in both price and accuracy.\n\nRecreational Grade\nMapping Grade\nSurvey Grade"
+  },
+  {
+    "objectID": "slides/outline.html#field-collection-1",
+    "href": "slides/outline.html#field-collection-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Field Collection",
+    "text": "Field Collection\n\n\n\nRecreational Grade\nRecreational grade GPS receivers are sold at most box stores and at many sporting goods and camping stores. They are also available widely through Internet retailers. These units are the least expensive grade and are generally accurate to within +/- 25 feet (7.6 meters). These receivers run in the $100 to $600 range and are the type most often purchased by the general public."
+  },
+  {
+    "objectID": "slides/outline.html#field-collection-2",
+    "href": "slides/outline.html#field-collection-2",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Field Collection",
+    "text": "Field Collection\n\n\n\nMapping Grade\nMapping grade GPS receivers are generally sold by “high end” and licensed resellers. These GPS receivers are typically less user-friendly than the recreational GPS, and they cost significantly more. Mapping grade GPS are more accurate than recreational units, commonly to within a meter (~3 feet)."
+  },
+  {
+    "objectID": "slides/outline.html#field-collection-3",
+    "href": "slides/outline.html#field-collection-3",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Field Collection",
+    "text": "Field Collection\n\n\n\nSurvey Grade\nSurvey grade GPS receivers are the most accurate and the most expensive. They are accurate to within a centimeter and can cost in the tens of thousands of dollars."
   },
   {
     "objectID": "slides/outline.html#apps-for-field-collection",
     "href": "slides/outline.html#apps-for-field-collection",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Apps for Field Collection",
-    "text": "Apps for Field Collection\n\nEsri: Esri Field Maps – ArcGIS Online – ArcGIS Pro\nQGIS: QField or Mergin Maps – QGIS\nAvenza Maps – Works with multiple programs"
+    "text": "Apps for Field Collection\n\n\n\nMany apps available for field data collection.\n\nEsri Field Maps (for Esri)\n\nIntegrates with ArcGIS Online and ArcGIS Pro\nBoth Android and iOS support\n\nQField or Mergin Maps (for QGIS)\n\nIntegrates with QGIS Cloud environment"
+  },
+  {
+    "objectID": "slides/outline.html#apps-for-field-collection-1",
+    "href": "slides/outline.html#apps-for-field-collection-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Apps for Field Collection",
+    "text": "Apps for Field Collection\n\n\n\nMany apps available for field data collection.\n\nAvenza Maps (for anything)\n\nWorks with multiple programs\n\nCan be used with external GPS receivers (Bad Elf, Garmin GLO), else uses the internal GPS chip."
+  },
+  {
+    "objectID": "slides/outline.html#spatial-operations",
+    "href": "slides/outline.html#spatial-operations",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Spatial Operations",
+    "text": "Spatial Operations\n\n\n\nSpatial operations in GIS refer to a set of analytical techniques and functions used to manipulate, analyze, and derive new spatial information from existing geographic datasets.\nThese operations involve the manipulation of spatial data to answer specific questions, identify patterns, and support decision-making processes."
+  },
+  {
+    "objectID": "slides/outline.html#spatial-operations-1",
+    "href": "slides/outline.html#spatial-operations-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Spatial Operations",
+    "text": "Spatial Operations\n\n\n\nTobler’s First Law of Geography, often summarized as “Everything is related to everything else, but near things are more related than distant things,” has profound implications for spatial analysis and GIS operations.\n\nMany GIS operations and spatial analysis techniques are inherently based on Tobler’s First Law of Geography, as they leverage proximity and spatial relationships to derive meaningful insights and make informed decisions."
+  },
+  {
+    "objectID": "slides/outline.html#common-spatial-operations",
+    "href": "slides/outline.html#common-spatial-operations",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Common Spatial Operations",
+    "text": "Common Spatial Operations\n\n\n\nThere are a various types or groups of spatial operations.\n\nExtraction\nOverlay\nProximity\nOthers"
+  },
+  {
+    "objectID": "slides/outline.html#extraction",
+    "href": "slides/outline.html#extraction",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Extraction",
+    "text": "Extraction\n\n\n\nClip\nThis operation involves extracting a portion of one layer based on the extent of another layer. It retains only those features from the input layer that fall within the spatial extent of the clip layer.\nSelect\nSelecting features involves choosing specific geographic features from a layer based on certain criteria, such as attribute values or spatial relationships."
+  },
+  {
+    "objectID": "slides/outline.html#extraction-1",
+    "href": "slides/outline.html#extraction-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Extraction",
+    "text": "Extraction\n\n\n\nSplit\nSplitting divides one or more input features into separate features based on a specified line or polygon boundary.\nSplit By Attributes\nThis operation divides features based on attribute values. It creates separate output datasets for each unique attribute value."
+  },
+  {
+    "objectID": "slides/outline.html#overlay",
+    "href": "slides/outline.html#overlay",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Overlay",
+    "text": "Overlay\n\n\n\nErase\nErase removes portions of one layer that overlap with another layer, leaving only the areas where the two layers do not overlap."
+  },
+  {
+    "objectID": "slides/outline.html#overlay-1",
+    "href": "slides/outline.html#overlay-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Overlay",
+    "text": "Overlay\n\n\n\nIdentity\nIdentity produces a new layer that preserves the geometries of both input layers. It assigns attributes from both layers to the output, and where they overlap, it retains the attributes of both layers."
+  },
+  {
+    "objectID": "slides/outline.html#overlay-2",
+    "href": "slides/outline.html#overlay-2",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Overlay",
+    "text": "Overlay\n\n\n\nIntersect\nIntersect creates a new layer that contains only the areas where features from input layers overlap. The output retains the attributes from both input layers."
+  },
+  {
+    "objectID": "slides/outline.html#overlay-3",
+    "href": "slides/outline.html#overlay-3",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Overlay",
+    "text": "Overlay\n\n\n\nSpatial Join\nSpatial Join combines attributes from two layers based on their spatial relationship. It creates a new layer with attributes from both input layers, using a specified spatial relationship (e.g., intersect, contain, within)."
+  },
+  {
+    "objectID": "slides/outline.html#overlay-4",
+    "href": "slides/outline.html#overlay-4",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Overlay",
+    "text": "Overlay\n\n\n\nUnion\nUnion combines the geometries and attributes of two or more input layers to create a new layer that represents the geometric and attribute combination of all input layers."
+  },
+  {
+    "objectID": "slides/outline.html#overlay-5",
+    "href": "slides/outline.html#overlay-5",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Overlay",
+    "text": "Overlay\n\n\n\nUpdate\nUpdate operation involves modifying attributes or geometries of features in a layer based on the attributes or geometries of another layer."
+  },
+  {
+    "objectID": "slides/outline.html#proximity",
+    "href": "slides/outline.html#proximity",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Proximity",
+    "text": "Proximity\n\n\n\nNear\nNear identifies features in one layer that are closest to features in another layer. It calculates distances between features and reports the nearest feature(s) based on specified criteria."
+  },
+  {
+    "objectID": "slides/outline.html#proximity-1",
+    "href": "slides/outline.html#proximity-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Proximity",
+    "text": "Proximity\n\n\n\nBuffer\nBuffering is a spatial operation in GIS that involves creating a zone or area around a geographic feature, typically represented as a point, line, or polygon. This zone is defined by a specified distance or buffer radius."
+  },
+  {
+    "objectID": "slides/outline.html#other",
+    "href": "slides/outline.html#other",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Other",
+    "text": "Other\n\n\n\nDissolve\nDissolve combines adjacent polygons or features that share a common attribute value into a single feature. It merges geometries and aggregates attributes based on the specified dissolve field.\nSummarize Within\nSummarize Within is a spatial operation in GIS that involves aggregating data from one layer based on the spatial relationship with features from another layer. It calculates statistics or aggregates attributes of features within the boundaries of other features."
+  },
+  {
+    "objectID": "slides/outline.html#what-is-programmatic-gis",
+    "href": "slides/outline.html#what-is-programmatic-gis",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "What is programmatic GIS?",
+    "text": "What is programmatic GIS?\n\n\n\nProgrammatic GIS refers to the practice of using programming languages and scripts to:\n\nperform geospatial analysis,\nautomate GIS tasks, and\ndevelop custom geospatial applications."
+  },
+  {
+    "objectID": "slides/outline.html#what-is-programmatic-gis-1",
+    "href": "slides/outline.html#what-is-programmatic-gis-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "What is programmatic GIS?",
+    "text": "What is programmatic GIS?\n\n\n\nRather than relying solely on graphical user interfaces (GUIs) of GIS software, programmatic GIS empowers users to harness the full capabilities of GIS through code.\n\nWhile the GUI is a vital part of GIS and creates a venue for speedy learning, it can be very slow (esp. in ArcGIS Pro) and does not make sense for large scope projects or repetitive tasks."
   },
   {
     "objectID": "slides/outline.html#why-use-scripting-for-gis",
@@ -203,18 +462,81 @@
     "text": "Why use scripting for GIS?\n\nAllows for reproducible science and workflows\n\nSupplementary material for manuscripts\n\nTurns repetitive tasks into simple tools\nSome tools are only available in the coding interface\nIntegrates with other tools and methods\n\nModules, extensions, APIs\nData wrangling and visualization"
   },
   {
-    "objectID": "slides/outline.html#why-use-r-for-spatial-analysis",
-    "href": "slides/outline.html#why-use-r-for-spatial-analysis",
+    "objectID": "slides/outline.html#what-is-python",
+    "href": "slides/outline.html#what-is-python",
     "title": "GIS for Fisheries and Wildlife Sciences",
-    "section": "Why Use R for Spatial Analysis?",
-    "text": "Why Use R for Spatial Analysis?\n\n\n\n\nAll the cool researchers are using it\n\nlibrary(sf)"
+    "section": "What is Python?",
+    "text": "What is Python?\n\n\n\nPython is a versatile and powerful programming language widely used in various fields, including web development, data science, artificial intelligence, and, importantly, GIS.\n\nWhile R is widely used across academia, many private industries use Python as the standard language for programmatic GIS.\nPython is the primary coding language used in ArcGIS Pro, along with Arcade (Esri’s proprietary language)."
+  },
+  {
+    "objectID": "slides/outline.html#what-is-jupyter",
+    "href": "slides/outline.html#what-is-jupyter",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "What is Jupyter?",
+    "text": "What is Jupyter?\n\n\n\nJupyter Notebooks are interactive computing environments that allow you to combine live code, equations, visualizations, and narrative text all in one document.\nThey support multiple programming languages, including Python, R, and Julia, making them versatile tools for various data analysis tasks."
+  },
+  {
+    "objectID": "slides/outline.html#what-is-jupyter-1",
+    "href": "slides/outline.html#what-is-jupyter-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "What is Jupyter?",
+    "text": "What is Jupyter?\n\n\n\nJupyter Notebooks is installed as part of the ArcGIS Pro installation process or added later using the ArcGIS Pro package manager.\nOnce installed, you can launch Jupyter Notebooks directly from the ArcGIS Pro interface or a Python command prompt.\njupyter notebook"
+  },
+  {
+    "objectID": "slides/outline.html#what-is-jupyter-2",
+    "href": "slides/outline.html#what-is-jupyter-2",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "What is Jupyter?",
+    "text": "What is Jupyter?"
+  },
+  {
+    "objectID": "slides/outline.html#python-in-arcgis-pro",
+    "href": "slides/outline.html#python-in-arcgis-pro",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Python in ArcGIS Pro",
+    "text": "Python in ArcGIS Pro\n\n\n\narcpy is the main python module to interact with the ArcGIS ecosystem and will be the focus of our exploration today.\n\nimport arcpy\n\nroads = \"c:/base/data.gdb/roads\"\noutput = \"c:/base/data.gdb/roads_Buffer\"\n\n# Run Buffer using the variables set above and pass the remaining \n# parameters in as strings\narcpy.Buffer_analysis(roads, output, \"distance\", \"FULL\", \"ROUND\", \"NONE\")"
+  },
+  {
+    "objectID": "slides/outline.html#best-practices",
+    "href": "slides/outline.html#best-practices",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Best Practices",
+    "text": "Best Practices\n\n\n\n\nWriting Efficient and Readable arcpy Scripts:\n\n\nUse meaningful variable names and comments to enhance code readability.\nBreak down complex tasks into smaller, modular functions.\nOptimize arcpy scripts by minimizing unnecessary loops and operations."
+  },
+  {
+    "objectID": "slides/outline.html#best-practices-1",
+    "href": "slides/outline.html#best-practices-1",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Best Practices",
+    "text": "Best Practices\n\n\n\n\nDocumenting Code and Workflows:\n\n\nDocument arcpy scripts with clear and concise comments explaining the purpose of each section and important steps.\nMaintain separate documentation files or READMEs detailing script usage, input/output data, and dependencies."
+  },
+  {
+    "objectID": "slides/outline.html#best-practices-2",
+    "href": "slides/outline.html#best-practices-2",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Best Practices",
+    "text": "Best Practices\n\n\n\n\nVersion Control and Collaboration:\n\n\nUse version control systems (e.g., Git) to track changes and collaborate with team members on arcpy projects.\nEstablish coding standards and conventions for consistent arcpy script development within the team."
+  },
+  {
+    "objectID": "slides/outline.html#hands-on-exercise",
+    "href": "slides/outline.html#hands-on-exercise",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "Hands-on Exercise",
+    "text": "Hands-on Exercise\n\n\n\nNow we will explore how to open, run, and output Python code in ArcGIS Pro!"
+  },
+  {
+    "objectID": "slides/outline.html#see-webpage-for-r-content",
+    "href": "slides/outline.html#see-webpage-for-r-content",
+    "title": "GIS for Fisheries and Wildlife Sciences",
+    "section": "See webpage for R content!",
+    "text": "See webpage for R content!"
   },
   {
     "objectID": "slides/outline.html#contact-resources",
     "href": "slides/outline.html#contact-resources",
     "title": "GIS for Fisheries and Wildlife Sciences",
     "section": "Contact & Resources",
-    "text": "Contact & Resources\nReach out with inquiries:\n\nBenjamin Tjepkes ~ bwtbgm@missouri.edu\nWesley Fitzsimmons ~ waf8xt@missouri.edu\n\nWorkshop Resources:\nTinyURL\n\n\n\n\n© The Authors | 2024.03.20"
+    "text": "Contact & Resources\nReach out with inquiries:\n\nBenjamin Tjepkes ~ bwtbgm@missouri.edu\nWesley Fitzsimmons ~ waf8xt@missouri.edu\n\nWorkshop Resources:\nResources\n\n\n\n\n© The Authors | 2024.03.19"
   },
   {
     "objectID": "resources.html",
@@ -396,7 +718,7 @@
     "href": "scripting-in-arcgis-pro.html#common-geospatial-packages",
     "title": "3. Scripting in ArcGIS Pro",
     "section": "Common Geospatial Packages",
-    "text": "Common Geospatial Packages\nPython has both base and extended functionality where the latter is provided by external packages (i.e., modules) that can be installed, and then imported into our workspace."
+    "text": "Common Geospatial Packages\nPython has both base and extended functionality where the latter is provided by external packages (i.e., modules) that can be installed, and then imported into our workspace.\n\nGeoPandas: GeoPandas extends the Pandas library to work with geometric data types, allowing for easy manipulation and analysis of spatial datasets.\nShapely: Shapely is a library for geometric operations and manipulations of geometries (points, lines, and polygons). It is often used in conjunction with GeoPandas.\nFiona: Fiona is a Python wrapper around the OGR library, providing an interface for reading and writing spatial data formats (e.g., Shapefile, GeoJSON, etc.).\nPyproj: Pyproj is a Python interface to the PROJ library, allowing for geospatial transformations, conversions between coordinate reference systems, and calculations of distances and areas.\nGDAL (Geospatial Data Abstraction Library): GDAL is a powerful library for reading, writing, and processing raster and vector geospatial data formats. It is often used in combination with other Python libraries like Fiona and Rasterio.\nRasterio: Rasterio is a Python library for reading and writing raster geospatial data formats. It provides an intuitive interface for working with raster datasets, including georeferencing and processing."
   },
   {
     "objectID": "scripting-in-arcgis-pro.html#python-in-arcgis",
@@ -410,13 +732,13 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click here.\n\nNote: To enter full screen view, click into the slide deck and hit the F key on your keyboard."
+    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom.\n\nNote: To enter full screen view, click into the slide deck and hit the F key on your keyboard."
   },
   {
     "objectID": "slides.html#presentation-slides",
     "href": "slides.html#presentation-slides",
     "title": "Slides",
     "section": "",
-    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom. To download a PDF version of this presentation, click here.\n\nNote: To enter full screen view, click into the slide deck and hit the F key on your keyboard."
+    "text": "The full presentation can be viewed interactively below. Note that any resources associated with each slide are linked at the bottom.\n\nNote: To enter full screen view, click into the slide deck and hit the F key on your keyboard."
   }
 ]
